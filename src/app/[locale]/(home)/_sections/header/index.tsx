@@ -5,13 +5,13 @@ import { FaGraduationCap, FaStar, FaTrophy } from "react-icons/fa";
 
 export default function HeroHeader() {
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       
       {/* Floating Planet */}
       <img
         src={frame.src}
         alt="planet"
-        className="absolute left-10 top-20 animate-bounce [animation-duration:3s] opacity-90 w-55 "
+        className="absolute left-10 top-20 animate-bounce [animation-duration:3s] opacity-90 w-55 hidden md:block"
       />
 
       {/* Floating VR Headset */}
@@ -21,8 +21,12 @@ export default function HeroHeader() {
         className="absolute -z-10 right-1 top-100 animate-spin [animation-duration:3s]  opacity-90"
       />
 
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        
+      <div className="max-w-6xl mx-auto px-6 text-center relative">
+        <div className={`
+              absolute w-full h-[70%] aspect-square  top-[12%] left-0
+              bg-linear-to-r from-[#2C67FF]  to-[#FF4DED]
+              blur-xl opacity-15 -z-10
+              `}/>
         {/* Heading */}
         <h1 className="text-5xl font-bold text-gray-800 leading-tight">
           Transform Objectives into <br />
@@ -31,7 +35,7 @@ export default function HeroHeader() {
 
         {/* Subtext */}
         <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
-          UAE’s #1 provider of curriculum-aligned AR/VR solutions for education,
+          UAE's #1 provider of curriculum-aligned AR/VR solutions for education,
           government campaigns, and immersive venues. Trusted by 50K+ active users
           across the region.
         </p>
@@ -83,7 +87,7 @@ export default function HeroHeader() {
             </div>
 
             {/* Video Placeholder */}
-            <div className="relative h-[400px] bg-grid-pattern bg-gray-50 flex items-center justify-center">
+            <div className="relative h-100 bg-grid-pattern bg-gray-50 flex items-center justify-center">
               
               {/* Ripple Effect */}
               <div className="absolute w-40 h-40 rounded-full bg-blue-400/30 animate-ping"></div>
@@ -105,7 +109,7 @@ export default function HeroHeader() {
       </div>
 
       {/* Bottom Stats Bar */}
-      <div className=" bottom-0 left-0 w-full mt-30 bg-gradient-to-r from-[#e8d9f8] to-[#d8ecff] py-8">
+      <div className=" bottom-0 left-0 w-full mt-30 bg-linear-to-r from-[#e8d9f8] to-[#d8ecff] py-8">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 text-center gap-8">
           
           <Stat number="90%" label="Teacher Adoption" />

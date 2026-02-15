@@ -1,11 +1,11 @@
 "use client";
-import HomeHeroSection from '@/app/[locale]/sections/header';
+import HomeHeroSection from '@/app/[locale]/(home)/_sections/header';
 import { useTranslations } from 'next-intl';
-import PerfectSolution from '@/app/[locale]/sections/perfect-solution';
-import SolutionsPortfolio from '../sections/our-solution';
-import OctarEducationalOffering from '../sections/octar-ed';
-import WhatOurClientsSay from '../sections/reveiws';
-import BookDemoSection from '../sections/book-demo';
+import PerfectSolution from '@/app/[locale]/(home)/_sections/perfect-solution';
+import SolutionsPortfolio from './_sections/our-solution';
+import OctarEducationalOffering from './_sections/octar-ed';
+import WhatOurClientsSay from './_sections/reveiws';
+import BookDemoSection from './_sections/book-demo';
 
 
 
@@ -19,8 +19,8 @@ export default function Homepage() {
   return (
     <div>
       <div className="">
-      <HomeHeroSection />
-</div>
+        <HomeHeroSection />
+      </div>
       <PerfectSolution></PerfectSolution>
       <SolutionsPortfolio></SolutionsPortfolio>
       <div className="mt-20">
