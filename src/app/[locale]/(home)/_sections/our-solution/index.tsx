@@ -43,14 +43,14 @@ const SolutionsPortfolio: React.FC = () => {
             stroke="#3A9DB2"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
           <path
             d="M28 36H20"
             stroke="#3A9DB2"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -78,21 +78,21 @@ const SolutionsPortfolio: React.FC = () => {
             stroke="#298B27"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
           <path
             d="M27.0003 12V20.3925L34.8566 33.485C34.9477 33.6367 34.9969 33.8098 34.9993 33.9867C35.0016 34.1636 34.957 34.338 34.8699 34.492C34.7829 34.6461 34.6565 34.7742 34.5037 34.8635C34.351 34.9527 34.1772 34.9998 34.0003 35H14.0003C13.8233 35.0001 13.6494 34.9531 13.4964 34.864C13.3435 34.7748 13.2169 34.6467 13.1297 34.4926C13.0425 34.3385 12.9978 34.164 13.0001 33.987C13.0024 33.81 13.0516 33.6368 13.1428 33.485L21.0003 20.3925V12"
             stroke="#298B27"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
           <path
             d="M16.9531 27.1351C18.6069 26.8251 20.9531 26.9588 23.9994 28.5001C28.0306 30.5413 30.8431 30.1138 32.4369 29.4563"
             stroke="#298B27"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -120,14 +120,14 @@ const SolutionsPortfolio: React.FC = () => {
             stroke="#0040CA"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
           <path
             d="M16.9995 36L13.3345 29.75C13.0082 29.1761 12.9222 28.4964 13.0952 27.8593C13.2681 27.2222 13.6861 26.6794 14.2578 26.3493C14.8295 26.0192 15.5086 25.9287 16.1468 26.0974C16.7851 26.2661 17.3306 26.6805 17.6645 27.25L19.9995 31V17.5C19.9995 16.837 20.2629 16.2011 20.7318 15.7322C21.2006 15.2634 21.8365 15 22.4995 15C23.1626 15 23.7985 15.2634 24.2673 15.7322C24.7361 16.2011 24.9995 16.837 24.9995 17.5V24.5C24.9995 23.837 25.2629 23.2011 25.7318 22.7322C26.2006 22.2634 26.8365 22 27.4995 22C28.1626 22 28.7985 22.2634 29.2673 22.7322C29.7361 23.2011 29.9995 23.837 29.9995 24.5V26.5C29.9995 25.837 30.2629 25.2011 30.7318 24.7322C31.2006 24.2634 31.8365 24 32.4995 24C33.1626 24 33.7985 24.2634 34.2673 24.7322C34.7361 25.2011 34.9995 25.837 34.9995 26.5V31C34.9995 34 33.9995 36 33.9995 36"
             stroke="#0040CA"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -155,14 +155,14 @@ const SolutionsPortfolio: React.FC = () => {
             stroke="#F97316"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
           <path
             d="M25 32H39L31 14H17V32"
             stroke="#F97316"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -190,49 +190,49 @@ const SolutionsPortfolio: React.FC = () => {
             stroke="#89278B"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
           <path
             d="M9 26H4V21"
             stroke="#89278B"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
           <path
             d="M28 21V26H23"
             stroke="#89278B"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
           <path
             d="M4 11V6H9"
             stroke="#89278B"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
           <path
             d="M16 8L23 12V20L16 24L9 20V12L16 8Z"
             stroke="#89278B"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
           <path
             d="M9 12L16 16L23 12"
             stroke="#89278B"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
           <path
             d="M16 16V24"
             stroke="#89278B"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),
@@ -260,28 +260,28 @@ const SolutionsPortfolio: React.FC = () => {
             stroke="#CA8A00"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
           <path
             d="M18.3062 22.6938L11 30.0001"
             stroke="#CA8A00"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
           <path
             d="M19.6575 30.3423L13 36.9998"
             stroke="#CA8A00"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
           <path
             d="M28.785 30.2148L22 36.9998"
             stroke="#CA8A00"
             strokeWidth="2"
             strokeLinecap="round"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
         </svg>
       ),

@@ -1,6 +1,10 @@
 export default function BookDemoSection() {
   return (
-    <section className="w-full bg-gradient-to-r from-[#A88EEF] to-[#79B9CE]  py-24 px-6 text-center">
+    <section className={`
+    w-full bg-[linear-gradient(to_right,rgba(144,31,233,0.1),rgba(0,163,255,0.1)),url('/waves.svg')] 
+    bg-contain bg-bottom bg-no-repeat
+    py-24 px-6 text-center
+    `}>
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
         <h1 className="text-4xl md:text-5xl font-semibold text-gray-800 mb-6">
@@ -14,7 +18,7 @@ export default function BookDemoSection() {
 
         {/* CTA Button */}
         <div className="mb-6">
-          <button className="px-8 py-3 rounded-xl text-white text-lg font-medium bg-gradient-to-r  from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
+          <button className="px-8 py-3 rounded-xl text-white text-lg font-medium bg-linear-to-r  from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
             Book Your Free Demo
           </button>
         </div>
