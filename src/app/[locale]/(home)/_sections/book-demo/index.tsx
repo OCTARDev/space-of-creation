@@ -21,7 +21,7 @@ export default function BookDemoSection() {
 
         {/* Phone */}
         <p className="text-gray-800 text-base">
-          Or call : +971 58 214 5330
+          Or call : +971 54 797 5397
         </p>
       </div>
 
