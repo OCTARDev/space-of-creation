@@ -49,33 +49,42 @@ const SolutionGrid: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2">
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className="group bg-white rounded-2xl shadow-sm hover:shadow-xl outline-1 outline-blue-100 hover:outline-blue-500 transition-all duration-300 ease-in-out overflow-hidden"
-          >
-            {/* Image */}
-            <div className="overflow-hidden">
-              <img
-                src={card.image}
-                alt={card.title}
-                className="w-full h-64 object-cover transition-transform duration-500 ease-in-out hover:scale-105"
-              />
-            </div>
+    <div className="max-w-6xl mx-auto px-6">
+  <div className="grid gap-8 md:grid-cols-2">
+    {cards.map((card, index) => (
+      <div
+        key={index}
+        className="group bg-white rounded-2xl border border-gray-200 
+                   hover:border-blue-500 
+                   hover:shadow-xl 
+                   transition-all duration-300 ease-in-out 
+                   overflow-hidden"
+      >
+        {/* Image */}
+        <div className="overflow-hidden">
+          <img
+            src={card.image}
+            alt={card.title}
+            className="w-full h-64 object-cover 
+                       transition-transform duration-500 ease-in-out 
+                       group-hover:scale-105"
+          />
+        </div>
 
-            {/* Content */}
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                {card.title}
-              </h3>
-              <p className="text-white-500 text-sm leading-relaxed">
-                {card.description}
-              </p>
-            </div>
-          </div>
-        ))}
+        {/* Content */}
+        <div className="p-6">
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            {card.title}
+          </h3>
+          <p className="text-gray-500 text-sm leading-relaxed">
+            {card.description}
+          </p>
+        </div>
       </div>
+    ))}
+  </div>
+</div>
+
     </section>
   );
 };
