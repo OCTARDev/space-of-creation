@@ -7,6 +7,7 @@
 @theme inline {
   --color-primary-a1: var(--primaryA1);
   --color-primary-a2: var(--primaryA2);
+  
   --color-secondary-a1: var(--secondaryA1);
   --color-secondary-a2: var(--secondaryA2);
   --font-cairo: "Cairo", sans-serif;
@@ -14,6 +15,11 @@
 
 @utility bg-gradient-primary-a1 {
   background: var(--gradient-primary-a1);
+ 
+} 
+@utility bg-gradient-primary-a2 {
+  background: var(--gradient-primary-a2);
+ 
 } 
 @utility text-gradient-primary-a1 {
     background: var(--gradient-primary-a1);

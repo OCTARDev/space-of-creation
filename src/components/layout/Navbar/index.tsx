@@ -39,11 +39,11 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="Logo"
               width={500}
               height={500}
-              className="hidden sm:block h-auto w-44"
+              className="hidden sm:block h-auto w-28"
             />
           </Link>
 

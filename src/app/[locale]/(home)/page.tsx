@@ -18,14 +18,10 @@ export default function Homepage() {
   
   return (
     <div>
-      <div className="">
         <HomeHeroSection />
-      </div>
       <PerfectSolution></PerfectSolution>
       <SolutionsPortfolio></SolutionsPortfolio>
-      <div className="mt-20">
         <OctarEducationalOffering></OctarEducationalOffering>
-      </div>
     
       
        <WhatOurClientsSay></WhatOurClientsSay>

@@ -5,7 +5,7 @@ import { FaGraduationCap, FaStar, FaTrophy } from "react-icons/fa";
 
 export default function HeroHeader() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden my-20 ">
       
       {/* Floating Planet */}
       <img
@@ -109,7 +109,7 @@ export default function HeroHeader() {
       </div>
 
       {/* Bottom Stats Bar */}
-      <div className=" bottom-0 left-0 w-full mt-30 bg-linear-to-r from-[#e8d9f8] to-[#d8ecff] py-8">
+      <div className=" bottom-0 left-0 w-full mt-30 bg-linear-to-r from-[#FEF1FE] to-[#E6F8FA] py-8">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 text-center gap-8">
           
           <Stat number="90%" label="Teacher Adoption" />

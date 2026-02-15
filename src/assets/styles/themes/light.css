@@ -1,11 +1,14 @@
 :root {
-  --primaryA1: rgb(193 155 65);
-  --primaryA2: rgb(131 106 44); 
+  --primaryA1: rgb(168, 142, 239 )
+  --primaryA2:rgb(121, 185, 206)
+  --primaryA3:rgb(254, 241, 254);
+  --primaryA4:rgb(230, 248, 250)
   --secondaryA1:rgb(59 59 58);
   --secondaryA2:rgb(19 176 245);
   --backgroundA1:rgb(255 255 255);
   --backgroundA2:rgb(255 255 255);
   --gradient-primary-a1:linear-gradient(0deg, var(--primaryA2) 0%, var(--primaryA1) 100%);
+  --gradient-primary-a2:linear-gradient(0deg, var(--primaryA3) 0%, var(--primaryA4) 100%);
   --textA1:rgb(0 0 0);
   --textA2:rgb(102 102 102);
 }

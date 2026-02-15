@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "space of creation",
   description: "space of creation Website",
   icons:{
-    icon:"logo.png"
+    icon:"logo.svg"
   }
 };
 
