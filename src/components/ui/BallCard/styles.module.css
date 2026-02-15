@@ -1,0 +1,28 @@
+.ballup , .balldown{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+.ballup::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 5px);
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid var(--border-color, #3498db);
+    background: transparent;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 51%);
+}
+
+.balldown::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 5px);
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid var(--border-color, #3498db);
+    background: transparent;
+    clip-path: polygon(0 49%, 100% 50%, 100% 100%, 0 100%);
+}

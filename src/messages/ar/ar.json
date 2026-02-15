@@ -1,0 +1,17 @@
+{
+    "common":{
+        "logo-dark":"/logo/logo-dark.svg",
+        "logo-light":"/logo/logo-light.svg"
+    },
+    "components":{
+        "layout":{
+            "header":{
+                "home":"الصفحة الرئيسية",
+                "about":"من أنا",
+                "tech-stack":"tech stack",
+                "projects":"projects",
+                "contact":"contact"
+            }
+        }
+    }
+}

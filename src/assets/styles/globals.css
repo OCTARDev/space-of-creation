@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@import "./themes/light.css";
+@import "./themes/dark.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-primary-a1: var(--primaryA1);
+  --color-primary-a2: var(--primaryA2);
+  --color-secondary-a1: var(--secondaryA1);
+  --color-secondary-a2: var(--secondaryA2);
+  --font-cairo: "Cairo", sans-serif;
+} 
+
+@utility bg-gradient-primary-a1 {
+  background: var(--gradient-primary-a1);
+} 
+@utility text-gradient-primary-a1 {
+    background: var(--gradient-primary-a1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    fill:currentColor;
+}
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body{
+  @apply transition-colors duration-500 ;
+}
+h1{
+  font-size: 30px;
+  font-weight: 700;
+  @apply text-secondary-a1;
+}
+h2{
+  font-size: 30px;
+  font-weight: 600;
+}
+h5{
+  font-size:16;
+  font-weight: 600;
+}
+
+@layer components {
+  .nav-link{
+    color: white;
+    font-weight: 600;
+  }
+  .nav-link:hover{
+    color: var(--color-primary-a1);
+  }
+  .nav-link.active{
+    color: var(--color-primary-a1);
+  }
+
+  .btn{
+    @apply px-2 sm:px-6 py-2 hover:cursor-pointer flex justify-center rounded-md font-semibold capitalize disabled:cursor-default transition-colors duration-150 hover:opacity-80;
+  }
+  .btn.btn-gold-primary{
+    @apply text-white disabled:bg-gray-500 bg-gradient-primary-a1 ;
+  }
+  .btn.btn-gold-secondary{
+    @apply bg-white border border-primary-a1 text-primary-a1 disabled:bg-gray-500 disabled:text-white ;
+  }
+}

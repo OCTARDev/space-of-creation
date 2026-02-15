@@ -1,0 +1,10 @@
+[data-theme="dark"] {
+  --primaryA1:rgb(217 217 217);
+  --secondaryA1:rgb(231 15 170);
+  --secondaryA2:rgb(19 176 245);
+  --backgroundA1:rgb(25 25 25);
+  --backgroundA2:rgb(54 54 54);
+  --gradient-primary-a1:linear-gradient(90deg, var(--secondaryA1) 3%, var(--secondaryA2) 100%);
+  --textA1:rgb(255 255 255);
+  --textA2:rgb(204 204 204);
+}
