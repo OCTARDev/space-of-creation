@@ -5,7 +5,7 @@ import { FaGraduationCap, FaStar, FaTrophy } from "react-icons/fa";
 
 export default function HeroHeader() {
   return (
-    <section className="relative overflow-hidden my-20 ">
+    <section className="z-20 relative overflow-hidden my-20 ">
       
       {/* Floating Planet */}
       <img

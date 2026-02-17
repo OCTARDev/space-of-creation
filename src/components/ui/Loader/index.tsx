@@ -10,14 +10,7 @@ export default function Loader(){
     <div className={styles.loaderContainer}>
       <div className={styles.imageContainer}>
         <div className={styles.loader}></div>
-        <Image 
-        src={t("common.logo-light")}
-        priority 
-        width={1000} 
-        height={1000} 
-        className={`${styles["actual-image"]} max-w-50`}  
-        quality={100} alt="logo"
-        />
+        
       </div>
     </div>
   );

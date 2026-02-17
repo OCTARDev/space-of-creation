@@ -1,46 +1,37 @@
+import './style.css';
 export default function BookDemoSection() {
   return (
-    <section className={`
-    w-full bg-[linear-gradient(to_right,rgba(144,31,233,0.1),rgba(0,163,255,0.1)),url('/waves.svg')] 
-    bg-contain bg-bottom bg-no-repeat
-    py-24 px-6 text-center
-    `}>
-      <div className="max-w-4xl mx-auto">
-        {/* Heading */}
+    <section className="relative w-full py-24 px-6 text-center overflow-hidden">
+      
+      {/* Background: SVG waves layer */}
+      <div 
+        className="absolute inset-0 svgc bg-transparent bg-[url('/waves.svg')] bg-contain bg-bottom bg-no-repeat"
+      />
+
+      {/* Gradient overlay on top of SVG — makes dots look tinted/transparent like Image 1 */}
+      <div 
+        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(144,31,233,0.15),rgba(0,163,255,0.15))] mix-blend-multiply"
+      />
+
+      {/* Content */}
+      <div className="relative max-w-4xl mx-auto z-10">
         <h1 className="text-4xl md:text-5xl font-semibold text-gray-800 mb-6">
           Ready to Transform Your Institution?
         </h1>
 
-        {/* Subheading */}
         <p className="text-lg md:text-xl text-gray-700 mb-8">
           Schedule a personalized 20-minute demo
         </p>
 
-        {/* CTA Button */}
         <div className="mb-6">
-          <button className="px-8 py-3 rounded-xl text-white text-lg font-medium bg-linear-to-r  from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
+          <button className="px-8 py-3 rounded-xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
             Book Your Free Demo
           </button>
         </div>
 
-        {/* Phone */}
-        <p className="text-gray-800 text-base">
+        <p className="text-black-800 text-3xl z-10">
           Or call : +971 54 797 5397
         </p>
-      </div>
-
-      {/* Decorative dotted wave (approximation) */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-        <svg
-          viewBox="0 0 1440 200"
-          className="w-full h-32 opacity-30"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="white"
-            d="M0,160 C240,120 480,200 720,160 C960,120 1200,200 1440,160 L1440,200 L0,200 Z"
-          />
-        </svg>
       </div>
     </section>
   );

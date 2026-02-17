@@ -3,6 +3,7 @@ import { Cairo } from "next/font/google";
 import ClientProvider from "@/components/hooks/ClientProvider";
 import { Suspense } from "react";
 import "@/assets/styles/globals.css";
+import Loader from "@/components/ui/Loader";
 
 
 
@@ -33,7 +34,7 @@ export default function RootLayout({
         className={``}
       >
         <ClientProvider>
-          <Suspense fallback={<div>Loading...</div>} >
+          <Suspense fallback={<Loader />}>
               {children}
           </Suspense>
         </ClientProvider>

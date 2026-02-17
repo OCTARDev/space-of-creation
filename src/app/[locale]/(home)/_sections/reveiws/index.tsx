@@ -24,7 +24,7 @@ export default function WhatOurClientsSay() {
   ];
 
   return (
-    <section className="w-full py-16 px-6">
+    <section className="w-full py-16 px-6 ">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-semibold text-gray-800">
           What Our Clients Say
