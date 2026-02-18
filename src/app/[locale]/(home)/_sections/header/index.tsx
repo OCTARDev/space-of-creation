@@ -2,21 +2,29 @@ import vr from "@/assets/media/Vr.png";
 import frame from "@/assets/media/Frame.png";
 import { FiMonitor } from "react-icons/fi";
 import { FaGraduationCap, FaStar, FaTrophy } from "react-icons/fa";
+import Image from "next/image";
+import Video from "next-video";
+
 
 export default function HeroHeader() {
   return (
     <section className="z-20 relative overflow-hidden my-20 ">
       
       {/* Floating Planet */}
-      <img
+      <Image
         src={frame.src}
         alt="planet"
+                width={400}
+                height={400}
+
         className="absolute left-10 top-20 animate-bounce [animation-duration:3s] opacity-90 w-55 hidden md:block"
       />
 
       {/* Floating VR Headset */}
-      <img
+      <Image
         src={vr.src}
+        width={400}
+        height={400}
         alt="vr"
         className="absolute -z-10 right-1 top-100 animate-spin [animation-duration:3s]  opacity-90"
       />
@@ -89,19 +97,13 @@ export default function HeroHeader() {
             {/* Video Placeholder */}
             <div className="relative h-100 bg-grid-pattern bg-gray-50 flex items-center justify-center">
               
-              {/* Ripple Effect */}
-              <div className="absolute w-40 h-40 rounded-full bg-blue-400/30 animate-ping"></div>
-              
-              {/* Play Button */}
-              <button className="relative w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition">
-                <svg
-                  className="w-8 h-8 text-white ml-1"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M6 4l10 6-10 6V4z" />
-                </svg>
-              </button>
+              {/* <Video   
+                src="https://res.cloudinary.com/dhqe8isrb/video/upload/v1760132818/sectionVideo/njjzgcantnf3erimbx7o.mp4"
+                
+                
+                
+                className="w-full h-full object-cover"
+              /> */}
 
             </div>
           </div>
