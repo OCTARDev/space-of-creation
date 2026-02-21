@@ -14,7 +14,7 @@ const LabIcon = () => (
     height="28"
     viewBox="0 0 24 24"
     fill="none"
-    stroke="#8B5CF6"   // soft purple
+    stroke="#89278B"   // soft purple
     strokeWidth="1.8"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -74,11 +74,11 @@ export default function Features() {
           <h3 className="text-lg font-semibold text-gray-900 mb-5">The VCLAB Experience</h3>
             <BulletItem
               text="VCLAB provides fully customized virtual laboratories where students can safely run unlimited experiments."
-              color="#3A9DB2"
+              color="#89278B"
             />
             <BulletItem
               text="No equipment. No risk. No scheduling constraints — just immersive, practical learning anytime."
-              color="#3A9DB2"
+              color="#89278B"
             />
            
         </div>

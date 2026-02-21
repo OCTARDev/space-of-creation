@@ -49,13 +49,9 @@ const KeyFeatures: React.FC<KeyFeaturesProps> = ({ features }) => {
           {/* Left: dot + line */}
           <div className="flex flex-col items-center">
             {/* Dot */}
-              <div className="shadow-gray-300 shadow-sm rounded-full p-1">
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md">
-                    
-                  <div className="w-4 h-4 rounded-full" style={{ backgroundColor: feature.dotColor }}></div>
-                  
-                </div>
-              </div>
+             <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gray-50 shadow-xl">
+  <div className="w-4 h-4 rounded-full" style={{ backgroundColor: feature.dotColor }} />
+</div>
               
               {/* Dashed line */}
               {i < items.length - 1 && (

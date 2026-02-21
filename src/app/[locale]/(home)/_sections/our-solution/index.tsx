@@ -7,9 +7,11 @@ import {
   Headset,
   Smartphone,
 } from "lucide-react";
+import Link from "next/link";
 
 interface Solution {
   id: string;
+  Link:string;
   title: string;
   description: string;
   linkText: string;
@@ -25,6 +27,7 @@ const SolutionsPortfolio: React.FC = () => {
       id: "1",
       title: "OCTAR Ecosystem",
       color:"#3A9DB2",
+      Link:"/octar",
       
       description:
         "Teacher-led AR platform bridging classroom and home. 400+ lessons, bilingual, MOE-aligned.",
@@ -60,6 +63,7 @@ const SolutionsPortfolio: React.FC = () => {
     {
       id: "2",
       title: "VCLAB Virtual Labs",
+      Link:"/vclab",
       color:"#298B27",
       description:
         "50+ safe science experiments. 42% test score improvement, unlimited repetition.",
@@ -103,6 +107,7 @@ const SolutionsPortfolio: React.FC = () => {
       id: "3",
       title: "Life Digital Environment",
       color:"#0040CA",
+      Link:"/life",
       description:
         "Wall-to-wall interactive spaces. Multi-touch, motion-tracked, customizable themes.",
       linkText: "Enter the Space",
@@ -138,6 +143,7 @@ const SolutionsPortfolio: React.FC = () => {
       id: "4",
       title: "Educational Planetarium",
       color:"#E66604",
+      Link:"/planetarium",
       description:
         "Curriculum-aligned astronomy programs. MOE-approved. Dome-p, all grade levels.",
       linkText: "Explore the Universe",
@@ -173,6 +179,7 @@ const SolutionsPortfolio: React.FC = () => {
       id: "5",
       title: "VR Experiences",
       color:"#89278B",
+      Link:"/vr",
       description:
         "Immersive VR journeys for education and events. Learn headsets, expert guidance.",
       linkText: "Step Into VR",
@@ -243,6 +250,7 @@ const SolutionsPortfolio: React.FC = () => {
       id: "6",
       title: "AR Campaigns",
       color:"#CA8A00",
+      Link:"/ar-campaigns",
       description:
         "Transform messages into viral AR experiences. 90% recall, 3x traditional engagement.",
       linkText: "Launch an AR Campaign",
@@ -328,9 +336,9 @@ const SolutionsPortfolio: React.FC = () => {
               </p>
 
               {/* Link */}
-              <a
-                href="#"
-                className={`inline-flex items-center  hover:text-${solution.color}-600 font-medium text-sm transition-colors group`}
+              <Link
+                href={solution.Link}
+                className={`inline-flex items-center hover:text-${solution.color}-600 font-medium text-sm transition-colors group`}
                 style={{ color: solution.color }}
               >
                 {solution.linkText}
@@ -347,7 +355,7 @@ const SolutionsPortfolio: React.FC = () => {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           ))}
         </div>

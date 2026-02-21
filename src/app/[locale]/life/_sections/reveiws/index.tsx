@@ -34,17 +34,17 @@ Real Impact from Educators and Students
         </p>
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {testimonials.map((item, index) => (
+  {testimonials.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-left"
+              className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-left flex flex-col"
             >
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed flex-1">
                 {item.quote}
               </p>
 
               <div className="mt-8 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-200 to-teal-200 flex items-center justify-center text-gray-700 font-semibold">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-200 to-teal-200 flex items-center justify-center text-gray-700 font-semibold flex-shrink-0">
                   {item.initials}
                 </div>
                 <div>
@@ -55,8 +55,7 @@ Real Impact from Educators and Students
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          ))}        </div>
       </div>
     </section>
   );

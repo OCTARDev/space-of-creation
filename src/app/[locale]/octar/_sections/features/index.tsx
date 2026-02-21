@@ -66,7 +66,7 @@ export default function Features() {
 
         {/* Card 2 - The Solution */}
         <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-                  <div className="mb-5 w-12 h-12 flex items-center justify-center rounded-2xl bg-blue-100">
+                  <div className="mb-5 w-12 h-12 flex items-center justify-center rounded-2xl" style={{ backgroundColor: '#dbeafe' }}> {/* bg-blue-100 equivalent */}
             <GraduationCapIcon />
           </div>
           <h3 className="text-lg font-semibold text-gray-900 mb-5">The Solution</h3>
