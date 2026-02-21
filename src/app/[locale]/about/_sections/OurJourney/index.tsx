@@ -20,7 +20,7 @@ const OurJourney: React.FC<TimelineProps> = ({ items }) => {
       description: "A proudly UAE-based company (Dubai License 1571670), developing solutions from the ground up for the region's curricula, cultures, and challenges."
     },
     {
-      title: "wOur Mission Today",
+      title: "Our Mission Today",
       description:"Transforming education in the Arab world through immersive technology that puts teachers in control and unlocks extraordinary potential in every learner."
     }
   ];

@@ -24,7 +24,7 @@ export default function BookDemoSection() {
         </p>
 
         <div className="mb-6">
-          <button className="px-8 py-3 rounded-xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
+          <button className="px-8 py-3 rounded-2xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
             Book Your Free Demo
           </button>
         </div>
