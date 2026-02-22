@@ -22,13 +22,13 @@ const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(false);
 
   const solutions = [
-    { name: 'OCTAR Ecosystem', icon: <PiCubeFocus />, href: '/octar' },
-    { name: 'VCLAB Virtual Labs', icon: <PiFlask />, href: '/vclab' },
-    { name: 'Life Digital Environment', icon: <PiHandPointing />, href: '/life' },
-    { name: 'AR Stories & Campaigns', icon: <PiSparkle />, href: '/ar-stories' },
-    { name: 'Learning Support', icon: <PiHeart />, href: '/learning-support' },
-    { name: 'Educational Planetarium', icon: <PiTent />, href: '/planetarium' },
-    { name: 'VR Experiences', icon: <PiVirtualReality />, href: '/vr' },
+    { name: 'OCTAR Ecosystem', icon: <PiCubeFocus color="#32a8a4" />, href: '/octar' },
+    { name: 'VCLAB Virtual Labs', icon: <PiFlask color="#36ba53" />, href: '/vclab' },
+    { name: 'Life Digital Environment', icon: <PiHandPointing color="#364eba" />, href: '/life' },
+    { name: 'AR Stories & Campaigns', icon: <PiSparkle color="#b3ba36" />, href: '/ar-stories' },
+    { name: 'Learning Support', icon: <PiHeart color="#ba3636" />, href: '/learning-support' },
+    { name: 'Educational Planetarium', icon:<PiTent color="#E09B00"/>, href: '/planetarium' },
+    { name: 'VR Experiences', icon: <PiVirtualReality color="#ad36ba" />, href: '/vr' },
   ];
 
   return (
