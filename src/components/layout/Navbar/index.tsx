@@ -148,9 +148,46 @@ const Navbar = () => {
           <Link href="/" className="block font-bold">
             Home
           </Link>
-          <Link href="/solutions" className="block">
-            Solutions
-          </Link>
+           <div
+              className="relative"
+              onMouseEnter={() => setOpenDropdown(true)}
+              onMouseLeave={() => setOpenDropdown(false)}
+            >
+              <button className="text-gray-600 font-bold hover:text-gray-900 flex items-center gap-1">
+                Solutions
+                <FiChevronDown
+                  className={`transition-transform duration-300 ${
+                    openDropdown ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+
+              {/* Dropdown Panel */}
+              <div
+                className={`absolute top-10 left-0 w-80 bg-white rounded-2xl shadow-xl p-5 transition-all duration-300 ${
+                  openDropdown
+                    ? 'opacity-100 visible translate-y-0'
+                    : 'opacity-0 invisible -translate-y-2'
+                }`}
+              >
+                <div className="space-y-4">
+                  {solutions.map((item, index) => (
+                    <Link
+                      key={index}
+                      href={item.href}
+                      className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 transition"
+                    >
+                      <span className="text-xl text-purple-600">
+                        {item.icon}
+                      </span>
+                      <span className="font-medium text-gray-700">
+                        {item.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           <Link href="/impact" className="block">
             Impact
           </Link>

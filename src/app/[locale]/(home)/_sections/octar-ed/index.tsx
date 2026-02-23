@@ -38,11 +38,11 @@ export default function SpaceEducationalHero() {
           <div className="absolute inset-1 bg-gradient-to-br from-[#1a0b2e]/60 via-[#2d1b4e]/50 to-transparent" />
 
           {/* Content Container */}
-          <div className="relative z-10 min-h-screen px-6 lg:px-12 xl:px-16 py-12">
+          <div className="relative z-10  min-h-screen px-6 lg:px-12 xl:px-16 py-12">
             {/* Main Content - Top Left Positioned */}
             <div className="pt-40 pl-24 max-w-4xl">
               {/* Main Heading */}
-              <p  className="text-7xl font-bold text-white mb-8">
+              <p  className="text-4xl font-bold text-white mb-8">
                 Explore the Planets Through Fun,
                 Animated Videos
               </p>

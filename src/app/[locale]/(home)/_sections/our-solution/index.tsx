@@ -250,7 +250,7 @@ const SolutionsPortfolio: React.FC = () => {
       id: "6",
       title: "AR Campaigns",
       color:"#CA8A00",
-      Link:"/ar-campaigns",
+      Link:"/ar-stories",
       description:
         "Transform messages into viral AR experiences. 90% recall, 3x traditional engagement.",
       linkText: "Launch an AR Campaign",
