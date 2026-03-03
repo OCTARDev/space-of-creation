@@ -84,7 +84,7 @@ export default function Hero() {
               {t('buttons.consultation')}
             </button>
             <button className="px-10 py-3 rounded-xl font-semibold bg-white border border-white shadow-lg hover:bg-white/90 transition">
-            <Link href="/video">              {t('buttons.catalogue')}
+            <Link href="/videos">              {t('buttons.catalogue')}
 </Link>
             </button>
           </div>
