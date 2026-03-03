@@ -1,6 +1,9 @@
 import './style.css';
+import { useTranslations } from 'next-intl';
 
 export default function BookSection() {
+  const t = useTranslations('about_book');
+  
   return (
     <section className="relative w-full py-24 px-6 text-center overflow-hidden">
       
@@ -17,19 +20,21 @@ export default function BookSection() {
       {/* Content */}
       <div className="relative max-w-4xl mx-auto z-10">
         <h1 className="text-4xl md:text-5xl font-semibold text-gray-800 mb-6">
-         Ready to Partner with Us?
+          {t('title')}
         </h1>
 
         <p className="text-lg md:text-xl text-gray-700 mb-8">
-Let's transform learning together        </p>
+          {t('subtitle')}
+        </p>
 
         <div className="mb-6">
           <button className="px-8 py-3 rounded-2xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
-Get in Touch          </button>
+            {t('button')}
+          </button>
         </div>
 
         <p className="text-black-800 text-3xl z-10">
-          Or call : +971 54 797 5397
+          {t('call')} {t('phone')}
         </p>
       </div>
     </section>

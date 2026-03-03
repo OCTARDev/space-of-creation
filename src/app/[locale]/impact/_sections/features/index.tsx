@@ -1,24 +1,15 @@
 import img1 from '@/assets/media/feature1.png';
 import img2 from '@/assets/media/feature2.png';
 import img3 from '@/assets/media/feature3.png';
-
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface CaseStudy {
   id: number;
-  tag: string;
-  title: string;
-  quote: string;
+  translationKey: string;
   image: any;
-  badge: {
-    value: string;
-    label: string;
-  };
-  challenge: string[];
-  solution: string[];
-  result: string[];
   badgeExtra?: string;
 }
 
@@ -27,55 +18,18 @@ interface CaseStudy {
 const caseStudies: CaseStudy[] = [
   {
     id: 1,
-    tag: 'School Success Story',
-    title: 'Bringing Physics to Life at Al Noor International School',
-    quote:
-      '"The virtual labs have transformed how our students understand physics. Concepts that were once abstract are now tangible and engaging. We\'ve seen remarkable improvements not just in test scores, but in genuine scientific curiosity."',
+    translationKey: 'school',
     image: img1,
-    badge: { value: '42%', label: 'Higher Test Scores' },
-    challenge: [
-      'Provide advanced physics lab experience without prohibitive equipment costs and safety concerns.',
-    ],
-    solution: [
-      'Implementation of VCLAB modules for Quantum Mechanics and Electromagnetism.',
-    ],
-    result: [
-      '42% increase in average test scores on related modules and qualitative feedback citing "fundamentally improved understanding of abstract concepts."',
-    ],
   },
   {
     id: 2,
-    tag: 'Government Campaign',
-    title: 'Major UAE Environmental Awareness Program',
-    quote:
-      '"By transforming complex water conservation concepts into clear, relatable experiences, the campaign made sustainability stick. Youth didn\'t just see the message—they remembered it. The result wasn\'t short-term attention, but lasting recall of the actions that truly matter."',
+    translationKey: 'government',
     image: img2,
-    badge: { value: '90%', label: 'Improved Conservation Recall' },
-    challenge: [
-      'Create high-impact, memorable content for a national water conservation campaign targeting youth.',
-    ],
-    solution: [
-      'Development and distribution of a custom "Water Guardian" AR storybook to 10,000+ students.',
-    ],
-    result: [
-      'Post-campaign surveys showed 90% recall of key conservation steps—a result dramatically higher than previous traditional material.',
-    ],
   },
   {
     id: 3,
-    tag: 'Venue Transformation',
-    title: 'Discovery Mall, Abu Dhabi',
-    quote:
-      '"The aquarium-themed Life Digital Environment gave families a reason to pause, connect, and create shared moments. It evolved into the mall\'s most popular photo spot, extending visits and transforming a routine mall trip into a memorable family experience."',
+    translationKey: 'venue',
     image: img3,
-    badge: { value: '25 m', label: 'Longer Dwell Time' },
-    challenge: ['Drive family footfall and dwell time during the summer festival.'],
-    solution: [
-      'Installation of the Life Digital Environment (Aquarium theme) in the main atrium for 6 weeks.',
-    ],
-    result: [
-      'The installation became the #1 photo spot in the mall, with participating families showing an average increased dwell time of 25 minutes.',
-    ],
   },
 ];
 
@@ -84,7 +38,7 @@ const caseStudies: CaseStudy[] = [
 function BadgeIcon() {
   return (
     <svg
-      className="w-6 h-6"
+      className="w-6  h-6"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +63,7 @@ function MetricBadge({
   extra?: string;
 }) {
   return (
-    <div className="absolute  right-4 flex items-center gap-2 bg-white rounded-xl shadow-lg px-3 py-2 z-10">
+    <div className="absolute s-4 flex items-center gap-2 bg-white rounded-xl shadow-lg px-3 py-2 z-10">
       {extra && (
         <span className="bg-[#3BBFEF] text-white text-xs font-bold rounded-md px-2 py-1 mr-1">
           {extra}
@@ -163,8 +117,9 @@ function ResultItem({ items }: { items: string[] }) {
   );
 }
 
-function CaseStudyCard({ study }: { study: CaseStudy }) {
+function CaseStudyCard({ study, t }: { study: CaseStudy; t: any }) {
   const badgeExtra = (study as any).badgeExtra;
+  const translationKey = `caseStudies.${study.translationKey}`;
 
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-visible p-6 md:p-8">
@@ -173,10 +128,10 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
         {/* Left: title + quote */}
         <div className="flex-1 flex flex-col gap-4">
           <h3 className="text-xl font-bold text-gray-900 leading-snug">
-            {study.title}
+            {t(`${translationKey}.title`)}
           </h3>
           <p className="text-[#302f2f] text-sm leading-relaxed italic">
-            {study.quote}
+            {t(`${translationKey}.quote`)}
           </p>
         </div>
 
@@ -185,18 +140,16 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
           <div className="relative rounded-xl overflow-hidden bg-gray-100 aspect-[4/3]">
             <Image
               src={study.image}
-              alt={study.title}
+              alt={t(`${translationKey}.title`)}
               fill
               className="w-full h-screen w-screen"
             />
-       
-         
           </div>
 
           {/* Metric badge overlapping image bottom */}
           <MetricBadge
-            value={study.badge.value}
-            label={study.badge.label}
+            value={t(`${translationKey}.badge.value`)}
+            label={t(`${translationKey}.badge.label`)}
             extra={badgeExtra}
           />
         </div>
@@ -205,16 +158,16 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
       {/* Bottom section: challenge / solution / result */}
       <div className="mt-8 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
         <div className="py-4 md:py-0 md:pr-6 flex flex-col gap-2">
-          <span className="text-[#E84545] font-semibold text-sm">Challenge</span>
-          <ChallengeItem items={study.challenge} />
+          <span className="text-[#E84545] font-semibold text-sm">{t('labels.challenge')}</span>
+          <ChallengeItem items={[t(`${translationKey}.challenge.0`)]} />
         </div>
         <div className="py-4 md:py-0 md:px-6 flex flex-col gap-2">
-          <span className="text-[#3BBFEF] font-semibold text-sm">Solution</span>
-          <SolutionItem items={study.solution} />
+          <span className="text-[#3BBFEF] font-semibold text-sm">{t('labels.solution')}</span>
+          <SolutionItem items={[t(`${translationKey}.solution.0`)]} />
         </div>
         <div className="py-4 md:py-0 md:pl-6 flex flex-col gap-2">
-          <span className="text-[#22C55E] font-semibold text-sm">Result</span>
-          <ResultItem items={study.result} />
+          <span className="text-[#22C55E] font-semibold text-sm">{t('labels.result')}</span>
+          <ResultItem items={[t(`${translationKey}.result.0`)]} />
         </div>
       </div>
     </div>
@@ -224,23 +177,24 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function Features() {
+  const t = useTranslations('impact_features');
+  
   return (
     <section className="w-full bg-[#F8FAFC] py-20 px-4">
       {/* Section header */}
       <div className="max-w-3xl mx-auto text-center mb-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-4 tracking-tight">
-          Creating Measurable Impact
+          {t('title')}
         </h2>
         <p className="text-gray-500 text-base leading-relaxed">
-          Experiences and campaigns designed to change behavior, deepen
-          engagement, and deliver results that last.
+          {t('subtitle')}
         </p>
       </div>
 
       {/* Cards */}
       <div className="max-w-5xl mx-auto flex flex-col gap-10">
         {caseStudies.map((study) => (
-          <CaseStudyCard key={study.id} study={study} />
+          <CaseStudyCard key={study.id} study={study} t={t} />
         ))}
       </div>
     </section>

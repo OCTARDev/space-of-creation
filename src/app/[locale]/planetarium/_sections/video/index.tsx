@@ -2,19 +2,22 @@
 
 import Video from "next-video";
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
 
 export default function VideoSection() {
   const [isHovered, setIsHovered] = useState(false);
+  const t = useTranslations('planetarium_video');
 
   return (
     <section className="min-h-screen bg-white flex flex-col items-center justify-center px-6 py-16 font-sans">
       {/* Heading */}
       <div className="text-center mb-10 max-w-xl">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-4">
-Curriculum-Aligned Educational Planetarium      </h1>
-        <p className=" md:text-lg text-indigo-400 leading-relaxed">
-    Bilingual, MOE-aligned astronomy programs that bring the universe to the classroom.
-          </p>
+          {t('title')}
+        </h1>
+        <p className="md:text-lg text-indigo-400 leading-relaxed">
+          {t('subtitle')}
+        </p>
       </div>
 
       {/* Video Card */}
@@ -62,12 +65,12 @@ Curriculum-Aligned Educational Planetarium      </h1>
 
 
         {/* Bottom caption bar */}
-        <div className="relative  text-center z-10 bg-gray-700 bg-opacity-90 px-5 py-3   ">
+        <div className="relative text-center z-10 bg-gray-700 bg-opacity-90 px-5 py-3">
           <p className="text-white text-sm font-medium">
-            Watch: Students conducting virtual experiments
+            {t('caption.title')}
           </p>
           <p className="text-gray-300 text-xs mt-0.5">
-            See how VCLAB transforms science learning
+            {t('caption.subtitle')}
           </p>
         </div>
       </div>

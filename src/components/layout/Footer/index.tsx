@@ -1,8 +1,29 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 
 const Footer: React.FC = () => {
+  const t = useTranslations('footer');
+  const currentYear = new Date().getFullYear();
+
+  const solutions = [
+    { key: 'octar', href: '/octar' },
+    { key: 'vclab', href: '/vclab' },
+    { key: 'life', href: '/life' },
+    { key: 'ar', href: '/ar-stories' },
+    { key: 'learning', href: '/learning-support' },
+    { key: 'planetarium', href: '/planetarium' },
+    { key: 'vr', href: '/vr' },
+  ];
+
+  const companyItems = [
+    { key: 'home', href: '/' },
+    { key: 'impact', href: '/impact' },
+    { key: 'about', href: '/about' },
+    { key: 'contact', href: '/contact' },
+  ];
+
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -22,32 +43,23 @@ const Footer: React.FC = () => {
             </Link>
 
             <p className="text-gray-600 leading-relaxed">
-              Transforming objectives into immersive experiences through
-              innovative AR, VR, and interactive technologies.
+              {t('brand.description')}
             </p>
           </div>
 
           {/* Solutions Column */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900 mb-6">
-              Solutions
+              {t('solutions.title')}
             </h3>
             <ul className="space-y-3 text-gray-600">
-              {[
-                "OCTAR Ecosystem",
-                "VCLAB Virtual Labs",
-                "Life Digital Environment",
-                "AR Stories & Campaigns",
-                "Learning Support",
-                "Educational Planetarium",
-                "VR Experiences",
-              ].map((item, index) => (
+              {solutions.map((item, index) => (
                 <li key={index}>
                   <Link
-                    href="#"
+                    href={item.href}
                     className="hover:text-gray-900 transition-colors duration-300"
                   >
-                    {item}
+                    {t(`solutions.items.${item.key}`)}
                   </Link>
                 </li>
               ))}
@@ -57,21 +69,16 @@ const Footer: React.FC = () => {
           {/* Company Column */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900 mb-6">
-              Company
+              {t('company.title')}
             </h3>
             <ul className="space-y-3 text-gray-600">
-              {[
-                { name: "Home", link: "/" },
-                { name: "Impact", link: "/impact" },
-                { name: "About Us", link: "/about" },
-                { name: "Contact Us", link: "/contact" },
-              ].map((item, index) => (
+              {companyItems.map((item, index) => (
                 <li key={index}>
                   <Link
-                    href={item.link}
+                    href={item.href}
                     className="hover:text-gray-900 transition-colors duration-300"
                   >
-                    {item.name}
+                    {t(`company.items.${item.key}`)}
                   </Link>
                 </li>
               ))}
@@ -81,37 +88,26 @@ const Footer: React.FC = () => {
           {/* Contact Column */}
           <div>
             <h3 className="text-lg font-semibold text-gray-900 mb-6">
-              Contact
+              {t('contact.title')}
             </h3>
             <div className="space-y-3 text-gray-600 text-sm">
               <p>
-                <span className="font-medium text-gray-900">Email:</span>{" "}
-                <a
-                  href="mailto:support@fadaatech.com"
-                  className="hover:text-gray-900 transition-colors"
-                >
-                  support@fadaatech.com
-                </a>
+                <span className="font-medium text-gray-900">{t('contact.email')}</span>{" "}
+  
               </p>
 
               <p>
-                <span className="font-medium text-gray-900">Phone:</span>{" "}
-                <a
-                  href="tel:+971547975397"
-                  className="hover:text-gray-900 transition-colors"
-                >
-                  +971 54 797 5397
-                </a>
+                <span className="font-medium text-gray-900">{t('contact.phone')}</span>{" "}
+             
               </p>
 
               <p>
-                <span className="font-medium text-gray-900">Location:</span>{" "}
-                Dubai, UAE
+                <span className="font-medium text-gray-900">{t('contact.location')}</span>{" "}
+                {t('contact.address')}
               </p>
 
               <p>
-                <span className="font-medium text-gray-900">License:</span>{" "}
-                1571670
+                <span className="font-medium text-gray-900">{t('contact.license')}</span>{" "}
               </p>
             </div>
           </div>
@@ -120,8 +116,7 @@ const Footer: React.FC = () => {
         {/* Bottom Section */}
         <div className="mt-16 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
           <p>
-            &copy; {new Date().getFullYear()} Space of Creation. All rights
-            reserved.
+            {t('copyright', { year: currentYear })}
           </p>
         </div>
       </div>

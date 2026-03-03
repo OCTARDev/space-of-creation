@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { useTranslations } from 'next-intl';
 import { FiZap } from "react-icons/fi";
 
 const AlertTriangleIcon = () => (
@@ -8,11 +9,12 @@ const AlertTriangleIcon = () => (
     <line x1="12" y1="17" x2="12.01" y2="17" />
   </svg>
 )
+
 const MagicIcon = () => {
   return (
     <FiZap
       size={28}
-      color="#E09B00" // golden color like your image
+      color="#E09B00"
     />
   );
 };
@@ -24,86 +26,65 @@ const CheckBadgeIcon = () => (
   </svg>
 )
 
-
 const BulletItem = ({ text, color }: { text: string; color: string }) => (
   <li className="mt-2 flex items-start gap-2 text-gray-600 text-sm leading-snug">
     <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: color }}></span>
-
     <span>{text}</span>
   </li>
 )
 
 export default function Features() {
+  const t = useTranslations("arstories_features");
+  
+  const cards = [
+    {
+      key: 'challenge',
+      icon: <AlertTriangleIcon />,
+      bgColor: '#fee2e2',
+      bulletColor: '#E84545',
+      itemCount: 3
+    },
+    {
+      key: 'solution',
+      icon: <MagicIcon />,
+      bgColor: '#FFF3DA',
+      bulletColor: '#F3A600',
+      itemCount: 3
+    },
+    {
+      key: 'impact',
+      icon: <CheckBadgeIcon />,
+      bgColor: '#dcfce7',
+      bulletColor: '#00A63E',
+      itemCount: 3
+    }
+  ];
+
   return (
     <section className="bg-white py-16 px-6">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        {cards.map((card) => (
+          <div key={card.key} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <div 
+              className="mb-5 w-12 h-12 flex items-center justify-center rounded-2xl" 
+              style={{ backgroundColor: card.bgColor }}
+            >
+              {card.icon}
+            </div>
 
-        {/* Card 1 - The Problem */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-   <div className="mb-5 w-12 h-12 flex items-center justify-center rounded-2xl" 
-     style={{ backgroundColor: '#fee2e2' }}> {/* bg-red-100 equivalent */}
-  <AlertTriangleIcon />
-</div>
-
-          <h3 className="text-lg font-semibold text-gray-900 mb-5">The Challenge</h3>
-          
-             <BulletItem
-              text="Audiences are overwhelmed by content and have learned to ignore traditional campaigns."
-                color="#E84545"
-              
-            />
-            <BulletItem
-              text="Messages are seen briefly, forgotten quickly, and rarely acted upon."
-              color="#E84545"
-            />
-            <BulletItem
-              text="Passive storytelling fails to create emotional connection or lasting recall."
-              color="#E84545"
-            />
-        </div>
-
-        {/* Card 2 - The Solution */}
-        <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-         <div className="mb-5 w-12 h-12 flex items-center justify-center rounded-2xl" style={{ backgroundColor:'#FFF3DA' }}> {/* bg-orange-100 equivalent */}
-  <MagicIcon />
-</div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-5">The Solution</h3>
-            <BulletItem
-              text="Immersive AR stories that place the audience inside the message, not in front of it."
-              color="#F3A600"
-            />
-            <BulletItem
-              text="Interactive campaigns designed for exploration, participation, and sharing."
-              color="#F3A600"
-            />
-            <BulletItem
-              text="The story unfolds through action, not observation."
-              color="#F3A600"
-            />
-           
-        </div>
-
-        {/* Card 3 - Measured Impact */}
-        <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-          <div className="mb-5 w-12 h-12 flex items-center justify-center  rounded-2xl bg-green-100">
-            <CheckBadgeIcon />
+            <h3 className="text-lg font-semibold text-gray-900 mb-5">
+              {t(`cards.${card.key}.title`)}
+            </h3>
+            
+            {Array.from({ length: card.itemCount }).map((_, index) => (
+              <BulletItem
+                key={index}
+                text={t(`cards.${card.key}.items.${index}`)}
+                color={card.bulletColor}
+              />
+            ))}
           </div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-5">Measured Impact</h3>
-            <BulletItem
-              text="Higher engagement rates compared to traditional digital campaigns."
-              color="#00A63E"
-            />
-            <BulletItem
-              text="Stronger message recall through experiential storytelling."
-              color="#00A63E"
-            />
-            <BulletItem
-              text="Increased organic sharing and audience-driven amplification."
-              color="#00A63E"
-            />
-           
-        </div>
-
+        ))}
       </div>
     </section>
   )

@@ -1,20 +1,11 @@
 import React from "react";
-import {
-  Monitor,
-  Beaker,
-  Laptop,
-  Globe,
-  Headset,
-  Smartphone,
-} from "lucide-react";
+import { useTranslations } from 'next-intl';
 import Link from "next/link";
 
 interface Solution {
   id: string;
-  Link:string;
-  title: string;
-  description: string;
-  linkText: string;
+  Link: string;
+  translationKey: string;
   icon: React.ReactNode;
   iconBgColor: string;
   iconColor: string;
@@ -22,16 +13,14 @@ interface Solution {
 }
 
 const SolutionsPortfolio: React.FC = () => {
+  const t = useTranslations('home_our_solutions');
+  
   const solutions: Solution[] = [
     {
       id: "1",
-      title: "OCTAR Ecosystem",
-      color:"#3A9DB2",
-      Link:"/octar",
-      
-      description:
-        "Teacher-led AR platform bridging classroom and home. 400+ lessons, bilingual, MOE-aligned.",
-      linkText: "Explore the Ecosystem",
+      translationKey: "octar",
+      color: "#3A9DB2",
+      Link: "/octar",
       icon: (
         <svg
           width="48"
@@ -62,12 +51,9 @@ const SolutionsPortfolio: React.FC = () => {
     },
     {
       id: "2",
-      title: "VCLAB Virtual Labs",
-      Link:"/vclab",
-      color:"#298B27",
-      description:
-        "50+ safe science experiments. 42% test score improvement, unlimited repetition.",
-      linkText: "Run a Virtual Lab",
+      translationKey: "vclab",
+      color: "#298B27",
+      Link: "/vclab",
       icon: (
         <svg
           width="48"
@@ -105,12 +91,9 @@ const SolutionsPortfolio: React.FC = () => {
     },
     {
       id: "3",
-      title: "Life Digital Environment",
-      color:"#0040CA",
-      Link:"/life",
-      description:
-        "Wall-to-wall interactive spaces. Multi-touch, motion-tracked, customizable themes.",
-      linkText: "Enter the Space",
+      translationKey: "life",
+      color: "#0040CA",
+      Link: "/life",
       icon: (
         <svg
           width="48"
@@ -141,12 +124,9 @@ const SolutionsPortfolio: React.FC = () => {
     },
     {
       id: "4",
-      title: "Educational Planetarium",
-      color:"#E66604",
-      Link:"/planetarium",
-      description:
-        "Curriculum-aligned astronomy programs. MOE-approved. Dome-p, all grade levels.",
-      linkText: "Explore the Universe",
+      translationKey: "planetarium",
+      color: "#E66604",
+      Link: "/planetarium",
       icon: (
         <svg
           width="48"
@@ -177,13 +157,9 @@ const SolutionsPortfolio: React.FC = () => {
     },
     {
       id: "5",
-      title: "VR Experiences",
-      color:"#89278B",
-      Link:"/vr",
-      description:
-        "Immersive VR journeys for education and events. Learn headsets, expert guidance.",
-      linkText: "Step Into VR",
-
+      translationKey: "vr",
+      color: "#89278B",
+      Link: "/vr",
       icon: (
         <svg
           width="32"
@@ -248,12 +224,9 @@ const SolutionsPortfolio: React.FC = () => {
     },
     {
       id: "6",
-      title: "AR Campaigns",
-      color:"#CA8A00",
-      Link:"/ar-stories",
-      description:
-        "Transform messages into viral AR experiences. 90% recall, 3x traditional engagement.",
-      linkText: "Launch an AR Campaign",
+      translationKey: "ar",
+      color: "#CA8A00",
+      Link: "/ar-stories",
       icon: (
         <svg
           width="48"
@@ -299,15 +272,15 @@ const SolutionsPortfolio: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen  py-16 px-4">
+    <div className="min-h-screen py-16 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">
-            Our Solutions Portfolio
+            {t('title')}
           </h1>
           <p className="text-gray-600 text-lg">
-            Comprehensive AR/VR solutions for every need
+            {t('subtitle')}
           </p>
         </div>
 
@@ -327,12 +300,12 @@ const SolutionsPortfolio: React.FC = () => {
 
               {/* Title */}
               <h3 className="text-xl font-bold text-gray-800 mb-3">
-                {solution.title}
+                {t(`solutions.${solution.translationKey}.title`)}
               </h3>
 
               {/* Description */}
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                {solution.description}
+                {t(`solutions.${solution.translationKey}.description`)}
               </p>
 
               {/* Link */}
@@ -341,9 +314,9 @@ const SolutionsPortfolio: React.FC = () => {
                 className={`inline-flex items-center hover:text-${solution.color}-600 font-medium text-sm transition-colors group`}
                 style={{ color: solution.color }}
               >
-                {solution.linkText}
+                {t(`solutions.${solution.translationKey}.linkText`)}
                 <svg
-                  className="w-4 h-4 ml-1 group-hover:translate-x-1  transition-transform"
+                  className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

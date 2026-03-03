@@ -2,8 +2,11 @@
 
 import Image from "next/image";
 import bgcover from "@/assets/media/aboutCover.jpg";
+import { useTranslations } from 'next-intl';
 
 export default function Hero() {
+  const t = useTranslations('about_hero');
+  
   return (
     <section className="mt-10 z-1 relative h-screen w-full flex items-center justify-center overflow-hidden">
       
@@ -25,17 +28,17 @@ export default function Hero() {
           
           {/* Breadcrumb */}
           <div className="text-white/70 text-sm mb-6">
-            Home / <span className="text-white/90">About us</span>
+            {t('breadcrumb.home')} / <span className="text-white/90">{t('breadcrumb.about')}</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            We Believe Technology Should Empower, Not Replace
+            {t('title')}
           </h1>
 
           {/* Description */}
           <p className="text-white/80 text-base lg:text-lg leading-relaxed">
-            Born from a vision to reshape education in the Arab world, FadaaTech (فضاء الابتكار) was founded on a simple, powerful idea: the most effective learning technology puts the teacher front and center.
+            {t('description')}
           </p>
 
         </div>

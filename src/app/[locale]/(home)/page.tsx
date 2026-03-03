@@ -11,10 +11,12 @@ import BookDemoSection from './_sections/book-demo';
 
 
 
-
 export default function Homepage() {
 
   let t = useTranslations('');
+
+
+
   
   return (
     <div>

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { useTranslations } from 'next-intl';
 
 const AlertTriangleIcon = () => (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef2134" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -22,96 +23,62 @@ const CheckBadgeIcon = () => (
   </svg>
 )
 
-
 const BulletItem = ({ text, color }: { text: string; color: string }) => (
   <li className="mt-2 flex items-start gap-2 text-gray-600 text-sm leading-snug">
     <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: color }}></span>
-
     <span>{text}</span>
   </li>
 )
 
 export default function Features() {
+  const t = useTranslations('octar_features');
+  
+  const cards = [
+    {
+      key: 'problem',
+      icon: <AlertTriangleIcon />,
+      bgColor: '#fee2e2',
+      bulletColor: '#E84545'
+    },
+    {
+      key: 'solution',
+      icon: <GraduationCapIcon />,
+      bgColor: '#dbeafe',
+      bulletColor: '#3A9DB2'
+    },
+    {
+      key: 'impact',
+      icon: <CheckBadgeIcon />,
+      bgColor: '#dcfce7',
+      bulletColor: '#00A63E'
+    }
+  ];
+
   return (
     <section className="bg-white py-16 px-6">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-
-        {/* Card 1 - The Problem */}
-        <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-     <div className="mb-5 w-12 h-12 flex items-center justify-center rounded-2xl" 
-     style={{ backgroundColor: '#fee2e2' }}> {/* bg-red-100 equivalent */}
-  <AlertTriangleIcon />
-</div>
-    
-          <h3 className="text-lg font-semibold text-gray-900 mb-5">Measured Impact</h3>
-          
-             <BulletItem
-              text="Learning breaks between classroom instruction and home reinforcement."
-                color="#E84545"
-              
-            />
-            <BulletItem
-              text="Teachers deliver lessons, but progress becomes hard to track beyond school."
-              color="#E84545"
-            />
-            <BulletItem
-              text="Parents want to help, yet lack clear guidance and visibility."
-              color="#E84545"
-            />
-            <BulletItem
-              text="School leaders struggle with alignment, engagement, and measurable impact across environments"
-              color="#E84545"
-            />
-        </div>
-
-        {/* Card 2 - The Solution */}
-        <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-                  <div className="mb-5 w-12 h-12 flex items-center justify-center rounded-2xl" style={{ backgroundColor: '#dbeafe' }}> {/* bg-blue-100 equivalent */}
-            <GraduationCapIcon />
+        {cards.map((card) => (
+          <div key={card.key} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <div 
+              className="mb-5 w-12 h-12 flex items-center justify-center rounded-2xl" 
+              style={{ backgroundColor: card.bgColor }}
+            >
+              {card.icon}
+            </div>
+            
+            <h3 className="text-lg font-semibold text-gray-900 mb-5">
+              {t(`cards.${card.key}.title`)}
+            </h3>
+            
+            {[0, 1, 2, 3].map((index) => (
+              <BulletItem
+                key={index}
+                text={t(`cards.${card.key}.items.${index}`)}
+                color={card.bulletColor}
+              />
+            ))}
           </div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-5">The Solution</h3>
-            <BulletItem
-              text="One connected ecosystem linking classroom teaching with guided home engagement."
-              color="#3A9DB2"
-            />
-            <BulletItem
-              text="Teacher-led curriculum control aligned with approved standards."
-              color="#3A9DB2"
-            />
-            <BulletItem
-              text="Student learning enhanced through interactive AR without workflow disruption."
-              color="#3A9DB2"
-            />
-            <BulletItem
-              text="Parent-enabled reinforcement that supports learning continuity."
-              color="#3A9DB2"
-            />
-        </div>
-
-        {/* Card 3 - Measured Impact */}
-        <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-            <div className="mb-5 w-12 h-12 flex items-center justify-center  rounded-2xl bg-green-100">
-            <CheckBadgeIcon />
-          </div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-5">Measured Impact</h3>
-            <BulletItem
-              text="Increased student engagement through curriculum-aligned interactive learning."
-              color="#00A63E"
-            />
-            <BulletItem
-              text="Continuous learning between school and home."
-              color="#00A63E"
-            />
-            <BulletItem
-              text="Clear visibility into progress, participation, and learning gaps."
-              color="#00A63E"
-            />
-            <BulletItem
-              text="Stronger parent trust without added teacher workload."
-              color="#00A63E"
-            />
-        </div>
-
+        ))}
       </div>
     </section>
   )

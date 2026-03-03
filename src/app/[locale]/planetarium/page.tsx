@@ -4,7 +4,7 @@ import VideoSection from './_sections/video';
 import Features from './_sections/features';
 import Key_features from './_sections/key-features';
 import WhatOurClientsSay from './_sections/reveiws';
-import BookOctarSection from './_sections/book-vclab';
+import BookOctarSection from './_sections/book-planetarium';
 
 export default function Vcalb() {
   return (

@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import {Link} from '@/i18n/navigation';
 import {
   FiChevronDown,
   FiGlobe,
@@ -16,6 +16,10 @@ import {
   PiTent,
   PiVirtualReality,
 } from 'react-icons/pi';
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
+
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +34,8 @@ const Navbar = () => {
     { name: 'Educational Planetarium', icon:<PiTent color="#E09B00"/>, href: '/planetarium' },
     { name: 'VR Experiences', icon: <PiVirtualReality color="#ad36ba" />, href: '/vr' },
   ];
+
+  const t = useTranslations();
 
   return (
     <nav className="top-0 left-0 right-0 py-6 bg-white z-50">
@@ -54,7 +60,7 @@ const Navbar = () => {
               href="/"
               className="text-gray-900 font-bold border-b-2 border-purple-500 pb-1"
             >
-              Home
+              {t('navbar.home')}
             </Link>
 
             {/* Solutions Dropdown */}
@@ -63,8 +69,8 @@ const Navbar = () => {
               onMouseEnter={() => setOpenDropdown(true)}
               onMouseLeave={() => setOpenDropdown(false)}
             >
-              <button className="text-gray-600 font-bold hover:text-gray-900 flex items-center gap-1">
-                Solutions
+              <button className="text-gray-600 font-bold hover:text-gray-900 flex items-center">
+                {t('navbar.solutions')}
                 <FiChevronDown
                   className={`transition-transform duration-300 ${
                     openDropdown ? 'rotate-180' : ''
@@ -103,31 +109,27 @@ const Navbar = () => {
               href="/impact"
               className="text-gray-600 font-bold hover:text-gray-900"
             >
-              Impact
+              {t('navbar.impact')}
             </Link>
 
             <Link
               href="/about"
-              className="text-gray-600 font-bold hover:text-gray-900"
+              className="text-gray-600 font-bold hover:text-gray-900 "
             >
-              About us
+              {t('navbar.about')}
             </Link>
           </div>
 
           {/* Right Side */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex">
             <Link
               href="/contact"
-              className="bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] text-white px-4 py-2.5 rounded-lg font-medium hover:opacity-90 transition ml-3"
+              className="ms-3 bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] text-white px-2 py-2.5 rounded-lg font-medium hover:opacity-90 transition"
             >
-              Contact us
+              {t('navbar.contact')}
             </Link>
 
-            <div className="flex items-center gap-2 text-gray-600 cursor-pointer">
-              <FiGlobe className="w-5 h-5" />
-              <span className="font-medium">En</span>
-              <FiChevronDown />
-            </div>
+            <LanguageSwitcher className=''/>
           </div>
 
           {/* Mobile menu button */}
@@ -146,7 +148,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white  border-t px-4 py-4 space-y-3">
           <Link href="/" className="block font-bold">
-            Home
+            {t('navbar.home')}
           </Link>
            <div
               className="relative"
@@ -154,7 +156,7 @@ const Navbar = () => {
               onMouseLeave={() => setOpenDropdown(false)}
             >
               <button className="text-gray-600 font-bold hover:text-gray-900 flex items-center gap-1">
-                Solutions
+                {t('navbar.solutions')}
                 <FiChevronDown
                   className={`transition-transform duration-300 ${
                     openDropdown ? 'rotate-180' : ''

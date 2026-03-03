@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslations } from 'next-intl';
 
 interface Step {
   number: string;
@@ -14,6 +15,8 @@ interface HowItWorksProps {
 }
 
 const HowItWorks: React.FC<HowItWorksProps> = ({ steps }) => {
+  const t = useTranslations('octar_howitworks');
+  
   const MonitorIcon = () => (
     <svg
       className="w-8 h-8"
@@ -87,41 +90,38 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ steps }) => {
 
   const defaultSteps: Step[] = [
     {
-      number: "Step 01",
+      number: t('steps.teach.number'),
       icon: <MonitorIcon />,
-      title: "Teach at School",
-      description:
-        "Teachers deliver AR-enhanced lessons in the classroom using curriculum-aligned digital content",
+      title: t('steps.teach.title'),
+      description: t('steps.teach.description'),
       features: [
-        "Teacher selects lesson",
-        "Students color workbooks",
-        "AR activates learning",
+        t('steps.teach.features.0'),
+        t('steps.teach.features.1'),
+        t('steps.teach.features.2'),
       ],
       color: "#2D9CDB",
     },
     {
-      number: "Step 02",
+      number: t('steps.sync.number'),
       icon: <CloudSyncIcon />,
-      title: "Auto-Sync Progress",
-      description:
-        "Learning data automatically syncs to cloud infrastructure for all stakeholders",
+      title: t('steps.sync.title'),
+      description: t('steps.sync.description'),
       features: [
-        "Real-time data sync",
-        "Teacher dashboard updates",
-        "Parent notifications sent",
+        t('steps.sync.features.0'),
+        t('steps.sync.features.1'),
+        t('steps.sync.features.2'),
       ],
       color: "#6366F1",
     },
     {
-      number: "Step 03",
+      number: t('steps.reinforce.number'),
       icon: <HomeIcon />,
-      title: "Reinforce at Home",
-      description:
-        "Students continue learning journey at home with parent guidance and same content",
+      title: t('steps.reinforce.title'),
+      description: t('steps.reinforce.description'),
       features: [
-        "Home app access",
-        "Parent-guided activities",
-        "Progress tracking",
+        t('steps.reinforce.features.0'),
+        t('steps.reinforce.features.1'),
+        t('steps.reinforce.features.2'),
       ],
       color: "#10B981",
     },
@@ -134,17 +134,17 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ steps }) => {
       {/* Header */}
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">
-          How It Works
+          {t('title')}
         </h1>
         <p className="text-base md:text-lg text-gray-500">
-          One ecosystem, seamless flow from classroom to home
+          {t('subtitle')}
         </p>
       </div>
 
       {/* Timeline Container */}
       <div className="relative">
         {/* Horizontal Line */}
-        <div className="absolute z-10left-0 right-1 h-3.5 bg-gradient-to-r from-[#2D9CDB] via-[#6366F1] to-[#10B981]"></div>
+        <div className="absolute z-10 left-0 right-1 h-3.5 bg-gradient-to-r from-[#2D9CDB] via-[#6366F1] to-[#10B981]"></div>
 
         {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
@@ -215,33 +215,12 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ steps }) => {
         {/* Continuous Loop Badge */}
         <div className="flex justify-center mt-12">
           <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-gray-200 shadow-sm">
-            <div       className="w-3 h-3 rounded-full shadow-md relative"
-                      style={{ backgroundColor: "#10B981" }}
-                    ></div>
+            <div className="w-3 h-3 rounded-full shadow-md relative" style={{ backgroundColor: "#10B981" }}></div>
             <span className="text-xl font-medium text-gray-700">
-              Continuous Loop
+              {t('badge')}
             </span>
           </div>
         </div>
-
-        {/* Curved Arrow (decorative) */}
-        {/* <div className="hidden md:block text-center items-center absolute-bottom-12 left-1/2 -translate-x-1/2">
-          <svg width="200" height="60" viewBox="0 0 200 60" fill="none" className="opacity-20">
-            <path 
-              d="M 10 30 Q 100 -10, 190 30" 
-              stroke="#10B981" 
-              strokeWidth="2" 
-              strokeDasharray="4 4"
-              fill="none"
-            />
-            <path 
-              d="M 190 30 L 185 25 M 190 30 L 185 35" 
-              stroke="#10B981" 
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-        </div> */}
       </div>
     </div>
   );

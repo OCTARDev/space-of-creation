@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { useTranslations } from 'next-intl';
 
 const AlertTriangleIcon = () => (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -14,7 +15,7 @@ const LabIcon = () => (
     height="28"
     viewBox="0 0 24 24"
     fill="none"
-    stroke="#89278B"   // soft purple
+    stroke="#89278B"
     strokeWidth="1.8"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -32,81 +33,65 @@ const CheckBadgeIcon = () => (
   </svg>
 )
 
-
 const BulletItem = ({ text, color }: { text: string; color: string }) => (
   <li className="mt-2 flex items-start gap-2 text-gray-600 text-sm leading-snug">
     <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: color }}></span>
-
     <span>{text}</span>
   </li>
 )
 
 export default function Features() {
+  const t = useTranslations('vclab_features');
+  
+  const cards = [
+    {
+      key: 'challenge',
+      icon: <AlertTriangleIcon />,
+      bgColor: '#fee2e2',
+      bulletColor: '#E84545',
+      itemCount: 2
+    },
+    {
+      key: 'experience',
+      icon: <LabIcon />,
+      bgColor: '#f3e8ff',
+      bulletColor: '#89278B',
+      itemCount: 2
+    },
+    {
+      key: 'impact',
+      icon: <CheckBadgeIcon />,
+      bgColor: '#dcfce7',
+      bulletColor: '#00A63E',
+      itemCount: 4
+    }
+  ];
+
   return (
     <section className="bg-white py-16 px-6">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        {cards.map((card) => (
+          <div key={card.key} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <div 
+              className="mb-5 w-12 h-12 flex items-center justify-center rounded-2xl" 
+              style={{ backgroundColor: card.bgColor }}
+            >
+              {card.icon}
+            </div>
 
-        {/* Card 1 - The Problem */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-   <div className="mb-5 w-12 h-12 flex items-center justify-center rounded-2xl" 
-     style={{ backgroundColor: '#fee2e2' }}> {/* bg-red-100 equivalent */}
-  <AlertTriangleIcon />
-</div>
-
-          <h3 className="text-lg font-semibold text-gray-900 mb-5">The Challenge</h3>
-          
-             <BulletItem
-              text="Traditional science labs are limited by cost, safety concerns, and availability."
-                color="#E84545"
-              
-            />
-            <BulletItem
-              text="Most students learn experiments theoretically, without enough hands-on practice to build real understanding or confidence."
-              color="#E84545"
-            />
-        </div>
-
-        {/* Card 2 - The Solution */}
-        <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-         <div className="mb-5 w-12 h-12 flex items-center justify-center rounded-2xl bg-purple-100">
-  <LabIcon />
-</div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-5">The VCLAB Experience</h3>
-            <BulletItem
-              text="VCLAB provides fully customized virtual laboratories where students can safely run unlimited experiments."
-              color="#89278B"
-            />
-            <BulletItem
-              text="No equipment. No risk. No scheduling constraints — just immersive, practical learning anytime."
-              color="#89278B"
-            />
-           
-        </div>
-
-        {/* Card 3 - Measured Impact */}
-        <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-          <div className="mb-5 w-12 h-12 flex items-center justify-center  rounded-2xl bg-green-100">
-            <CheckBadgeIcon />
+            <h3 className="text-lg font-semibold text-gray-900 mb-5">
+              {t(`cards.${card.key}.title`)}
+            </h3>
+            
+            {Array.from({ length: card.itemCount }).map((_, index) => (
+              <BulletItem
+                key={index}
+                text={t(`cards.${card.key}.items.${index}`)}
+                color={card.bulletColor}
+              />
+            ))}
           </div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-5">Measured Impact</h3>
-            <BulletItem
-              text="Deeper understanding of scientific concepts."
-              color="#00A63E"
-            />
-            <BulletItem
-              text="Higher student engagement and participation."
-              color="#00A63E"
-            />
-            <BulletItem
-              text="Equal hands-on experience for every learner."
-              color="#00A63E"
-            />
-            <BulletItem
-              text="Stronger readiness for real-world labs."
-              color="#00A63E"
-            />
-        </div>
-
+        ))}
       </div>
     </section>
   )

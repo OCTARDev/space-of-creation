@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 interface TimelineItem {
   title: string;
@@ -10,18 +11,20 @@ interface TimelineProps {
 }
 
 const OurJourney: React.FC<TimelineProps> = ({ items }) => {
+  const t = useTranslations('about_ourjourney');
+  
   const defaultItems: TimelineItem[] = [
     {
-      title: "From SMARTY to FadaaTech",
-      description: "Our focus has remained constant: building complete learning ecosystems, not isolated apps. We evolved from our initial work as SMARTY to become FadaaTech, always staying true to our mission of empowering educators."
+      title: t('items.evolution.title'),
+      description: t('items.evolution.description')
     },
     {
-      title: "Proudly UAE-Based",
-      description: "A proudly UAE-based company (Dubai License 1571670), developing solutions from the ground up for the region's curricula, cultures, and challenges."
+      title: t('items.pride.title'),
+      description: t('items.pride.description')
     },
     {
-      title: "Our Mission Today",
-      description:"Transforming education in the Arab world through immersive technology that puts teachers in control and unlocks extraordinary potential in every learner."
+      title: t('items.mission.title'),
+      description: t('items.mission.description')
     }
   ];
 
@@ -32,10 +35,10 @@ const OurJourney: React.FC<TimelineProps> = ({ items }) => {
       {/* Header */}
       <div className="text-center mb-16">
         <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4">
-          Our Journey
+          {t('title')}
         </h1>
         <p className="text-lg md:text-xl text-gray-500">
-          Building complete learning ecosystems, not isolated apps
+          {t('subtitle')}
         </p>
       </div>
 
@@ -70,8 +73,6 @@ const OurJourney: React.FC<TimelineProps> = ({ items }) => {
           </div>
         ))}
       </div>
-
-
     </div>
   );
 };

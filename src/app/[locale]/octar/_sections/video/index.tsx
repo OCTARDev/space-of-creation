@@ -2,20 +2,22 @@
 
 import Video from "next-video";
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
 
 export default function VideoSection() {
   const [isHovered, setIsHovered] = useState(false);
+  const t = useTranslations('octar_video');
 
   return (
     <section className="min-h-screen bg-white flex flex-col items-center justify-center px-6 py-16 font-sans">
       {/* Heading */}
       <div className="text-center mb-10 max-w-xl">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-4">
-          Learn, Explore, Empower
+          {t('title')}
         </h1>
         <p className="text-base md:text-lg text-indigo-400 leading-relaxed">
-          Turn every lesson into an opportunity — at school and at home —<br />
-          where students take charge of their learning journey.
+          {t('subtitle.line1')}<br />
+          {t('subtitle.line2')}
         </p>
       </div>
 
@@ -41,14 +43,11 @@ export default function VideoSection() {
         <div className="relative flex items-center justify-center"
           style={{ minHeight: "380px" }}>
 
-            
-            {/* <Video   
-                src="https://res.cloudinary.com/dhqe8isrb/video/upload/v1760132818/sectionVideo/njjzgcantnf3erimbx7o.mp4"
-                
-                
-                
-                className="w-full h-full object-cover"
-              /> */}
+          {/* <Video   
+            src="https://res.cloudinary.com/dhqe8isrb/video/upload/v1760132818/sectionVideo/njjzgcantnf3erimbx7o.mp4"
+            className="w-full h-full object-cover"
+          /> */}
+          
           {/* Play button */}
           <button
             onMouseEnter={() => setIsHovered(true)}
@@ -59,17 +58,17 @@ export default function VideoSection() {
             }}
             aria-label="Play video"
           >
+            {/* You might want to add a play icon here */}
           </button>
         </div>
 
-
         {/* Bottom caption bar */}
-        <div className="relative  text-center z-10 bg-gray-700 bg-opacity-90 px-5 py-3   ">
+        <div className="relative text-center z-10 bg-gray-700 bg-opacity-90 px-5 py-3">
           <p className="text-white text-sm font-medium">
-            Watch: Students conducting virtual experiments
+            {t('caption.title')}
           </p>
           <p className="text-gray-300 text-xs mt-0.5">
-            See how VCLAB transforms science learning
+            {t('caption.subtitle')}
           </p>
         </div>
       </div>

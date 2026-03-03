@@ -1,8 +1,12 @@
 import Image from "next/image";
 import React from "react";
+import { useTranslations } from 'next-intl';
 import bgcover from "@/assets/media/gif.gif";
+import Link from "next/link";
 
 export default function SpaceEducationalHero() {
+  const t = useTranslations('home_octar');
+  
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
       {/* Video Background */}
@@ -15,11 +19,10 @@ export default function SpaceEducationalHero() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-            OCTAR Educational Offering
+            {t('title')}
           </h1>
           <p className="text-lg md:text-xl mt-10 text-[#8371A7] max-w-3xl mx-auto">
-            Turn lessons into immersive space adventures - let every student
-            explore the universe
+            {t('description')}
           </p>
         </div>
 
@@ -38,20 +41,17 @@ export default function SpaceEducationalHero() {
           <div className="absolute inset-1 bg-gradient-to-br from-[#1a0b2e]/60 via-[#2d1b4e]/50 to-transparent" />
 
           {/* Content Container */}
-          <div className="relative z-10  min-h-screen px-6 lg:px-12 xl:px-16 py-12">
+          <div className="relative z-10 min-h-screen px-6 lg:px-12 xl:px-16 py-12">
             {/* Main Content - Top Left Positioned */}
             <div className="pt-40 pl-24 max-w-4xl">
               {/* Main Heading */}
-              <p  className="text-4xl font-bold text-white mb-8">
-                Explore the Planets Through Fun,
-                Animated Videos
+              <p className="text-4xl font-bold text-white mb-8">
+                {t('main_heading')}
               </p>
 
               {/* Description */}
               <p className="text-gray-200 text-3xl md:text-2xl leading-relaxed mb-10 max-w-2xl">
-                Short, engaging space videos designed for kids — helping them discover
-                planets, stars, and space concepts through storytelling,animation, and
-                visuals they love.
+                {t('main_description')}
               </p>
 
               {/* Feature List */}
@@ -73,7 +73,7 @@ export default function SpaceEducationalHero() {
                     </svg>
                   </div>
                   <span className="text-white text-base md:text-lg">
-                    Kid-friendly planet stories
+                    {t('features.stories')}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -93,7 +93,7 @@ export default function SpaceEducationalHero() {
                     </svg>
                   </div>
                   <span className="text-white text-base md:text-lg">
-                    Short, engaging video episodes
+                    {t('features.episodes')}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -113,14 +113,16 @@ export default function SpaceEducationalHero() {
                     </svg>
                   </div>
                   <span className="text-white text-base md:text-lg">
-                    Designed for home learning & curiosity
+                    {t('features.learning')}
                   </span>
                 </li>
               </ul>
 
               {/* CTA Button */}
               <button className="px-8 py-3.5 bg-gradient-to-r from-purple-400/80 to-purple-500/80 hover:from-purple-400 hover:to-purple-500 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-purple-500/50">
-                Catalogue
+                     <Link href="/catalogue">
+                {t('cta')}
+          </Link>
               </button>
             </div>
           </div>

@@ -1,9 +1,11 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 interface Feature {
   title: string;
   description: string;
   dotColor: string;
+  translationKey: string;
 }
 
 interface KeyFeaturesProps {
@@ -11,43 +13,48 @@ interface KeyFeaturesProps {
 }
 
 const KeyFeatures: React.FC<KeyFeaturesProps> = ({ features }) => {
+  const t = useTranslations('vr_keyfeatures');
+  
   const defaultFeatures: Feature[][] = [
     [
       {
-        title: "Premium Headsets",
-        description: "Meta Quest 3, HTC Vive, and other top-tier VR systems.",
+        translationKey: "headsets",
+        title: t('features.headsets.title'),
+        description: t('features.headsets.description'),
         dotColor: "#4F46E5",
       },
       {
-        title: "Portable Setup",
-        description: "Bring VR to any location. Quick setup in classrooms or event spaces.",
+        translationKey: "portable",
+        title: t('features.portable.title'),
+        description: t('features.portable.description'),
         dotColor: "#32AB30",
       },
-         {
-        title: "Multi-User Sessions",
-        description: "Run simultaneous experiences for groups.",
+      {
+        translationKey: "multi",
+        title: t('features.multi.title'),
+        description: t('features.multi.description'),
         dotColor: "#0046DE",
       },
-
-      
     ],
     [
       {
-        title: "Safe & Supervised",
-        description: "Trained facilitators guide every session with safety protocols.",
+        translationKey: "safe",
+        title: t('features.safe.title'),
+        description: t('features.safe.description'),
         dotColor: "#F97316",
       },
       {
-        title: "Entertainment",
-        description: "Thrilling adventures and immersive games for events.",
+        translationKey: "entertainment",
+        title: t('features.entertainment.title'),
+        description: t('features.entertainment.description'),
         dotColor: "#EC4899",
       },
       {
-        title: "Educational Content",
-        description: "Curriculum-aligned VR experiences for immersive learning.",
+        translationKey: "educational",
+        title: t('features.educational.title'),
+        description: t('features.educational.description'),
         dotColor: "#3A9DB2",
       },
-  
     ],
   ];
 
@@ -56,17 +63,17 @@ const KeyFeatures: React.FC<KeyFeaturesProps> = ({ features }) => {
   const Column: React.FC<{ items: Feature[] }> = ({ items }) => (
     <div className="flex flex-col mt-20">
       {items.map((feature, i) => (
-        <div key={i} className="mb-4 flex gap-4">
+        <div key={feature.translationKey} className="mb-4 flex gap-4">
           {/* Left: dot + line */}
           <div className="flex flex-col items-center">
             {/* Dot */}
-      <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gray-50 shadow-xl">
-  <div className="w-4 h-4 rounded-full" style={{ backgroundColor: feature.dotColor }} />
-</div>
-              {/* Dashed line */}
-              {i < items.length - 1 && (
-                <div className="w-0.5 h-full min-h-[120px] border-l-2 border-dashed border-gray-300 mt-2"></div>
-              )}
+            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gray-50 shadow-xl">
+              <div className="w-4 h-4 rounded-full" style={{ backgroundColor: feature.dotColor }} />
+            </div>
+            {/* Dashed line */}
+            {i < items.length - 1 && (
+              <div className="w-0.5 h-full min-h-[120px] border-l-2 border-dashed border-gray-300 mt-2"></div>
+            )}
           </div>
 
           {/* Right: text */}
@@ -83,8 +90,7 @@ const KeyFeatures: React.FC<KeyFeaturesProps> = ({ features }) => {
     <div className="w-full max-w-4xl mx-auto px-6 py-16">
       {/* Header */}
       <div className="text-center mb-14">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">
-Complete VR Solution</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">{t('title')}</h1>
       </div>
 
       {/* Two-column grid */}
