@@ -86,7 +86,7 @@ const LanguageSwitcher = ({isUp=false,className=""}) => {
         aria-expanded={isOpen}
         aria-label="Select language"
       >
-        <div className="flex items-center gap-2 text-white">
+        <div className="flex items-center gap-2 ms-2 text-gray-500">
           <span className="shrink-0 ">
             <FaLanguage size={24} />
           </span>

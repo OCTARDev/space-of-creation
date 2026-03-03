@@ -129,7 +129,7 @@ const Navbar = () => {
               {t('navbar.contact')}
             </Link>
 
-            <LanguageSwitcher className=''/>
+            <LanguageSwitcher className='mx-2'/>
           </div>
 
           {/* Mobile menu button */}
