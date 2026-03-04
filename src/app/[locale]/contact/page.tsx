@@ -1,5 +1,8 @@
 "use client";
+import { useState } from "react";
 import "./style.css";
+import { useMutation } from "@tanstack/react-query";
+import { bookLife } from "@/lib/api";
 
 const solutions = [
   'OCTAR Ecosystem',
@@ -12,10 +15,53 @@ const solutions = [
 ];
 
 export default function Contact() {
-  //   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
-  //     e.preventDefault();
-  //     alert("Demo booked! We'll contact you within 24 hours.");
-  //   };
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    category_id:[1],
+    
+  });
+
+    const [submitted, setSubmitted] = useState(false);
+
+
+  
+  const mutation = useMutation({
+    mutationFn: () =>
+      bookLife({
+        name: formData.name as any,
+        email: formData.email,
+        phone: formData.phone,
+        category_ids: formData.category_id ? [Number(formData.category_id)] : [],
+      }),
+      
+    onSuccess: () => {
+      setSubmitted(true);
+      setFormData({ name: "", email: "", phone: "", category_id: [1] });
+    },
+    onError: (error) => {
+      console.error("Booking failed:", error);
+    },
+  });
+
+
+    const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.phone  ) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+    mutation.mutate();
+  };
+
 
   return (
     <div
@@ -25,7 +71,7 @@ export default function Contact() {
 
          <div className={`
               absolute w-full h-[70%] aspect-square  top-[12%] left-0
-              bg-linear-to-r from-[#2C67FF]  to-[#FF4DED]
+              bg-linear-to-r from-[#2C67FF]  to-[#ee5ddf]
               blur-xl opacity-15 -z-10
               `}/>
       {/* Hero text */}
@@ -44,6 +90,18 @@ export default function Contact() {
           Schedule Your Demo
         </h2>
 
+              {submitted && (
+          <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm text-center">
+            ✅ Demo booked! We'll contact you within 24 hours.
+          </div>
+        )}
+
+        {mutation.isError && (
+          <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm text-center">
+            ❌ Something went wrong. Please try again.
+          </div>
+        )}
+
         <div className="space-y-4">
           {/* Name */}
           <div>
@@ -53,9 +111,9 @@ export default function Contact() {
             <input
               type="text"
               name="name"
-              placeholder="your full name"
-              //   value={formData.name}
-              //   onChange={handleChange}
+              placeholder="Your full name"
+              value={formData.name}
+              onChange={handleChange}
               className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 placeholder-gray-300 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition"
             />
           </div>
@@ -69,8 +127,8 @@ export default function Contact() {
               type="email"
               name="email"
               placeholder="Work email address"
-              //   value={formData.email}
-              //   onChange={handleChange}
+              value={formData.email}
+              onChange={handleChange}
               className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 placeholder-gray-300 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition"
             />
           </div>
@@ -84,8 +142,8 @@ export default function Contact() {
               type="tel"
               name="phone"
               placeholder="Phone number"
-              //   value={formData.phone}
-              //   onChange={handleChange}
+              value={formData.phone}
+              onChange={handleChange}
               className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 placeholder-gray-300 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition"
             />
           </div>
@@ -158,15 +216,16 @@ export default function Contact() {
             />
           </div>
 
-          {/* Submit button */}
+           {/* Submit button */}
           <button
-            // onClick={handleSubmit}
-            className="w-full py-3 rounded-xl text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.98]"
+            onClick={handleSubmit}
+            disabled={mutation.isPending}
+            className="w-full py-3 rounded-xl text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
             style={{
               background: "linear-gradient(90deg, #a78bfa 0%, #818cf8 100%)",
             }}
           >
-            Book a Demo
+            {mutation.isPending ? "Booking..." : "Book a Demo"}
           </button>
 
           <p className="text-center text-xs text-gray-400 mt-2">

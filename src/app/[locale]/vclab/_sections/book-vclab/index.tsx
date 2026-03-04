@@ -1,5 +1,7 @@
 import "./style.css";
 import { useTranslations } from 'next-intl';
+import Link from "next/link";
+
 
 export default function BookVCLABSection() {
   const t = useTranslations('vclab_book');
@@ -24,7 +26,7 @@ export default function BookVCLABSection() {
 
         <div className="mb-6">
           <button className="px-8 py-3 rounded-2xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
-            {t('button')}
+            <Link href={"/contact"}>{t("button")}</Link>
           </button>
         </div>
 

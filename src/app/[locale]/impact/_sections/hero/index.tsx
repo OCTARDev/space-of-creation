@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
 import bgcover from "@/assets/media/impactcover.png";
+import Link from "next/link";
+
 
 export default function Hero() {
   const t = useTranslations('impact_hero');
@@ -40,7 +42,10 @@ export default function Hero() {
           </p>
           <div>
             <button className="px-8 py-3 rounded-xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
-              {t('button')}
+                                <Link href={"/contact"}>
+
+            {t('button')}
+                      </Link>
             </button>
           </div>
         </div>

@@ -1,63 +1,139 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from "next-intl";
+import { Linkedin, Facebook, Instagram } from "lucide-react";
+
+const TikTokIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z" />
+  </svg>
+);
+
+const SocialIcon: React.FC<{ href: string; icon: React.ReactNode }> = ({
+  href,
+  icon,
+}) => (
+  <Link
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-gray-900 hover:border-gray-500 transition-all duration-200"
+  >
+    {icon}
+  </Link>
+);
 
 const Footer: React.FC = () => {
-  const t = useTranslations('footer');
+  const t = useTranslations("footer");
+  const locale = useLocale();
+  const isRTL = locale === "ar";
   const currentYear = new Date().getFullYear();
 
   const solutions = [
-    { key: 'octar', href: '/octar' },
-    { key: 'vclab', href: '/vclab' },
-    { key: 'life', href: '/life' },
-    { key: 'ar', href: '/ar-stories' },
-    { key: 'learning', href: '/learning-support' },
-    { key: 'planetarium', href: '/planetarium' },
-    { key: 'vr', href: '/vr' },
+    { key: "octar", href: "/octar" },
+    { key: "vclab", href: "/vclab" },
+    { key: "life", href: "/life" },
+    { key: "ar", href: "/ar-stories" },
+    { key: "learning", href: "/learning-support" },
+    { key: "planetarium", href: "/planetarium" },
+    { key: "vr", href: "/vr" },
   ];
 
   const companyItems = [
-    { key: 'home', href: '/' },
-    { key: 'impact', href: '/impact' },
-    { key: 'about', href: '/about' },
-    { key: 'contact', href: '/contact' },
+    { key: "home", href: "/" },
+    { key: "impact", href: "/impact" },
+    { key: "about", href: "/about" },
+    { key: "contact", href: "/contact" },
+  ];
+
+  const contactRows = [
+    {
+      label: t("contact.email"),
+      value: "b2b@spaceforcreation.ae",
+    },
+    {
+      label: t("contact.phone"),
+      value: "+971 54 797 5397",
+     
+    },
+    {
+      label: t("contact.location"),
+      value: t("contact.address"),
+    },
+    {
+      label: t("contact.license"),
+      value: "1571670",
+    },
   ];
 
   return (
-    <footer className="bg-white border-t border-gray-200">
+    <footer
+      className="bg-white border-t border-gray-200"
+      dir={isRTL ? "rtl" : "ltr"}
+    >
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
-          
-          {/* Brand Column */}
-          <div className="flex flex-col gap-1 items-start">
-            <Link href="/" className="inline-block mb-6">
+        <div
+          className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 ${
+            isRTL ? "text-right" : "text-left"
+          }`}
+        >
+          {/* ── Brand Column ── */}
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="inline-block">
               <Image
                 src="/logo.svg"
-                alt="Space of Creation Logo"
-                width={200}
-                height={300}
+                alt="Space for Creation Logo"
+                width={120}
+                height={80}
                 className="h-auto w-auto"
                 priority
               />
             </Link>
 
-            <p className="text-gray-600 leading-relaxed">
-              {t('brand.description')}
+            <p className="text-gray-500 text-sm leading-relaxed">
+              {t("brand.description")}
             </p>
+
+            {/* Social Icons */}
+            <div
+              className={`flex gap-2 mt-1 ${
+                isRTL ? "flex-row-reverse justify-end" : "flex-row"
+              }`}
+            >
+              <SocialIcon
+                href="https://linkedin.com"
+                icon={<Linkedin size={16} />}
+              />
+              <SocialIcon
+                href="https://facebook.com"
+                icon={<Facebook size={16} />}
+              />
+              <SocialIcon
+                href="https://instagram.com"
+                icon={<Instagram size={16} />}
+              />
+              <SocialIcon href="https://tiktok.com" icon={<TikTokIcon />} />
+            </div>
           </div>
 
-          {/* Solutions Column */}
+          {/* ── Solutions Column ── */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-6">
-              {t('solutions.title')}
+            <h3 className="text-base font-semibold text-gray-900 mb-5">
+              {t("solutions.title")}
             </h3>
-            <ul className="space-y-3 text-gray-600">
-              {solutions.map((item, index) => (
-                <li key={index}>
+            <ul className="space-y-3">
+              {solutions.map((item) => (
+                <li key={item.key}>
                   <Link
                     href={item.href}
-                    className="hover:text-gray-900 transition-colors duration-300"
+                    className="text-sm text-gray-500 hover:text-gray-900 transition-colors duration-200"
                   >
                     {t(`solutions.items.${item.key}`)}
                   </Link>
@@ -66,17 +142,17 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Company Column */}
+          {/* ── Company Column ── */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-6">
-              {t('company.title')}
+            <h3 className="text-base font-semibold text-gray-900 mb-5">
+              {t("company.title")}
             </h3>
-            <ul className="space-y-3 text-gray-600">
-              {companyItems.map((item, index) => (
-                <li key={index}>
+            <ul className="space-y-3">
+              {companyItems.map((item) => (
+                <li key={item.key}>
                   <Link
                     href={item.href}
-                    className="hover:text-gray-900 transition-colors duration-300"
+                    className="text-sm text-gray-500 hover:text-gray-900 transition-colors duration-200"
                   >
                     {t(`company.items.${item.key}`)}
                   </Link>
@@ -85,39 +161,25 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Contact Column */}
+          {/* ── Contact Column ── */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-6">
-              {t('contact.title')}
+            <h3 className="text-base font-semibold text-gray-900 mb-5">
+              {t("contact.title")}
             </h3>
-            <div className="space-y-3 text-gray-600 text-sm">
-              <p>
-                <span className="font-medium text-gray-900">{t('contact.email')}</span>{" "}
-  
-              </p>
-
-              <p>
-                <span className="font-medium text-gray-900">{t('contact.phone')}</span>{" "}
-             
-              </p>
-
-              <p>
-                <span className="font-medium text-gray-900">{t('contact.location')}</span>{" "}
-                {t('contact.address')}
-              </p>
-
-              <p>
-                <span className="font-medium text-gray-900">{t('contact.license')}</span>{" "}
-              </p>
+            <div className="space-y-3">
+              {contactRows.map((row) => (
+                <p key={row.label} className="text-sm text-gray-500">
+                  <span className="font-medium text-gray-900">{row.label}</span>{" "}
+                  {row.value}
+                </p>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="mt-16 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
-          <p>
-            {t('copyright', { year: currentYear })}
-          </p>
+        {/* ── Bottom Bar ── */}
+        <div className="mt-14 pt-6 border-t border-gray-200 text-center text-sm text-gray-400">
+          {t("copyright", { year: currentYear })}
         </div>
       </div>
     </footer>

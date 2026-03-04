@@ -315,11 +315,11 @@
       "line1": "OCTAR: The Connected",
       "line2": "Learning Ecosystem"
     },
-    "subtitle": "Seamlessly bridge classroom instruction with guided home engagement. Teacher-led. Parent-enabled. Student-empowered.",
+    "subtitle": "One mission: make Arabic and English learning unforgettable — at school and at home. Teacher-led. Parent-enabled. Student-empowered.",
     "badges": {
       "users": "50K+ Active Users",
       "moe": "MOE Aligned",
-      "bilingual": "Bilingual AR/EN"
+      "bilingual": "Arabic & English Editions"
     },
     "button": "Book OCTAR Demo",
     "stats": {
@@ -332,8 +332,9 @@
    "octar_video": {
     "title": "Learn, Explore, Empower",
     "subtitle": {
-      "line1": "Turn every lesson into an opportunity — at school and at home —",
-      "line2": "where students take charge of their learning journey."
+      "line1": "Designed for every learning environment — ",
+      
+      "line2": "from nursery to Grade 6, from classroom to living room."
     },
     "caption": {
       "title": "Watch: Students conducting virtual experiments",
@@ -343,7 +344,7 @@
     "octar_features": {
     "cards": {
       "problem": {
-        "title": "The Problem",
+        "title": "Measured Impact",
         "items": [
           "Learning breaks between classroom instruction and home reinforcement.",
           "Teachers deliver lessons, but progress becomes hard to track beyond school.",
@@ -354,17 +355,17 @@
       "solution": {
         "title": "The Solution",
         "items": [
-          "One connected ecosystem linking classroom teaching with guided home engagement.",
+          "OCTAR School and OCTAR Home — forming one seamless learning ecosystem.",
           "Teacher-led curriculum control aligned with approved standards.",
-          "Student learning enhanced through interactive AR without workflow disruption.",
+          "Bilingual AR content in Arabic and English, aligned with UAE MOE and international frameworks.",
           "Parent-enabled reinforcement that supports learning continuity."
         ]
       },
       "impact": {
-        "title": "Measured Impact",
+        "title": "Two Editions",
         "items": [
-          "Increased student engagement through curriculum-aligned interactive learning.",
-          "Continuous learning between school and home.",
+          " For schools — KG to Grade 6 Curriculum-aligned AR lessons in Arabic and English, a teacher dashboard, and real-time progress analytics.",
+          "For nurseries & families, Guided AR activities for early learners at home, with full parent app support and bilingual content.",
           "Clear visibility into progress, participation, and learning gaps.",
           "Stronger parent trust without added teacher workload."
         ]
@@ -426,11 +427,11 @@
       },
       "standards": {
         "title": "Standards Aligned",
-        "description": "Fully compliant with UAE MOE standards and IEYC, IPC, CCSS frameworks"
+        "description": "OCTAR School: UAE MOE aligned | OCTAR Home: IEYC, IPC & CCSS international frameworks"
       },
       "bilingual": {
         "title": "Bilingual Support",
-        "description": "Full Arabic and English content with linguistic authenticity"
+        "description": "Full Arabic and English content — culturally authentic for UAE learners, internationally aligned for global standards."
       },
       "ar": {
         "title": "AR Visualization",
@@ -463,9 +464,10 @@
     }
   },
     "octar_book": {
-    "title": "Ready to Connect Classroom and Home?",
-    "subtitle": "Schedule a personalized OCTAR demo",
-    "button": "Book an OCTAR Demo",
+    "title": "Ready to Transform Arabic and English Learning?",
+    "subtitle": "Choose your edition and book a personalized OCTAR demo",
+    "button1": "Book OCTAR Home Demo",
+    "button2": "Book OCTAR School Demo",
     "call": "Or call :",
     "phone": "+971 54 797 5397"
   },
@@ -504,7 +506,7 @@
   "life_video": {
     "title": "Explore Digital Worlds",
     "subtitle": {
-      "line1": "Dive into immersive digital spaces that spark curiosity and inspire learning"
+      "line1": "Step into immersive AR worlds built from the imagination of every child."
     },
     "caption": {
       "title": "Watch: Students conducting virtual experiments",
@@ -606,11 +608,11 @@
       "life": "Life Digital Environment"
     },
     "title": "Life Digital Environment",
-    "subtitle": "Transform any space into an immersive, interactive experience. Wall-to-wall digital environments that captivate, educate, and inspire.",
+    "subtitle": "Turn a child's coloring into a living, interactive world. AR-powered experiences that bring learning to life — right from their own hands.",
     "badges": {
-      "themes": "Customizable Themes",
-      "multitouch": "Multi-Touch Interactive",
-      "motion": "Motion Tracked"
+      "themes": "Themed Environments",
+      "multitouch": "AR Color Recognition",
+      "motion": "Interactive & Audio"
     },
     "buttons": {
       "project": "Start Your Project",
@@ -622,26 +624,26 @@
       "challenge": {
         "title": "The Challenge",
         "items": [
-          "Learning spaces are static and disconnected from how students actually engage with the world.",
-          "Traditional classrooms fail to sustain attention, context, and emotional engagement.",
-          "Content is delivered, but experiences are not lived."
+          "Children lose interest when learning feels passive and disconnected from their own creativity.",
+          "Traditional activities don't bridge the gap between hands-on play and meaningful learning outcomes.",
+          "Classroom experiences rarely give children a sense of wonder or personal ownership over what they learn."
         ]
       },
       "solution": {
         "title": "The Solution",
         "items": [
-          "A Life Digital Environment that transforms physical spaces into immersive, interactive learning worlds.",
-          "Wall-to-wall digital layers that respond to movement, content, and context.",
-          "Learning becomes an experience students explore, not information they receive."
+          "A Life Digital Environment where children color educational scenes — then watch their artwork come alive in AR.",
+          "Each child's coloring is scanned and instantly reflected on the big screen in their exact chosen colors.",
+          "Rich audio narration, songs, and interactive commands turn every session into a personalized learning journey."
         ]
       },
       "impact": {
         "title": "Measured Impact",
         "items": [
-          "Increased student engagement and time-on-task inside learning spaces.",
-          "Improved concept retention through immersive, multi-sensory experiences.",
-          "Higher participation rates across different learning styles.",
-          "Stronger readiness for real-world labs."
+          "Deeper engagement as children connect personally with content they created themselves.",
+          "Stronger concept retention through multi-sensory storytelling and interactive AR experiences.",
+          "Higher motivation and confidence across different learning styles and age groups.",
+          "Memorable, shareable moments that extend learning beyond the classroom."
         ]
       }
     }
@@ -650,20 +652,20 @@
     "title": "Powerful Features",
     "features": {
       "themes": {
-        "title": "Customizable Themes",
-        "description": "Switch between completely different environments with a few clicks. Ocean, space, rainforest, heritage, and more."
+        "title": "Themed Environments",
+        "description": "Choose from a growing library of educational worlds — Ramadan, dinosaurs, Gulf marine life, space, and more. Each theme is curriculum-aligned and culturally authentic."
       },
       "motion": {
-        "title": "Motion Tracking",
-        "description": "Advanced sensors detect movement, environments react to visitors."
+        "title": "AR Color Recognition",
+        "description": "Children color a printed scene, then scan it with the app — and their artwork appears on the big screen in their own exact colors. Every experience is uniquely theirs."
       },
       "touch": {
-        "title": "Interactive Touch Walls",
-        "description": "Multi-touch responsive surfaces turn walls into giant touchscreens."
+        "title": "Magic Transfer",
+        "description": "With one tap on the tablet, the child's colored world is transferred to the large display screen — bringing their creation to life in front of the whole class."
       },
       "social": {
-        "title": "Social Media Ready",
-        "description": "Built-in photo moments and automatic content generation for sharing."
+        "title": "Audio & Interaction",
+        "description": "Each environment includes voice narration, educational songs, and interactive commands — creating a rich, guided learning experience every time."
       }
     }
   },
@@ -672,31 +674,31 @@
     "subtitle": "Real results from educators, campaign managers, and venue operators",
     "testimonials": {
       "teacher": {
-        "quote": "\"My students finally understand oxidation-reduction reactions. They can experiment until they truly get it, without worrying about making mistakes.\"",
-        "initials": "DR",
-        "name": "Dr. Sarah Ahmed",
-        "title": "Chemistry Teacher"
+        "quote": "\"The moment a child sees their own coloring come alive on the big screen, everything changes. The excitement, the focus — it's unlike anything I've seen in a traditional classroom.\"",
+        "initials": "Dubai",
+        "name": "Dr.Fatima Al Zaabi",
+        "title": "KG Teacher"
       },
       "coordinator": {
-        "quote": "\"Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable.\"",
-        "initials": "MC",
-        "name": "Michael Chen",
-        "title": "Science Coordinator"
+        "quote": "\"We used the Ramadan theme for our school's awareness week. Every student was fully engaged from the first minute, and the Arabic narration made it even more meaningful.\"",
+        "initials": "Sharjah",
+        "name": "Ahmed Nasser",
+        "title": "School Coordinator"
       },
       "student": {
-        "quote": "\"Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement.\"",
+        "quote": "\"My favorite part was when my drawing showed up on the big screen! I kept asking my teacher to do it again.\"",
         "initials": "DR",
-        "name": "Layla Hassan",
-        "title": "Grade 10 Student"
+        "name": "Sara",
+        "title": "Grade 2 Student"
       }
     }
   },
     "life_engaging": {
     "title": "Launch an Engaging Learning Experience — Instantly",
     "subtitle": {
-      "line1": "Run immersive educational experiences instantly via web,",
-      "line2": "or use the Android app for guided, on-site engagement",
-      "line3": "during programs and events."
+      "line1": "Run themed AR experiences instantly via web,",
+      "line2": "or use the Android app for guided,",
+      "line3": ", on-site engagement during school programs and events."
     },
     "web": {
       "prefix": "Start on",

@@ -7,10 +7,11 @@ export interface category {
   name: string
 }
 
-export interface CreateOrderDto {
-  categoryId: number
-  title: string
-  media: string
+export interface book {
+  name: number
+  email: string
+  phone: string
+  category_ids:Array<number>
 }
 
 /* ========== GET APIs ========== */
@@ -22,7 +23,7 @@ export const getcategorys = async (): Promise<category[]> => {
 
 /* ========== POST API ========== */
 
-export const createOrder = async (data: CreateOrderDto) => {
-  const res = await api.post('/orders', data)
-  return res.data
+export const bookLife = async (data: book) => {
+  const res = await api.post('/booking/store', data)
+  return res.data.data
 }

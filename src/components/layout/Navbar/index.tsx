@@ -1,12 +1,9 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import {Link} from '@/i18n/navigation';
-import {
-  FiChevronDown,
-  FiGlobe,
-} from 'react-icons/fi';
+import { useState } from "react";
+import Image from "next/image";
+import { Link } from "@/i18n/navigation";
+import { FiChevronDown, FiGlobe } from "react-icons/fi";
 import {
   PiCubeFocus,
   PiFlask,
@@ -15,24 +12,50 @@ import {
   PiHeart,
   PiTent,
   PiVirtualReality,
-} from 'react-icons/pi';
-import { useTranslations } from 'next-intl';
-import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
-
-
+} from "react-icons/pi";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
 
   const solutions = [
-    { name: 'OCTAR Ecosystem', icon: <PiCubeFocus color="#32a8a4" />, href: '/octar' },
-    { name: 'VCLAB Virtual Labs', icon: <PiFlask color="#36ba53" />, href: '/vclab' },
-    { name: 'Life Digital Environment', icon: <PiHandPointing color="#364eba" />, href: '/life' },
-    { name: 'AR Stories & Campaigns', icon: <PiSparkle color="#b3ba36" />, href: '/ar-stories' },
-    { name: 'Learning Support', icon: <PiHeart color="#ba3636" />, href: '/learning-support' },
-    { name: 'Educational Planetarium', icon:<PiTent color="#E09B00"/>, href: '/planetarium' },
-    { name: 'VR Experiences', icon: <PiVirtualReality color="#ad36ba" />, href: '/vr' },
+    {
+      name: "OCTAR Ecosystem",
+      icon: <PiCubeFocus color="#32a8a4" />,
+      href: "/octar",
+    },
+    {
+      name: "VCLAB Virtual Labs",
+      icon: <PiFlask color="#36ba53" />,
+      href: "/vclab",
+    },
+    {
+      name: "Life Digital Environment",
+      icon: <PiHandPointing color="#364eba" />,
+      href: "/life",
+    },
+    {
+      name: "AR Stories & Campaigns",
+      icon: <PiSparkle color="#b3ba36" />,
+      href: "/ar-stories",
+    },
+    {
+      name: "Learning Support",
+      icon: <PiHeart color="#ba3636" />,
+      href: "/learning-support",
+    },
+    {
+      name: "Educational Planetarium",
+      icon: <PiTent color="#E09B00" />,
+      href: "/planetarium",
+    },
+    {
+      name: "VR Experiences",
+      icon: <PiVirtualReality color="#ad36ba" />,
+      href: "/vr",
+    },
   ];
 
   const t = useTranslations();
@@ -41,7 +64,6 @@ const Navbar = () => {
     <nav className="top-0 left-0 right-0 py-6 bg-white z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -55,12 +77,11 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8 ms-auto relative">
-
             <Link
               href="/"
               className="text-gray-900 font-bold border-b-2 border-purple-500 pb-1"
             >
-              {t('navbar.home')}
+              {t("navbar.home")}
             </Link>
 
             {/* Solutions Dropdown */}
@@ -70,10 +91,10 @@ const Navbar = () => {
               onMouseLeave={() => setOpenDropdown(false)}
             >
               <button className="text-gray-600 font-bold hover:text-gray-900 flex items-center">
-                {t('navbar.solutions')}
+                {t("navbar.solutions")}
                 <FiChevronDown
                   className={`transition-transform duration-300 ${
-                    openDropdown ? 'rotate-180' : ''
+                    openDropdown ? "rotate-180" : ""
                   }`}
                 />
               </button>
@@ -82,8 +103,8 @@ const Navbar = () => {
               <div
                 className={`absolute top-10 left-0 w-80 bg-white rounded-2xl shadow-xl p-5 transition-all duration-300 ${
                   openDropdown
-                    ? 'opacity-100 visible translate-y-0'
-                    : 'opacity-0 invisible -translate-y-2'
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible -translate-y-2"
                 }`}
               >
                 <div className="space-y-4">
@@ -109,27 +130,27 @@ const Navbar = () => {
               href="/impact"
               className="text-gray-600 font-bold hover:text-gray-900"
             >
-              {t('navbar.impact')}
+              {t("navbar.impact")}
             </Link>
 
             <Link
               href="/about"
-              className="text-gray-600 font-bold hover:text-gray-900 "
+              className="text-gray-600 font-bold hover:text-gray-900"
             >
-              {t('navbar.about')}
+              {t("navbar.about")}
             </Link>
           </div>
 
           {/* Right Side */}
-          <div className="hidden md:flex">
+          <div className="hidden p-5 md:flex items-center gap-3 border-l border-gray-200 pl-8 ms-8">
             <Link
               href="/contact"
-              className="ms-3 bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] text-white px-2 py-2.5 rounded-lg font-medium hover:opacity-90 transition"
+              className="bg-gradient-to-r p-2 from-[#A88EEF] to-[#79B9CE] text-white px-5 py-2.5 rounded-lg font-medium hover:opacity-90 transition whitespace-nowrap"
             >
-              {t('navbar.contact')}
+              {t("navbar.contact")}
             </Link>
 
-            <LanguageSwitcher className='mx-2'/>
+            <LanguageSwitcher className="mx-2" />
           </div>
 
           {/* Mobile menu button */}
@@ -138,7 +159,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-600"
             >
-              {isOpen ? '✕' : '☰'}
+              {isOpen ? "✕" : "☰"}
             </button>
           </div>
         </div>
@@ -146,62 +167,61 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white  border-t px-4 py-4 space-y-3">
+        <div className="md:hidden bg-white border-t px-4 py-4 space-y-3">
           <Link href="/" className="block font-bold">
-            {t('navbar.home')}
+            {t("navbar.home")}
           </Link>
-           <div
-              className="relative"
-              onMouseEnter={() => setOpenDropdown(true)}
-              onMouseLeave={() => setOpenDropdown(false)}
-            >
-              <button className="text-gray-600 font-bold hover:text-gray-900 flex items-center gap-1">
-                {t('navbar.solutions')}
-                <FiChevronDown
-                  className={`transition-transform duration-300 ${
-                    openDropdown ? 'rotate-180' : ''
-                  }`}
-                />
-              </button>
-
-              {/* Dropdown Panel */}
-              <div
-                className={`absolute top-10 left-0 w-80 bg-white rounded-2xl shadow-xl p-5 transition-all duration-300 ${
-                  openDropdown
-                    ? 'opacity-100 visible translate-y-0'
-                    : 'opacity-0 invisible -translate-y-2'
+          <div
+            className="relative"
+            onMouseEnter={() => setOpenDropdown(true)}
+            onMouseLeave={() => setOpenDropdown(false)}
+          >
+            <button className="text-gray-600 font-bold hover:text-gray-900 flex items-center gap-1">
+              {t("navbar.solutions")}
+              <FiChevronDown
+                className={`transition-transform duration-300 ${
+                  openDropdown ? "rotate-180" : ""
                 }`}
-              >
-                <div className="space-y-4">
-                  {solutions.map((item, index) => (
-                    <Link
-                      key={index}
-                      href={item.href}
-                      className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 transition"
-                    >
-                      <span className="text-xl text-purple-600">
-                        {item.icon}
-                      </span>
-                      <span className="font-medium text-gray-700">
-                        {item.name}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
+              />
+            </button>
+
+            {/* Dropdown Panel */}
+            <div
+              className={`absolute top-10 left-0 w-80 bg-white rounded-2xl shadow-xl p-5 transition-all duration-300 ${
+                openDropdown
+                  ? "opacity-100 visible translate-y-0"
+                  : "opacity-0 invisible -translate-y-2"
+              }`}
+            >
+              <div className="space-y-4">
+                {solutions.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 transition"
+                  >
+                    <span className="text-xl text-purple-600">{item.icon}</span>
+                    <span className="font-medium text-gray-700">
+                      {item.name}
+                    </span>
+                  </Link>
+                ))}
               </div>
             </div>
+          </div>
           <Link href="/impact" className="block">
-            Impact
+            {t("navbar.impact")}
           </Link>
           <Link href="/about" className="block">
-            About us
+            {t("navbar.about")}
           </Link>
           <Link
             href="/contact"
-            className="block bg-purple-500 text-white px-2 py-2 rounded-lg"
+            className="block bg-purple-500 text-white px-4 py-2 rounded-lg"
           >
-            Contact us
+            {t("navbar.contact")}
           </Link>
+          <LanguageSwitcher className="mx-2" />
         </div>
       )}
     </nav>

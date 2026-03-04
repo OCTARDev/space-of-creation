@@ -1,9 +1,11 @@
 import "./style.css";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
+
+import Link from "next/link";
 
 export default function BookLearningSection() {
-  const t = useTranslations('learning_book');
-  
+  const t = useTranslations("learning_book");
+
   return (
     <section className="relative w-full py-24 px-6 text-center overflow-hidden">
       {/* Background: SVG waves layer */}
@@ -15,21 +17,19 @@ export default function BookLearningSection() {
       {/* Content */}
       <div className="relative max-w-4xl mx-auto z-10">
         <h1 className="text-4xl md:text-5xl font-semibold text-gray-800 mb-6">
-          {t('title')}
+          {t("title")}
         </h1>
 
-        <p className="text-lg md:text-xl text-gray-700 mb-8">
-          {t('subtitle')}
-        </p>
+        <p className="text-lg md:text-xl text-gray-700 mb-8">{t("subtitle")}</p>
 
         <div className="mb-6">
           <button className="px-8 py-3 rounded-2xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
-            {t('button')}
+            <Link href={"/contact"}>{t("button")}</Link>{" "}
           </button>
         </div>
 
         <p className="text-black-800 text-3xl z-10">
-          {t('call')} {t('phone')}
+          {t("call")} {t("phone")}
         </p>
       </div>
     </section>

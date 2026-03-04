@@ -3,7 +3,8 @@
 import Image from "next/image";
 import bgcover from "@/assets/media/arcover.png";
 import { Star, Users, Globe } from "lucide-react";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 const stats = [
   { value: "90%", key: "recall" },
@@ -13,12 +14,11 @@ const stats = [
 ];
 
 export default function Hero() {
-  const t = useTranslations('arstories_hero');
-  
+  const t = useTranslations("arstories_hero");
+
   return (
     <section className="relative overflow-hidden">
       <div className="relative h-screen w-full">
-        
         {/* Background Image */}
         <Image
           src={bgcover}
@@ -33,53 +33,52 @@ export default function Hero() {
 
         {/* Content */}
         <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-14 lg:px-20 max-w-2xl pb-24">
-          
           {/* Breadcrumb */}
           <p className="text-sm text-gray-300 mb-6">
-            {t('breadcrumb.home')} / {t('breadcrumb.solutions')} /{" "}
-            <span className="text-[#79B9CE]">{t('breadcrumb.ar')}</span>
+            {t("breadcrumb.home")} / {t("breadcrumb.solutions")} /{" "}
+            <span className="text-[#79B9CE]">{t("breadcrumb.ar")}</span>
           </p>
 
           {/* Ideal for */}
           <p className="text-gray-200 text-sm md:text-base leading-relaxed mb-2 max-w-md">
-            {t('ideal')}
+            {t("ideal")}
           </p>
 
           {/* Heading */}
           <h2 className="text-white text-5xl md:text-4xl font-extrabold leading-tight mb-6">
-            {t('title')}
+            {t("title")}
           </h2>
 
           {/* Description */}
           <p className="text-gray-200 text-sm md:text-base leading-relaxed mb-8 max-w-md">
-            {t('subtitle')}
+            {t("subtitle")}
           </p>
 
           {/* Feature Badges */}
           <div className="flex flex-wrap gap-3 mb-8">
             <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm border border-white/20">
               <Users size={16} />
-              {t('badges.recall')}
+              {t("badges.recall")}
             </div>
 
             <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm border border-white/20">
               <Star size={16} />
-              {t('badges.engagement')}
+              {t("badges.engagement")}
             </div>
 
             <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm border border-white/20">
               <Globe size={16} />
-              {t('badges.noapp')}
+              {t("badges.noapp")}
             </div>
           </div>
-          
+
           <div>
             <button className="px-6 py-3 rounded-xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
-              {t('button')}
+              <Link href={"/contact"}>{t("button")}</Link>{" "}
             </button>
           </div>
         </div>
-        
+
         {/* Stats Bar */}
         <div className="absolute bottom-10 left-0 right-0 z-20 backdrop-blur-md bg-[#DEF9FF33] border-t border-white/10">
           <div className="max-w-5xl mx-auto px-6 md:px-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-white/20">
@@ -98,7 +97,6 @@ export default function Hero() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

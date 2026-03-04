@@ -4,10 +4,16 @@ import { FiMonitor } from "react-icons/fi";
 import { FaGraduationCap, FaStar, FaTrophy } from "react-icons/fa";
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
+import { useState } from "react";
 
 export default function HeroHeader() {
   const t = useTranslations('home_hero');
-  
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const youtubeId = "WPX3_4RWXcw";
+  const thumbnailUrl = `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`;
+  const embedUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+
   return (
     <section className="z-20 relative overflow-hidden my-20 ">
       
@@ -86,18 +92,50 @@ export default function HeroHeader() {
         {/* Browser Mockup */}
         <div className="relative mt-14 flex justify-center">
           <div className="w-full max-w-4xl bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-            
-            {/* Browser Top */}
-            <div className="flex items-center gap-2 px-4 py-3 bg-gray-100">
-              <span className="w-3 h-3 bg-red-400 rounded-full"></span>
-              <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
-              <span className="w-3 h-3 bg-green-400 rounded-full"></span>
+
+            {/* Video — 16:9 aspect ratio */}
+            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+              {isPlaying ? (
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src={embedUrl}
+                  title="Hero video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <div className="absolute inset-0 w-full h-full">
+                  {/* Thumbnail */}
+                  <img
+                    src={thumbnailUrl}
+                    alt="Video thumbnail"
+                    className="w-full h-full object-cover"
+                  />
+
+                  {/* Subtle dark overlay */}
+                  <div className="absolute inset-0 bg-black bg-opacity-10" />
+
+                  {/* Play button */}
+                  <button
+                    onClick={() => setIsPlaying(true)}
+                    className="absolute inset-0  flex items-center justify-center group"
+                    aria-label="Play video"
+                  >
+                    <div className="w-16 h-16 p-5 bg-white rounded-full flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110">
+                      <svg
+                        className="w-6 h-6 text-gray-800 ml-1"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              )}
             </div>
 
-            {/* Video Placeholder */}
-            <div className="relative h-100 bg-grid-pattern bg-gray-50 flex items-center justify-center">
-              {/* Video component commented out as in original */}
-            </div>
           </div>
         </div>
       </div>

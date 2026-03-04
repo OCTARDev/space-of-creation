@@ -4,7 +4,8 @@ import Image from "next/image";
 import bgcover from "@/assets/media/vclavcv.png";
 import { Star, Users, Globe } from "lucide-react";
 import { useTranslations } from 'next-intl';
-
+import Link from "next/link";
+  
 const stats = [
   { value: "50+", key: "experiments" },
   { value: "42%", key: "improvement" },
@@ -70,7 +71,7 @@ export default function Hero() {
           
           <div>
             <button className="px-6 py-3 rounded-xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
-              {t('button')}
+            <Link href={"/contact"}>{t("button")}</Link>
             </button>
           </div>
         </div>

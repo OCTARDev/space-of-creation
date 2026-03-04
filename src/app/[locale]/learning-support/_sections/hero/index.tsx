@@ -3,15 +3,16 @@
 import Image from "next/image";
 import bgcover from "@/assets/media/learncover.png";
 import { Star, Users, Globe } from "lucide-react";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function Hero() {
-  const t = useTranslations('learning_hero');
-  
+  const t = useTranslations("learning_hero");
+
   const badges = [
-    { key: 'engagement', icon: Users },
-    { key: 'safe', icon: Star },
-    { key: 'centers', icon: Globe },
+    { key: "engagement", icon: Users },
+    { key: "safe", icon: Star },
+    { key: "centers", icon: Globe },
   ];
 
   return (
@@ -33,23 +34,23 @@ export default function Hero() {
         <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-14 lg:px-20 max-w-2xl pb-24">
           {/* Breadcrumb */}
           <p className="text-sm text-gray-300 mb-6">
-            {t('breadcrumb.home')} / {t('breadcrumb.solutions')} /{" "}
-            <span className="text-[#79B9CE]">{t('breadcrumb.learning')}</span>
+            {t("breadcrumb.home")} / {t("breadcrumb.solutions")} /{" "}
+            <span className="text-[#79B9CE]">{t("breadcrumb.learning")}</span>
           </p>
 
           {/* For */}
           <p className="text-gray-200 text-sm md:text-base leading-relaxed mb-2 max-w-md">
-            {t('for')}
+            {t("for")}
           </p>
 
           {/* Heading */}
           <h2 className="text-white text-5xl md:text-4xl font-extrabold leading-tight mb-6">
-            {t('title')}
+            {t("title")}
           </h2>
 
           {/* Description */}
           <p className="text-gray-200 text-sm md:text-base leading-relaxed mb-8 max-w-md">
-            {t('subtitle')}
+            {t("subtitle")}
           </p>
 
           {/* Feature Badges */}
@@ -57,7 +58,7 @@ export default function Hero() {
             {badges.map((badge) => {
               const Icon = badge.icon;
               return (
-                <div 
+                <div
                   key={badge.key}
                   className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-sm border border-white/20"
                 >
@@ -67,10 +68,10 @@ export default function Hero() {
               );
             })}
           </div>
-          
+
           <div>
             <button className="px-6 py-3 rounded-xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
-              {t('button')}
+              <Link href={"/contact"}>{t("button")}</Link>{" "}
             </button>
           </div>
         </div>

@@ -67,7 +67,7 @@ export default function Features() {
             </div>
             
             <h3 className="text-lg font-semibold text-gray-900 mb-5">
-              {t(`cards.${card.key}.title`)}
+                {t(`cards.${card.key}.title`)}
             </h3>
             
             {[0, 1, 2, 3].map((index) => (

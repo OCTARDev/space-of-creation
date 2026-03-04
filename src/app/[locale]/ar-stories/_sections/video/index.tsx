@@ -1,12 +1,16 @@
 "use client";
 
-import Video from "next-video";
 import { useState } from "react";
 import { useTranslations } from 'next-intl';
 
 export default function VideoSection() {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const t = useTranslations('arstories_video');
+
+  // Extract YouTube video ID from the URL
+  const youtubeId = "-SwnqS2D-j4";
+  const thumbnailUrl = `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`;
+  const embedUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
 
   return (
     <section className="min-h-screen bg-white flex flex-col items-center justify-center px-6 py-16 font-sans">
@@ -27,49 +31,58 @@ export default function VideoSection() {
           background: "linear-gradient(135deg, #E1F4F9 0%, #EDE2FF 100%)",
         }}
       >
-
-        
-        {/* Gradient background layers for depth */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, #E1F4F9 0%, #b8ccd8 40%, #8da3b0 70%, #6b8290 100%)",
-          }}
-        />
-
         {/* Video content area */}
-        <div className="relative flex items-center justify-center"
-          style={{ minHeight: "380px" }}>
-
-            
-            {/* <Video   
-                src="https://res.cloudinary.com/dhqe8isrb/video/upload/v1760132818/sectionVideo/njjzgcantnf3erimbx7o.mp4"
-                
-                
-                
+        <div className="relative w-full" style={{ paddingBottom: "56.25%" /* 16:9 aspect ratio */ }}>
+          {isPlaying ? (
+            /* YouTube iframe — shown after clicking play */
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src={embedUrl}
+              title="Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          ) : (
+            /* Thumbnail + custom play button */
+            <div className="absolute inset-0 w-full h-full">
+              {/* Thumbnail */}
+              <img
+                src={thumbnailUrl}
+                alt="Video thumbnail"
                 className="w-full h-full object-cover"
-              /> */}
-          {/* Play button */}
-          <button
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            className="relative z-10 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg transition-transform duration-200"
-            style={{
-              transform: isHovered ? "scale(1.08)" : "scale(1)",
-            }}
-            aria-label="Play video"
-          >
-          </button>
-        </div>
+              />
 
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black bg-opacity-20" />
+
+              {/* Play button */}
+              <button
+                onClick={() => setIsPlaying(true)}
+                className="absolute inset-0 px-10 text-redasdsadsadsa flex items-center justify-center group"
+                aria-label="Play video"
+              >
+                <div className="w-16 h-16 px-10 bg-white rounded-full flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110">
+                  {/* Triangle play icon */}
+                  <svg
+                    className="w-6 h-6 text-gray-800 ml-1"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </button>
+            </div>
+          )}
+        </div>
 
         {/* Bottom caption bar */}
         <div className="relative text-center z-10 bg-gray-700 bg-opacity-90 px-5 py-3">
-          <p className="text-white text-sm font-medium">
+          <p className="text-gray-500 text-sm font-medium">
             {t('caption.title')}
           </p>
-          <p className="text-gray-300 text-xs mt-0.5">
+          <p className="text-gray-350 text-xs mt-0.5">
             {t('caption.subtitle')}
           </p>
         </div>

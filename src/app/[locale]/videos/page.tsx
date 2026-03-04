@@ -1,347 +1,323 @@
 "use client";
-
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Play, Globe } from "lucide-react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 
 const ITEMS_PER_PAGE = 9;
 
-type Video = {
-  id: number;
-  title: string;
-  year: number;
-  duration: string;
-  ageRating: string;
-  description: string;
-  languages: string[];
-  thumbnail: string;
-  heroImage: string;
-  category: string;
-};
-
-const VIDEOS: Video[] = [
+const allCategories = [
   {
     id: 1,
-    title: "NASA's Journey to Mars",
-    year: 2014,
-    duration: "1h 20min",
-    ageRating: "8+",
+    title: "NASA'S Journey to Mars",
+    img: "https://api.adgrouptech.com/images/services/0395c6ce8e1238abf44027dd534fcaf31683446343.webp",
+    cover: "https://api.adgrouptech.com/images/services/56e4744bb54621dc49b5ec35f3edee9f1683446344.webp",
+    video: "https://www.youtube.com/watch?v=emnp5-Rc4NE",
+    year: "2014",
+    duration: "20 mins",
+    rating: "HR / Rulesome",
+    subtitle: "The story of the supernova 7+ | 20 mins | HR / Rulesome",
+    studio: "Rocket Jonuals Publications Films",
+    subject: "The 1776 Lists",
+    languages: "English, French",
     description:
-      "This bright and colorful film tells the story of a star's life-cycle from its birth as a gas cloud nebula to the end of its life in the form of a black hole or a supernova star. All filmic principles are developed to the maximum extent possible and are accessible for both children and students.",
-    languages: ["English", "Arabic", "French", "Spanish"],
-    thumbnail: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=400&h=290&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=1600&h=900&fit=crop",
-    category: "Space",
+      "This bright and colorful film tells the story of a star's life cycle: from its birth in gas dust nebulae to the end of life in the form of a black hole or a supernova star. All these phenomena are explained to the maximum extent possible and are accessible for both children and students.",
   },
   {
     id: 2,
-    title: "A Tale of Scale",
-    year: 2018,
-    duration: "45min",
-    ageRating: "6+",
-    description: "An exploration of the vastness of the universe from the smallest atom to the largest galaxy clusters.",
-    languages: ["English", "German"],
-    thumbnail: "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=400&h=290&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1600&h=900&fit=crop",
-    category: "Science",
+    title: "A Tale of scale",
+    img: "https://api.adgrouptech.com/images/services/6485a52dd282f688874a027b873e080d1683446496.webp",
+    cover: "https://api.adgrouptech.com/images/services/6485a52dd282f688874a027b873e080d1683446496.webp",
+    video: "https://www.youtube.com/watch?v=26b-ghmjR7U",
+    year: "2015",
+    duration: "18 mins",
+    rating: "HR / Rulesome",
+    subtitle: "The story of scale 7+ | 18 mins | HR / Rulesome",
+    studio: "Space Films Studio",
+    subject: "Scale & Universe",
+    languages: "English, French",
+    description:
+      "A fascinating journey exploring the immense scale of our universe, from the smallest subatomic particles to the largest galactic structures known to science.",
   },
   {
     id: 3,
-    title: "Astralia",
-    year: 2020,
-    duration: "1h 5min",
-    ageRating: "10+",
-    description: "A breathtaking journey through the cosmos, unveiling the secrets of distant worlds and alien landscapes.",
-    languages: ["English", "Japanese"],
-    thumbnail: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=400&h=290&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1600&h=900&fit=crop",
-    category: "Documentary",
+    title: "Astralis",
+    img: "https://api.adgrouptech.com/images/services/c41d48ad67d67cc7025ae7169d4bcdac1683446622.webp",
+    cover: "https://api.adgrouptech.com/images/services/52bb8d6fdd92282c825ad5ed260bef3f1683446622.webp",
+    video: "https://www.youtube.com/watch?v=ND9T-rNx5E8",
+    year: "2016",
+    duration: "22 mins",
+    rating: "HR / Rulesome",
+    subtitle: "Astralis 7+ | 22 mins | HR / Rulesome",
+    studio: "Stellar Productions",
+    subject: "Stars & Galaxies",
+    languages: "English, Spanish",
+    description:
+      "Astralis takes viewers on a breathtaking visual journey through star clusters, nebulae, and the birth of new solar systems across the Milky Way galaxy.",
   },
   {
     id: 4,
     title: "Bizarre Moons",
-    year: 2019,
-    duration: "55min",
-    ageRating: "8+",
-    description: "Discover the strangest moons in our solar system, from Europa's frozen oceans to Titan's methane lakes.",
-    languages: ["English", "French"],
-    thumbnail: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&h=290&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1600&h=900&fit=crop",
-    category: "Space",
+    img: "https://api.adgrouptech.com/images/services/afd3da21d1211a8e80982cc01aebfccb1683446878.webp",
+    cover: "https://api.adgrouptech.com/images/services/3ce12fa555b579e4d4508758c8075dea1683446878.webp",
+    video: "https://www.youtube.com/watch?v=ND9T-rNx5E8",
+    year: "2017",
+    duration: "25 mins",
+    rating: "HR / Rulesome",
+    subtitle: "Bizarre Moons 7+ | 25 mins | HR / Rulesome",
+    studio: "Cosmic Films",
+    subject: "Moons & Planets",
+    languages: "English, French",
+    description:
+      "Discover the strangest moons in our solar system — from Europa's icy ocean to Titan's methane lakes — and what they might tell us about life beyond Earth.",
   },
   {
     id: 5,
-    title: "Once Upon the Big Bang",
-    year: 2017,
-    duration: "1h 15min",
-    ageRating: "10+",
-    description: "Travel back 13.8 billion years to witness the birth of the universe and the formation of the first stars.",
-    languages: ["English", "Arabic", "Spanish"],
-    thumbnail: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400&h=290&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1600&h=900&fit=crop",
-    category: "Science",
+    title: "Once uponTheBigBang",
+    img: "https://api.adgrouptech.com/images/services/794e024d427889bb1fa5abec2b7dcee71683447585.webp",
+    cover: "https://api.adgrouptech.com/images/services/794e024d427889bb1fa5abec2b7dcee71683447585.webp",
+    video: "https://www.youtube.com/watch?v=y-bvynYNIb4",
+    year: "2018",
+    duration: "30 mins",
+    rating: "HR / Rulesome",
+    subtitle: "Big Bang 7+ | 30 mins | HR / Rulesome",
+    studio: "Origin Stories",
+    subject: "Cosmology",
+    languages: "English",
+    description:
+      "Travel back 13.8 billion years to the very beginning of the universe. Witness the Big Bang and follow the formation of matter, stars, galaxies, and ultimately life.",
   },
   {
     id: 6,
-    title: "Incredible: Introduction to the Solar System",
-    year: 2021,
-    duration: "1h 30min",
-    ageRating: "6+",
-    description: "A comprehensive tour of our solar system designed to ignite curiosity in young minds about space exploration.",
-    languages: ["English", "Mandarin", "Arabic"],
-    thumbnail: "https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=400&h=290&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=1600&h=900&fit=crop",
-    category: "Education",
+    title: "Incredible Introduction to the solar system",
+    img: "https://api.adgrouptech.com/images/services/a669cb7750da5c74a41d3259519bc7ee1683447868.webp",
+    cover: "https://api.adgrouptech.com/images/services/208689df74033c800b5e17ed4310688d1683447868.webp",
+    video: "https://www.youtube.com/watch?v=PC2P4V5vSOo",
+    year: "2019",
+    duration: "28 mins",
+    rating: "HR / Rulesome",
+    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
+    studio: "NASA Education",
+    subject: "Solar System",
+    languages: "English, French",
+    description:
+      "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
   {
     id: 7,
     title: "New Horizons",
-    year: 2016,
-    duration: "50min",
-    ageRating: "8+",
-    description: "Follow the New Horizons spacecraft on its historic mission to Pluto and beyond into the Kuiper Belt.",
-    languages: ["English"],
-    thumbnail: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=290&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&h=900&fit=crop",
-    category: "Space",
+    img: "https://api.adgrouptech.com/images/services/32795c31ecf6dce1995d0f5bf43a7c171683447585.webp",
+    cover: "https://api.adgrouptech.com/images/services/32795c31ecf6dce1995d0f5bf43a7c171683447585.webp",
+    video: "https://www.youtube.com/watch?v=y-bvynYNIb4",
+    year: "2020",
+    duration: "20 mins",
+    rating: "HR / Rulesome",
+    subtitle: "New Horizons 7+ | 20 mins | HR / Rulesome",
+    studio: "Deep Space Films",
+    subject: "Space Exploration",
+    languages: "English",
+    description:
+      "Follow the New Horizons spacecraft on its historic mission past Pluto and into the mysterious Kuiper Belt at the edge of our solar system.",
   },
   {
     id: 8,
     title: "Enigma",
-    year: 2022,
-    duration: "1h 10min",
-    ageRating: "12+",
-    description: "Dark matter, dark energy, and the deepest mysteries of the cosmos — science confronts the unknown.",
-    languages: ["English", "French", "German"],
-    thumbnail: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=400&h=290&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=1600&h=900&fit=crop",
-    category: "Science",
-  },
-  {
-    id: 9,
-    title: "Map to the Chocolate Planet",
-    year: 2015,
-    duration: "40min",
-    ageRating: "4+",
-    description: "A fun-filled animated adventure for young explorers discovering a planet made entirely of chocolate.",
-    languages: ["English", "Spanish", "Arabic"],
-    thumbnail: "https://images.unsplash.com/photo-1545156521-77bd85671d30?w=400&h=290&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1545156521-77bd85671d30?w=1600&h=900&fit=crop",
-    category: "Animation",
-  },
-  {
-    id: 10,
-    title: "Mexico: Archeoastronomy Between Space and Time",
-    year: 2023,
-    duration: "1h 25min",
-    ageRating: "10+",
-    description: "Explore how ancient Mexican civilizations tracked celestial movements and built monuments aligned with the stars.",
-    languages: ["Spanish", "English"],
-    thumbnail: "https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?w=400&h=290&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?w=1600&h=900&fit=crop",
-    category: "History",
-  },
-  {
-    id: 11,
-    title: "Stellar Nurseries",
-    year: 2020,
-    duration: "58min",
-    ageRating: "8+",
-    description: "Inside the giant molecular clouds where new stars are born every second across the Milky Way.",
-    languages: ["English", "French"],
-    thumbnail: "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=400&h=290&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=1600&h=900&fit=crop",
-    category: "Space",
-  },
-  {
-    id: 12,
-    title: "Black Hole Hunters",
-    year: 2019,
-    duration: "1h 18min",
-    ageRating: "12+",
-    description: "The story behind the first ever photograph of a black hole and the scientists who made it possible.",
-    languages: ["English", "German", "Japanese"],
-    thumbnail: "https://images.unsplash.com/photo-1520034475321-cbe63696469a?w=400&h=290&fit=crop",
-    heroImage: "https://images.unsplash.com/photo-1520034475321-cbe63696469a?w=1600&h=900&fit=crop",
-    category: "Science",
+    img: "https://api.adgrouptech.com/images/services/794e024d427889bb1fa5abec2b7dcee71683447585.webp",
+    cover: "https://api.adgrouptech.com/images/services/32795c31ecf6dce1995d0f5bf43a7c171683447585.webp",
+    video: "https://www.youtube.com/watch?v=y-bvynYNIb4",
+    year: "2021",
+    duration: "24 mins",
+    rating: "HR / Rulesome",
+    subtitle: "Enigma 7+ | 24 mins | HR / Rulesome",
+    studio: "Mystery Films",
+    subject: "Dark Matter",
+    languages: "English, French",
+    description:
+      "Explore the deepest mysteries of the cosmos — dark matter, dark energy, and the unseen forces that shape the fate of the entire universe.",
   },
 ];
 
 export default function Videos() {
-  const [activeVideo, setActiveVideo] = useState<Video>(VIDEOS[0]);
+  const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [activeCategory, setActiveCategory] = useState(allCategories[0]);
 
-  const totalPages = Math.ceil(VIDEOS.length / ITEMS_PER_PAGE);
-  const paginated = VIDEOS.slice(
+  const filtered = allCategories.filter((cat) =>
+    cat.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+  const paginated = filtered.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE
   );
 
-  const handleVideoClick = (video: Video) => {
-    setActiveVideo(video);
+  const handleCategoryClick = (cat: (typeof allCategories)[0]) => {
+    setActiveCategory(cat);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    setCurrentPage(1);
+  };
+
+  const openVideo = () => {
+    window.open(activeCategory.video, "_blank");
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50 font-sans">
-      {/* ── Hero ── */}
-      <section className="relative h-screen w-full overflow-hidden">
+    <div className="min-h-screen bg-[#f7f8fa]" style={{ fontFamily: "'Segoe UI', Arial, sans-serif" }}>
+      {/* ── Hero Section ── */}
+      <section className="relative h-screen overflow-hidden">
         {/* Background */}
         <img
-          src={activeVideo.heroImage}
-          alt={activeVideo.title}
-          className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
+          src={activeCategory.cover}
+          alt={activeCategory.title}
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = activeCategory.img;
+          }}
         />
+
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/10" />
 
         {/* Content */}
-        <div className="relative h-full max-w-7xl mx-auto px-6 lg:px-12 flex items-center">
-          <div className="max-w-2xl text-white">
-            {/* Breadcrumb */}
-            <p className="text-xs md:text-sm text-gray-300 mb-4 tracking-wide">
-              Life Digital Environment / Videos /{" "}
-              <span className="text-sky-400 font-semibold">{activeVideo.title}</span>
-            </p>
+        <div className="relative h-full max-w-[1200px] mx-auto px-8 flex items-center">
+          <div className="max-w-[580px] text-white">
+            <p className="text-[25px] text-gray-300 mb-2.5">{activeCategory.subtitle}</p>
 
-            {/* Title */}
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
-              {activeVideo.title}{" "}
-              <span className="text-gray-300 font-normal text-2xl md:text-3xl">
-                ({activeVideo.year})
-              </span>
+            <h1 className="text-[42px] font-extrabold mb-4 leading-tight tracking-tight">
+              {activeCategory.title}{" "}
+              <span className="font-normal text-[32px] text-gray-300">({activeCategory.year})</span>
             </h1>
 
-            {/* Meta row */}
-            <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-gray-300 mb-4">
-              <span>Duration of the experience: {activeVideo.duration} | {activeVideo.ageRating} | Published</span>
-            </div>
-
-            {/* Description */}
-            <p className="text-sm md:text-base text-gray-200 leading-relaxed mb-6 max-w-xl">
-              {activeVideo.description}
+            <p className="text-lg leading-relaxed text-gray-200 mb-6 max-w-[520px]">
+              {activeCategory.description}
             </p>
 
-            {/* Info grid */}
-            <div className="flex flex-wrap gap-8 mb-8">
+            <div className="flex gap-10 mb-7">
               <div>
-                <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">Main Information</p>
-                <p className="text-xs text-gray-300">Category: {activeVideo.category}</p>
-                <p className="text-xs text-gray-300">Rating: {activeVideo.ageRating}</p>
-                <p className="text-xs text-gray-300">Duration: {activeVideo.duration}</p>
+                <p className="text-[11px] text-gray-400 mb-1 uppercase tracking-wide">Main Information</p>
+                <p className="text-gray-300">{activeCategory.studio}</p>
+                <p className="text-gray-300">{activeCategory.subject}</p>
               </div>
               <div>
-                <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">Languages</p>
-                {activeVideo.languages.map((lang) => (
-                  <p key={lang} className="text-xs text-gray-300">{lang}</p>
-                ))}
+                <p className="text-[11px] text-gray-400 mb-1 uppercase tracking-wide">Languages</p>
+                <p className=" text-gray-300">{activeCategory.languages}</p>
               </div>
             </div>
 
-            {/* CTA */}
-            <button className="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-400 transition-colors text-white text-sm font-semibold px-6 py-3 rounded-full shadow-lg">
-              <Play size={15} fill="white" />
+            <button
+              onClick={openVideo}
+              className="inline-flex mt-10 items-center px-6 py-3 rounded-xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition"
+            >
+              <Play size={16} fill="white" />
               Start Watching
             </button>
           </div>
         </div>
       </section>
 
-      {/* ── Videos Grid ── */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-14">
-        {/* Section heading */}
-        <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Explore the Universe</h2>
-          <p className="text-sm text-gray-500 mt-1">
-            Fun, age-appropriate videos that turn space science into an exciting adventure.
-          </p>
-        </div>
-
-        {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-          {paginated.map((video) => {
-            const isActive = activeVideo.id === video.id;
-            return (
-              <button
-                key={video.id}
-                onClick={() => handleVideoClick(video)}
-                className={`group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 text-left ${
-                  isActive ? "ring-2 ring-sky-500 shadow-lg" : ""
-                }`}
-              >
-                {/* Active checkmark */}
-                {isActive && (
-                  <div className="absolute top-2 right-2 z-10 w-6 h-6 rounded-full bg-sky-500 flex items-center justify-center shadow-md">
-                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
-                      <path d="M2 6l3 3 5-5" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                )}
-
-                {/* Thumbnail */}
-                <div className="relative w-full" style={{ paddingBottom: "72%" }}>
-                  <img
-                    src={video.thumbnail}
-                    alt={video.title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = `https://placehold.co/400x290/dde1ea/9ca3af?text=${encodeURIComponent(video.title)}`;
-                    }}
-                  />
-                  {/* Play icon on hover */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
-                    <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center shadow">
-                      <Play size={16} fill="#0ea5e9" color="#0ea5e9" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Title */}
-                <div className="p-3">
-                  <h3 className={`text-xs sm:text-sm font-semibold leading-snug transition-colors ${
-                    isActive ? "text-sky-600" : "text-gray-800 group-hover:text-sky-600"
-                  }`}>
-                    {video.title}
-                  </h3>
-                </div>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Pagination */}
-        {totalPages > 1 && (
-          <div className="flex items-center justify-center gap-2 mt-10">
-            <button
-              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-              disabled={currentPage === 1}
-              className="w-9 h-9 flex items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed"
-            >
-              <ChevronLeft size={16} />
-            </button>
-
-            {[...Array(totalPages)].map((_, i) => (
-              <button
-                key={i + 1}
-                onClick={() => setCurrentPage(i + 1)}
-                className={`w-9 h-9 rounded-lg text-sm font-medium transition-colors ${
-                  currentPage === i + 1
-                    ? "bg-sky-500 text-white shadow"
-                    : "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
-                }`}
-              >
-                {i + 1}
-              </button>
-            ))}
-
-            <button
-              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-              disabled={currentPage === totalPages}
-              className="w-9 h-9 flex items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed"
-            >
-              <ChevronRight size={16} />
-            </button>
+      {/* ── Catalogue Section ── */}
+      <section className="py-[60px]">
+        <div className="max-w-[1100px] mx-auto px-6">
+          {/* Header */}
+          <div className="text-center mb-3">
+            <h2 className="text-3xl font-bold text-gray-900 mt-20">Explore the Universe</h2>
+            <p className="text-gray-500 text-sm mt-1.5">
+              Fun, age-appropriate videos that turn space science into an exciting adventure.
+            </p>
           </div>
-        )}
+
+          {/* Search */}
+          <div className="flex justify-end mb-6">
+            <div className="relative">
+ 
+              <input
+                type="text"
+                placeholder="Search videos..."
+                value={searchQuery}
+                onChange={handleSearchChange}
+                className="pl-8 pr-3.5 py-2.5 border border-gray-200 rounded-lg text-sm outline-none w-60 bg-white text-gray-700"
+              />
+            </div>
+          </div>
+
+          {/* Grid — 1 col mobile → 2 col sm → 3 col md → 4 col lg */}
+          {paginated.length === 0 ? (
+            <div className="text-center py-12 text-gray-500">
+              No videos found matching &quot;{searchQuery}&quot;
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {paginated.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => handleCategoryClick(category)}
+                  className="group text-left p-0 bg-transparent border-none outline-none cursor-pointer"
+                >
+                  {/* Card image — portrait 3:4 */}
+                  <div
+                    className="relative w-full overflow-hidden rounded-2xl bg-black"
+                    style={{ aspectRatio: "3 / 4" }}
+                  >
+                    <Image
+                      src={category.img}
+                      alt={category.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = `https://placehold.co/400x530/dde1ea/9ca3af?text=${encodeURIComponent(category.title)}`;
+                      }}
+                    />
+                  </div>
+
+                  {/* Title */}
+                  <h2 className="mt-3 text-sm font-normal text-gray-800 leading-snug px-0.5">
+                    {category.title}
+                  </h2>
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex items-center justify-center gap-2 mt-9">
+              <button
+                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                disabled={currentPage === 1}
+                className="w-9 h-9 flex items-center justify-center border border-gray-200 rounded-lg bg-white cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed text-gray-500"
+              >
+                <ChevronLeft size={16} />
+              </button>
+
+              {[...Array(totalPages)].map((_, i) => (
+                <button
+                  key={i + 1}
+                  onClick={() => setCurrentPage(i + 1)}
+                  className={`w-9 h-9 rounded-lg font-semibold text-sm cursor-pointer transition-colors ${
+                    currentPage === i + 1
+                      ? "bg-indigo-500 text-white border-none"
+                      : "border border-gray-200 bg-white text-gray-500 hover:bg-gray-50"
+                  }`}
+                >
+                  {i + 1}
+                </button>
+              ))}
+
+              <button
+                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                disabled={currentPage === totalPages}
+                className="w-9 h-9 flex items-center justify-center border border-gray-200 rounded-lg bg-white cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed text-gray-500"
+              >
+                <ChevronRight size={16} />
+              </button>
+            </div>
+          )}
+        </div>
       </section>
     </div>
   );

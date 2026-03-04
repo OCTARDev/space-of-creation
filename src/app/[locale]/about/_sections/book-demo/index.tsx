@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import './style.css';
 import { useTranslations } from 'next-intl';
+
 
 export default function BookSection() {
   const t = useTranslations('about_book');
@@ -29,7 +31,11 @@ export default function BookSection() {
 
         <div className="mb-6">
           <button className="px-8 py-3 rounded-2xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
+                      <Link href={"/contactlife"}>
+
             {t('button')}
+                      </Link>
+
           </button>
         </div>
 
