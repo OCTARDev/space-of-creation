@@ -20,6 +20,10 @@ export const getcategorys = async (): Promise<category[]> => {
   const res = await api.get('/categories')
   return res.data.data
 }
+export const getTargets = async (id:number): Promise<category[]> => {
+  const res = await api.get(`/categories/targets/${id}`)
+  return res.data.data
+}
 
 /* ========== POST API ========== */
 

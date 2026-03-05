@@ -6,6 +6,7 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import bgcover from "@/assets/media/catloguecover.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const ITEMS_PER_PAGE = 9;
 
@@ -18,7 +19,6 @@ type Category = {
 export default function Catalogue() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [activeCategory, setActiveCategory] = useState<Category | null>(null);
 
   const categoryQuery = useQuery<any>({
     queryKey: ["categories"],
@@ -28,19 +28,14 @@ export default function Catalogue() {
   const allCategories: Category[] = categoryQuery.data?.data ?? [];
 
   const filtered = allCategories.filter((cat) =>
-    cat.title.toLowerCase().includes(searchQuery.toLowerCase())
+    cat.title.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
   const paginated = filtered.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
+    currentPage * ITEMS_PER_PAGE,
   );
-
-  const handleCategoryClick = (cat: Category) => {
-    setActiveCategory(cat);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
@@ -48,8 +43,8 @@ export default function Catalogue() {
   };
 
   // Hero displays default cover until user clicks a card
-  const heroImage = activeCategory?.media ?? bgcover;
-  const heroTitle = activeCategory?.title ?? "Available categories";
+  const heroImage = bgcover;
+  const heroTitle = "Available categories";
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -147,98 +142,56 @@ export default function Catalogue() {
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {paginated.map((category) => {
-                    const isActive = activeCategory?.id === category.id;
-
                     return (
-                      <button
+                      <Link
                         key={category.id}
-                        onClick={() => handleCategoryClick(category)}
-                        className={`
-                          group relative bg-white rounded-xl shadow-sm overflow-hidden
-                          transition-all duration-300 hover:shadow-xl text-left
-                          ${isActive ? "ring-2 ring-purple-500 shadow-lg" : ""}
-                        `}
+                        href={`/catalogue/targets/${category.id}`}
                       >
-                        {/* Active checkmark badge */}
-                        {isActive && (
+  
+                          {/* Image wrapper */}
                           <div
                             style={{
-                              position: "absolute",
-                              top: 9,
-                              right: 9,
-                              zIndex: 10,
-                              width: 24,
-                              height: 24,
-                              borderRadius: "50%",
-                              background: "#4c6ef5",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              boxShadow: "0 2px 8px rgba(76,110,245,0.55)",
+                              position: "relative",
+                              paddingBottom: "72%",
+                              overflow: "hidden",
+                              background: "#e8eaf2",
                             }}
                           >
-                            <svg
-                              width="11"
-                              height="11"
-                              viewBox="0 0 12 12"
-                              fill="none"
-                            >
-                              <path
-                                d="M2 6l3 3 5-5"
-                                stroke="#fff"
-                                strokeWidth="2.2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
+                            <img
+                              src={category.media}
+                              alt={category.title}
+                              onError={(e) => {
+                                (e.target as HTMLImageElement).src =
+                                  `https://placehold.co/400x290/dde1ea/9ca3af?text=${encodeURIComponent(
+                                    category.title,
+                                  )}`;
+                              }}
+                              style={{
+                                position: "absolute",
+                                inset: 0,
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "cover",
+                                transition: "transform 0.3s ease",
+                              }}
+                              className="group-hover:scale-105"
+                            />
                           </div>
-                        )}
 
-                        {/* Image wrapper */}
-                        <div
-                          style={{
-                            position: "relative",
-                            paddingBottom: "72%",
-                            overflow: "hidden",
-                            background: "#e8eaf2",
-                          }}
-                        >
-                          <img
-                            src={category.media}
-                            alt={category.title}
-                            onError={(e) => {
-                              (e.target as HTMLImageElement).src = `https://placehold.co/400x290/dde1ea/9ca3af?text=${encodeURIComponent(
-                                category.title
-                              )}`;
-                            }}
-                            style={{
-                              position: "absolute",
-                              inset: 0,
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "cover",
-                              transition: "transform 0.3s ease",
-                            }}
-                            className="group-hover:scale-105"
-                          />
-                        </div>
-
-                        {/* Title */}
-                        <div className="p-4">
-                          <h3
-                            className={`
+                          {/* Title */}
+                          <div className="p-4">
+                            <h3
+                              className={`
                             font-semibold text-base transition-colors
-                            ${
-                              isActive
-                                ? "text-purple-600"
-                                : "text-gray-900 group-hover:text-purple-600"
+                            
+                              text-gray-900 group-hover:text-purple-600"
                             }
                           `}
-                          >
-                            {category.title}
-                          </h3>
-                        </div>
-                      </button>
+                            >
+                              {category.title}
+                            </h3>
+                          </div>
+                      </Link>
                     );
                   })}
                 </div>

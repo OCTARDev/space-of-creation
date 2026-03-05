@@ -107,11 +107,13 @@ export default function HeroHeader() {
               ) : (
                 <div className="absolute inset-0 w-full h-full">
                   {/* Thumbnail */}
-                  <img
-                    src={thumbnailUrl}
-                    alt="Video thumbnail"
-                    className="w-full h-full object-cover"
-                  />
+             <Image
+        src={`https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`}
+        alt="Video thumbnail"
+        fill
+        className="object-cover"
+        unoptimized // Since it's an external image
+      />
 
                   {/* Subtle dark overlay */}
                   <div className="absolute inset-0 bg-black bg-opacity-10" />

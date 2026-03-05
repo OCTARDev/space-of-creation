@@ -11,7 +11,7 @@ import { RiEnglishInput } from "react-icons/ri";
 const LanguageSwitcher = ({isUp=false,className=""}) => {
   const pathname = usePathname();
   const router = useRouter();
-  const searchParams = useSearchParams(); // Add this hook
+  const searchParams = useSearchParams();
   const currentLocale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
@@ -21,8 +21,6 @@ const LanguageSwitcher = ({isUp=false,className=""}) => {
     en: { name: "English", nativeName: "English", flag: <RiEnglishInput /> , symbol:"EN" },
     ar: { name: "Arabic", nativeName: "العربية", flag: <GrLanguage /> , symbol:"ع" },
   };
-
-
 
   const changeLanguage = (newLocale:string) => {
     if (newLocale === currentLocale) {
@@ -109,6 +107,15 @@ const LanguageSwitcher = ({isUp=false,className=""}) => {
             const language = languageMap[locale];
             const isSelected = locale === currentLocale;
             
+            // FIX: Show opposite language in dropdown
+            // If current locale is Arabic, show English options and vice versa
+            const displayLanguage = {
+              ...language,
+              nativeName: currentLocale === 'ar' 
+                ? (locale === 'ar' ? languageMap.en.nativeName : languageMap.ar.nativeName)
+                : (locale === 'en' ? languageMap.ar.nativeName : languageMap.en.nativeName)
+            };
+            
             return (
               <button
                 key={locale}
@@ -128,7 +135,7 @@ const LanguageSwitcher = ({isUp=false,className=""}) => {
                     {language?.flag}
                   </span>
                   <span>
-                    {language?.nativeName}
+                    {displayLanguage.nativeName}
                   </span>
                 </div>
               </button>
