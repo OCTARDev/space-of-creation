@@ -99,23 +99,11 @@
     "subtitle": "Real results from educators, government entities, and immersive venue operators",
     "testimonials": {
       "vclab": {
-        "quote": "VCLAB transformed our physics program. Students who struggled now achieve 42% higher test scores. Safer, unlimited, and more engaging than our physical lab ever was.",
-        "initials": "DR",
-        "name": "Dr. Rashid Al-Mansoori",
-        "title": "Science Head, Al Noor School"
-      },
+        "quote": "VCLAB transformed our physics program. Students who struggled now achieve 42% higher test scores. Safer, unlimited, and more engaging than our physical lab ever was."      },
       "government": {
-        "quote": "Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable.",
-        "initials": "FM",
-        "name": "Fatima Al-Mazrouei",
-        "title": "UAE Environmental Agency"
-      },
+        "quote": "Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable."      },
       "centers": {
-        "quote": "Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement.",
-        "initials": "KS",
-        "name": "Khalid Saeed",
-        "title": "Discovery Mall Abu Dhabi"
-      }
+        "quote": "Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement."      }
     }
   },
   "home_book": {
@@ -239,10 +227,11 @@
   },
    "impact_hero": {
     "title": {
-      "line1": "Real Challenges, Tailored",
-      "line2": "Solutions, Measurable Results"
+      "line": "Our Impact Story is Just Beginning"
     },
-    "subtitle": "Explore how our partners have used FadaaTech solutions to achieve their specific goals—from boosting test scores to creating national awareness.",
+    "subtitle": "We don't have 100 case studies yet — we have something more valuable: a clear vision, proven technology, and the right partners to build something real.",
+    "sub2":"FadaaTech launched in the UAE in early 2026",
+    
     "button": "Book a Consultation",
     "stats": {
       "scores": "Test Score Increase",
@@ -252,13 +241,13 @@
     }
   },
    "impact_features": {
-    "title": "Creating Measurable Impact",
+    "title": "What We've Built",
     "subtitle": "Experiences and campaigns designed to change behavior, deepen engagement, and deliver results that last.",
     "caseStudies": {
       "school": {
         "tag": "School Success Story",
-        "title": "Bringing Physics to Life at Al Noor International School",
-        "quote": "\"The virtual labs have transformed how our students understand physics. Concepts that were once abstract are now tangible and engaging. We've seen remarkable improvements not just in test scores, but in genuine scientific curiosity.\"",
+        "title": "OCTAR AR",
+        "quote": "\"Fully developed Arabic learning ecosystem for kindergartens, learning centers, and homes. MOE-aligned content, bilingual interface, teacher and parent dashboards. Currently in an active pilot with selected UAE institutions.\"",
         "badge": {
           "value": "42%",
           "label": "Higher Test Scores"
@@ -269,7 +258,7 @@
       },
       "government": {
         "tag": "Government Campaign",
-        "title": "Major UAE Environmental Awareness Program",
+        "title": "Awareness Program",
         "quote": "\"By transforming complex water conservation concepts into clear, relatable experiences, the campaign made sustainability stick. Youth didn't just see the message—they remembered it. The result wasn't short-term attention, but lasting recall of the actions that truly matter.\"",
         "badge": {
           "value": "90%",
@@ -281,7 +270,7 @@
       },
       "venue": {
         "tag": "Venue Transformation",
-        "title": "Discovery Mall, Abu Dhabi",
+        "title": "",
         "quote": "\"The aquarium-themed Life Digital Environment gave families a reason to pause, connect, and create shared moments. It evolved into the mall's most popular photo spot, extending visits and transforming a routine mall trip into a memorable family experience.\"",
         "badge": {
           "value": "25 m",
@@ -332,7 +321,7 @@
    "octar_video": {
     "title": "Learn, Explore, Empower",
     "subtitle": {
-      "line1": "Designed for every learning environment — ",
+      "line1": "Two editions Designed for every learning environment — ",
       
       "line2": "from nursery to Grade 6, from classroom to living room."
     },
@@ -344,7 +333,7 @@
     "octar_features": {
     "cards": {
       "problem": {
-        "title": "Measured Impact",
+        "title": "The Challenge",
         "items": [
           "Learning breaks between classroom instruction and home reinforcement.",
           "Teachers deliver lessons, but progress becomes hard to track beyond school.",
@@ -362,12 +351,20 @@
         ]
       },
       "impact": {
-        "title": "Two Editions",
+        "title": "Measured Impact",
         "items": [
-          " For schools — KG to Grade 6 Curriculum-aligned AR lessons in Arabic and English, a teacher dashboard, and real-time progress analytics.",
+          "Increased student engagement through curriculum-aligned interactive learning.",
+          "Continuous learning between school and home.",
           "For nurseries & families, Guided AR activities for early learners at home, with full parent app support and bilingual content.",
           "Clear visibility into progress, participation, and learning gaps.",
           "Stronger parent trust without added teacher workload."
+        ]
+      },
+      "flexibility": {
+        "title": "Flexibility",
+        "items": [
+          " For schools — KG to Grade 6 Curriculum-aligned AR lessons in Arabic and English, a teacher dashboard, and real-time progress analytics.",
+          "For nurseries & families, Guided AR activities for early learners at home, with full parent app support and bilingual content."
         ]
       }
     }
@@ -444,30 +441,17 @@
     "subtitle": "Real results from educators, campaign managers, and venue operators",
     "testimonials": {
       "teacher": {
-        "quote": "\"My students finally understand oxidation-reduction reactions. They can experiment until they truly get it, without worrying about making mistakes.\"",
-        "initials": "DR",
-        "name": "Dr. Sarah Ahmed",
-        "title": "Chemistry Teacher"
-      },
+        "quote": "\"My students finally understand oxidation-reduction reactions. They can experiment until they truly get it, without worrying about making mistakes.\""      },
       "coordinator": {
-        "quote": "\"Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable.\"",
-        "initials": "MC",
-        "name": "Michael Chen",
-        "title": "Science Coordinator"
-      },
+        "quote": "\"Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable.\""      },
       "student": {
-        "quote": "\"Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement.\"",
-        "initials": "DR",
-        "name": "Layla Hassan",
-        "title": "Grade 10 Student"
-      }
+        "quote": "\"Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement.\""      }
     }
   },
     "octar_book": {
     "title": "Ready to Transform Arabic and English Learning?",
     "subtitle": "Choose your edition and book a personalized OCTAR demo",
-    "button1": "Book OCTAR Home Demo",
-    "button2": "Book OCTAR School Demo",
+    "button": "Book OCTAR Demo",
     "call": "Or call :",
     "phone": "+971 54 797 5397"
   },
@@ -575,23 +559,11 @@
     "subtitle": "Real results from educators, campaign managers, and venue operators",
     "testimonials": {
       "teacher": {
-        "quote": "\"My students finally understand oxidation-reduction reactions. They can experiment until they truly get it, without worrying about making mistakes.\"",
-        "initials": "DR",
-        "name": "Dr. Sarah Ahmed",
-        "title": "Chemistry Teacher"
-      },
+        "quote": "\"My students finally understand oxidation-reduction reactions. They can experiment until they truly get it, without worrying about making mistakes.\""      },
       "coordinator": {
-        "quote": "\"Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable.\"",
-        "initials": "MC",
-        "name": "Michael Chen",
-        "title": "Science Coordinator"
-      },
+        "quote": "\"Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable.\""      },
       "student": {
-        "quote": "\"Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement.\"",
-        "initials": "DR",
-        "name": "Layla Hassan",
-        "title": "Grade 10 Student"
-      }
+        "quote": "\"Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement.\""      }
     }
   },
     "vclab_book": {
@@ -674,23 +646,11 @@
     "subtitle": "Real results from educators, campaign managers, and venue operators",
     "testimonials": {
       "teacher": {
-        "quote": "\"The moment a child sees their own coloring come alive on the big screen, everything changes. The excitement, the focus — it's unlike anything I've seen in a traditional classroom.\"",
-        "initials": "Dubai",
-        "name": "Dr.Fatima Al Zaabi",
-        "title": "KG Teacher"
-      },
+        "quote": "\"The moment a child sees their own coloring come alive on the big screen, everything changes. The excitement, the focus — it's unlike anything I've seen in a traditional classroom.\""      },
       "coordinator": {
-        "quote": "\"We used the Ramadan theme for our school's awareness week. Every student was fully engaged from the first minute, and the Arabic narration made it even more meaningful.\"",
-        "initials": "Sharjah",
-        "name": "Ahmed Nasser",
-        "title": "School Coordinator"
-      },
+        "quote": "\"We used the Ramadan theme for our school's awareness week. Every student was fully engaged from the first minute, and the Arabic narration made it even more meaningful.\""      },
       "student": {
-        "quote": "\"My favorite part was when my drawing showed up on the big screen! I kept asking my teacher to do it again.\"",
-        "initials": "DR",
-        "name": "Sara",
-        "title": "Grade 2 Student"
-      }
+        "quote": "\"My favorite part was when my drawing showed up on the big screen! I kept asking my teacher to do it again.\""      }
     }
   },
     "life_engaging": {
@@ -796,23 +756,11 @@
     "subtitle": "Real results from educators, campaign managers, and venue operators",
     "testimonials": {
       "teacher": {
-        "quote": "\"My students finally understand oxidation-reduction reactions. They can experiment until they truly get it, without worrying about making mistakes.\"",
-        "initials": "DR",
-        "name": "Dr. Sarah Ahmed",
-        "title": "Chemistry Teacher"
-      },
+        "quote": "\"My students finally understand oxidation-reduction reactions. They can experiment until they truly get it, without worrying about making mistakes.\""      },
       "coordinator": {
-        "quote": "\"Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable.\"",
-        "initials": "MC",
-        "name": "Michael Chen",
-        "title": "Science Coordinator"
-      },
+        "quote": "\"Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable.\""      },
       "student": {
-        "quote": "\"Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement.\"",
-        "initials": "DR",
-        "name": "Layla Hassan",
-        "title": "Grade 10 Student"
-      }
+        "quote": "\"Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement.\""      }
     }
   },
    "arstories_book": {

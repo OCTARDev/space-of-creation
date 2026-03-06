@@ -33,12 +33,14 @@ export default function Hero() {
         {/* ── Hero text content ── */}
         <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-14 lg:px-20 max-w-2xl pb-24">
           <h2 className="text-white text-5xl md:text-3xl font-extrabold leading-tight mb-4">
-            {t('title.line1')}
-            <br />
-            {t('title.line2')}
+            {t('title.line')}
+      
           </h2>
           <p className="text-gray-200 text-sm md:text-base leading-relaxed mb-8 max-w-md">
             {t('subtitle')}
+            <br />
+         <span>{t('sub2')}</span>  
+
           </p>
           <div>
             <button className="px-8 py-3 rounded-xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">

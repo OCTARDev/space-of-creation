@@ -23,14 +23,10 @@ export default function BookOctarSection() {
 
         <div className="mb-6">
           <button className="px-8 py-3 rounded-2xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
-            <Link href={"/contact"}>{t("button1")}</Link>
+            <Link href={"/contact"}>{t("button")}</Link>
           </button>
         </div>
-        <div className="mb-6">
-          <button className="px-8 py-3 rounded-2xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition">
-            <Link href={"/contact"}>{t("button2")}</Link>
-          </button>
-        </div>
+     
 
         <p className="text-black-800 text-3xl z-10">
           {t("call")} {t("phone")}

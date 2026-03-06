@@ -92,51 +92,50 @@ export default function HeroHeader() {
         {/* Browser Mockup */}
         <div className="relative mt-14 flex justify-center">
           <div className="w-full max-w-4xl bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-
             {/* Video — 16:9 aspect ratio */}
-            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-              {isPlaying ? (
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src={embedUrl}
-                  title="Hero video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              ) : (
-                <div className="absolute inset-0 w-full h-full">
-                  {/* Thumbnail */}
-             <Image
-        src={`https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`}
-        alt="Video thumbnail"
-        fill
-        className="object-cover"
-        unoptimized // Since it's an external image
-      />
-
-                  {/* Subtle dark overlay */}
-                  <div className="absolute inset-0 bg-black bg-opacity-10" />
-
-                  {/* Play button */}
-                  <button
-                    onClick={() => setIsPlaying(true)}
-                    className="absolute inset-0  flex items-center justify-center group"
-                    aria-label="Play video"
+             {/* Video — 16:9 aspect ratio */}
+        <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+          {isPlaying ? (
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src={embedUrl}
+              title="Life video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          ) : (
+            <div className="absolute inset-0 w-full h-full">
+              <img
+                src={thumbnailUrl}
+                alt="Video thumbnail"
+                className="w-full h-full object-cover"
+              />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(180deg, transparent 0%, rgba(107,130,144,0.4) 100%)",
+                }}
+              />
+              <button
+                onClick={() => setIsPlaying(true)}
+                className="absolute inset-0 flex items-center justify-center group"
+                aria-label="Play video"
+              >
+                <div className="w-16 h-16 p-5 bg-white rounded-full flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110">
+                  <svg
+                    className="w-6 h-6 text-gray-800 ml-1"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
                   >
-                    <div className="w-16 h-16 p-5 bg-white rounded-full flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110">
-                      <svg
-                        className="w-6 h-6 text-gray-800 ml-1"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                  </button>
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                 </div>
-              )}
+              </button>
             </div>
+          )}
+        </div>
 
           </div>
         </div>

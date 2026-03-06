@@ -23,6 +23,23 @@ const CheckBadgeIcon = () => (
   </svg>
 )
 
+const LabIcon = () => (
+  <svg
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#89278B"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M9 3h6" />
+    <path d="M10 3v5l-5 9a3 3 0 0 0 2.6 4h8.8A3 3 0 0 0 19 17l-5-9V3" />
+    <path d="M8 14h8" />
+  </svg>
+);
+
 const BulletItem = ({ text, color }: { text: string; color: string }) => (
   <li className="mt-2 flex items-start gap-2 text-gray-600 text-sm leading-snug">
     <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: color }}></span>
@@ -38,39 +55,49 @@ export default function Features() {
       key: 'problem',
       icon: <AlertTriangleIcon />,
       bgColor: '#fee2e2',
-      bulletColor: '#E84545'
+      bulletColor: '#E84545',
+      itemCount: 4
     },
     {
       key: 'solution',
       icon: <GraduationCapIcon />,
       bgColor: '#dbeafe',
-      bulletColor: '#3A9DB2'
+      bulletColor: '#3A9DB2',
+      itemCount: 4
     },
     {
       key: 'impact',
       icon: <CheckBadgeIcon />,
       bgColor: '#dcfce7',
-      bulletColor: '#00A63E'
+      bulletColor: '#00A63E',
+      itemCount: 4
+    },
+    {
+      key: 'flexibility',
+      icon: <LabIcon />,
+      bgColor: '#FFF3FF',
+      bulletColor: '#89278B',
+      itemCount: 2
     }
   ];
 
   return (
     <section className="bg-white py-16 px-6">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
         {cards.map((card) => (
           <div key={card.key} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-            <div 
-              className="mb-5 w-12 h-12 flex items-center justify-center rounded-2xl" 
+            <div
+              className="mb-5 w-12 h-12 flex items-center justify-center rounded-2xl"
               style={{ backgroundColor: card.bgColor }}
             >
               {card.icon}
             </div>
-            
+
             <h3 className="text-lg font-semibold text-gray-900 mb-5">
-                {t(`cards.${card.key}.title`)}
+              {t(`cards.${card.key}.title`)}
             </h3>
-            
-            {[0, 1, 2, 3].map((index) => (
+
+            {Array.from({ length: card.itemCount }).map((_, index) => (
               <BulletItem
                 key={index}
                 text={t(`cards.${card.key}.items.${index}`)}

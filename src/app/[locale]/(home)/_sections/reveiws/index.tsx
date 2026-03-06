@@ -36,19 +36,7 @@ export default function WhatOurClientsSay() {
                 {t(`testimonials.${item.key}.quote`)}
               </p>
 
-              <div className="mt-8 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-200 to-teal-200 flex items-center justify-center text-gray-700 font-semibold flex-shrink-0">
-                  {t(`testimonials.${item.key}.initials`)}
-                </div>
-                <div>
-                  <p className="font-medium text-gray-800 text-sm">
-                    {t(`testimonials.${item.key}.name`)}
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    {t(`testimonials.${item.key}.title`)}
-                  </p>
-                </div>
-              </div>
+              
             </div>
           ))}
         </div>
