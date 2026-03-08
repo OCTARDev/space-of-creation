@@ -33,18 +33,19 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+    const t = useTranslations();
+
 
   const solutions = [
-    { name: "OCTAR Ecosystem", icon: <PiCubeFocus color="#32a8a4" />, href: "/octar" },
-    { name: "VCLAB Virtual Labs", icon: <PiFlask color="#36ba53" />, href: "/vclab" },
-    { name: "Life Digital Environment", icon: <PiHandPointing color="#364eba" />, href: "/life" },
-    { name: "AR Stories & Campaigns", icon: <PiSparkle color="#b3ba36" />, href: "/ar-stories" },
-    { name: "Learning Support", icon: <PiHeart color="#ba3636" />, href: "/learning-support" },
-    { name: "Educational Planetarium", icon: <PiTent color="#E09B00" />, href: "/planetarium" },
-    { name: "VR Experiences", icon: <PiVirtualReality color="#ad36ba" />, href: "/vr" },
+    { name: `${t("contact.solutions.octar")}`, icon: <PiCubeFocus color="#32a8a4" />, href: "/octar" },
+    { name: `${t("contact.solutions.vclab")}`, icon: <PiFlask color="#36ba53" />, href: "/vclab" },
+    { name: `${t("contact.solutions.life")}`, icon: <PiHandPointing color="#364eba" />, href: "/life" },
+    { name: `${t("contact.solutions.ar")}`, icon: <PiSparkle color="#b3ba36" />, href: "/ar-stories" },
+    { name: `${t("contact.solutions.learning")}`, icon: <PiHeart color="#ba3636" />, href: "/learning-support" },
+    { name: `${t("contact.solutions.planetarium")}`, icon: <PiTent color="#E09B00" />, href: "/planetarium" },
+    { name: `${t("contact.solutions.vr")}`, icon: <PiVirtualReality color="#ad36ba" />, href: "/vr" },
   ];
 
-  const t = useTranslations();
 
   return (
     <nav className="top-0 left-0 right-0 py-6 bg-white z-50">
@@ -138,7 +139,7 @@ const Navbar = () => {
           </div>
 
           {/* Right Side */}
-          <div className="hidden p-5 md:flex items-center gap-3 border-l border-gray-200 pl-8 ms-8">
+          <div className="hidden p-5 md:flex items-center gap-3  pl-8 ms-8">
             <Link
               href="/contact"
               className="bg-gradient-to-r p-2 from-[#A88EEF] to-[#79B9CE] text-white px-5 py-2.5 rounded-lg font-medium hover:opacity-90 transition whitespace-nowrap"

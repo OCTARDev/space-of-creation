@@ -31,7 +31,7 @@ const SocialIcon: React.FC<{ href: string; icon: React.ReactNode }> = ({
 );
 
 const Footer: React.FC = () => {
-  const t = useTranslations("footer");
+  const t = useTranslations();
   const locale = useLocale();
   const isRTL = locale === "ar";
   const currentYear = new Date().getFullYear();
@@ -55,20 +55,20 @@ const Footer: React.FC = () => {
 
   const contactRows = [
     {
-      label: t("contact.email"),
+      label: t("footer.contact.email"),
       value: "b2b@spaceforcreation.ae",
     },
     {
-      label: t("contact.phone"),
-      value: "+971 54 797 5397",
+      label: t("footer.contact.phone"),
+      value:  t("footer.contact.phoneValue"),
      
     },
     {
-      label: t("contact.location"),
-      value: t("contact.address"),
+      label: t("footer.contact.location"),
+      value: t("footer.contact.address"),
     },
     {
-      label: t("contact.license"),
+      label: t("footer.contact.license"),
       value: "1571670",
     },
   ];
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
             </Link>
 
             <p className="text-gray-500 text-sm leading-relaxed">
-              {t("brand.description")}
+              {t("footer.brand.description")}
             </p>
 
             {/* Social Icons */}
@@ -126,7 +126,7 @@ const Footer: React.FC = () => {
           {/* ── Solutions Column ── */}
           <div>
             <h3 className="text-base font-semibold text-gray-900 mb-5">
-              {t("solutions.title")}
+              {t("footer.solutions.title")}
             </h3>
             <ul className="space-y-3">
               {solutions.map((item) => (
@@ -135,7 +135,7 @@ const Footer: React.FC = () => {
                     href={item.href}
                     className="text-sm text-gray-500 hover:text-gray-900 transition-colors duration-200"
                   >
-                    {t(`solutions.items.${item.key}`)}
+                    {t(`footer.solutions.items.${item.key}`)}
                   </Link>
                 </li>
               ))}
@@ -145,7 +145,7 @@ const Footer: React.FC = () => {
           {/* ── Company Column ── */}
           <div>
             <h3 className="text-base font-semibold text-gray-900 mb-5">
-              {t("company.title")}
+              {t("footer.company.title")}
             </h3>
             <ul className="space-y-3">
               {companyItems.map((item) => (
@@ -154,7 +154,7 @@ const Footer: React.FC = () => {
                     href={item.href}
                     className="text-sm text-gray-500 hover:text-gray-900 transition-colors duration-200"
                   >
-                    {t(`company.items.${item.key}`)}
+                    {t(`footer.company.items.${item.key}`)}
                   </Link>
                 </li>
               ))}
@@ -164,7 +164,7 @@ const Footer: React.FC = () => {
           {/* ── Contact Column ── */}
           <div>
             <h3 className="text-base font-semibold text-gray-900 mb-5">
-              {t("contact.title")}
+              {t("footer.contact.title")}
             </h3>
             <div className="space-y-3">
               {contactRows.map((row) => (
@@ -179,7 +179,7 @@ const Footer: React.FC = () => {
 
         {/* ── Bottom Bar ── */}
         <div className="mt-14 pt-6 border-t border-gray-200 text-center text-sm text-gray-400">
-          {t("copyright", { year: currentYear })}
+          {t("footer.copyright", { year: currentYear })}
         </div>
       </div>
     </footer>

@@ -9,7 +9,7 @@ import Link from "next/link";
 const stats = [
   { value: "50+", key: "experiments" },
   { value: "42%", key: "improvement" },
-  { value: "100+", key: "schools" },
+  { value: "50+", key: "schools" },
   { value: "Zero", key: "safety" },
 ];
 

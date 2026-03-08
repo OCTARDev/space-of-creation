@@ -75,7 +75,7 @@ export default function Hero() {
               <Link href={"/contact"}> {t("buttons.book")}</Link>
             </button>
             <button className="px-10 py-3 rounded-xl font-semibold bg-white border border-white shadow-lg hover:bg-white/90 transition">
-              <Link href={"/videos"}> {t("buttons.catalogue")}</Link>
+              <Link href={"/vr-videos"}> {t("buttons.catalogue")}</Link>
             </button>
           </div>
         </div>

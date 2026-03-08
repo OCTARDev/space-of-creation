@@ -3,6 +3,7 @@ import "./style.css";
 import { getcategorys, bookLife } from "@/lib/api";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
 
 type Category = {
   id: number;
@@ -11,6 +12,8 @@ type Category = {
 };
 
 export default function Contactlife() {
+  const t = useTranslations('contact_life');
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,7 +29,6 @@ export default function Contactlife() {
   });
 
   const allCategories: Category[] = categoryQuery.data?.data ?? [];
-
 
   const mutation = useMutation({
     mutationFn: () =>
@@ -46,8 +48,6 @@ export default function Contactlife() {
     },
   });
 
-
-
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -57,7 +57,7 @@ export default function Contactlife() {
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.phone || !formData.category_id) {
-      alert("Please fill in all required fields.");
+      alert(t('form.error'));
       return;
     }
     mutation.mutate();
@@ -74,28 +74,28 @@ export default function Contactlife() {
       {/* Hero text */}
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold text-gray-900 tracking-tight mb-2">
-          Let's Transform Your Vision
+          {t('hero.title')}
         </h1>
         <p className="text-sm text-gray-500">
-          Schedule a personalized demo or speak with our team
+          {t('hero.subtitle')}
         </p>
       </div>
 
       {/* Card */}
       <div className="bg-white rounded-2xl shadow-md w-full max-w-md px-8 py-8">
         <h2 className="text-center text-lg font-semibold text-gray-800 mb-6">
-          Schedule Your Demo
+          {t('form.title')}
         </h2>
 
         {submitted && (
           <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm text-center">
-            ✅ Demo booked! We'll contact you within 24 hours.
+            {t('form.success')}
           </div>
         )}
 
         {mutation.isError && (
           <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm text-center">
-            ❌ Something went wrong. Please try again.
+            {t('form.error')}
           </div>
         )}
 
@@ -103,12 +103,12 @@ export default function Contactlife() {
           {/* Name */}
           <div>
             <label className="block text-xs font-medium text-gray-700 mb-1">
-              Your name <span className="text-red-400">*</span>
+              {t('form.fields.name.label')} <span className="text-red-400">*</span>
             </label>
             <input
               type="text"
               name="name"
-              placeholder="Your full name"
+              placeholder={t('form.fields.name.placeholder')}
               value={formData.name}
               onChange={handleChange}
               className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 placeholder-gray-300 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition"
@@ -118,12 +118,12 @@ export default function Contactlife() {
           {/* Email */}
           <div>
             <label className="block text-xs font-medium text-gray-700 mb-1">
-              Email <span className="text-red-400">*</span>
+              {t('form.fields.email.label')} <span className="text-red-400">*</span>
             </label>
             <input
               type="email"
               name="email"
-              placeholder="Work email address"
+              placeholder={t('form.fields.email.placeholder')}
               value={formData.email}
               onChange={handleChange}
               className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 placeholder-gray-300 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition"
@@ -133,12 +133,12 @@ export default function Contactlife() {
           {/* Phone */}
           <div>
             <label className="block text-xs font-medium text-gray-700 mb-1">
-              Phone <span className="text-red-400">*</span>
+              {t('form.fields.phone.label')} <span className="text-red-400">*</span>
             </label>
             <input
               type="tel"
               name="phone"
-              placeholder="Phone number"
+              placeholder={t('form.fields.phone.placeholder')}
               value={formData.phone}
               onChange={handleChange}
               className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 placeholder-gray-300 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition"
@@ -148,17 +148,17 @@ export default function Contactlife() {
           {/* Category dropdown */}
           <div>
             <label className="block text-xs font-medium text-gray-700 mb-1">
-              Available Categories <span className="text-red-400">*</span>
+              {t('form.fields.category.label')} <span className="text-red-400">*</span>
             </label>
             <div className="relative">
               <select
                 name="category_id"
                 value={formData.category_id}
                 onChange={handleChange}
-                className="w-full appearance-none border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-400 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition bg-white cursor-pointer"
+                className="w-full appearance-none border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition bg-white cursor-pointer"
               >
                 <option value="" disabled>
-                  Select a Category
+                  {t('form.fields.category.placeholder')}
                 </option>
                 {allCategories.map((s) => (
                   <option key={s.id} value={s.id} className="text-gray-800">
@@ -166,7 +166,6 @@ export default function Contactlife() {
                   </option>
                 ))}
               </select>
-       
             </div>
           </div>
 
@@ -179,11 +178,11 @@ export default function Contactlife() {
               background: "linear-gradient(90deg, #a78bfa 0%, #818cf8 100%)",
             }}
           >
-            {mutation.isPending ? "Booking..." : "Book a Demo"}
+            {mutation.isPending ? t('form.button_pending') : t('form.button')}
           </button>
 
           <p className="text-center text-xs text-gray-400 mt-2">
-            We'll contact you within 24 hours. No spam.
+            {t('form.footer')}
           </p>
         </div>
       </div>
@@ -194,12 +193,13 @@ export default function Contactlife() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(144,31,233,0.15),rgba(0,163,255,0.15))] mix-blend-multiply" />
         <div className="relative max-w-4xl mx-auto z-10">
           <h1 className="text-4xl md:text-5xl font-semibold text-gray-800 mb-6">
-            Prefer to Talk Directly?
+            {t('direct.title')}
           </h1>
-          <div className="mb-6" />
-          <p className="text-gray-800 z-10">Call : +971 54 797 5397</p>
-          <p className="text-gray-800 z-10">Email: b2b@spaceforcreation.ae</p>
-          <p className="text-gray-800 z-10">Address : Dubai, UAE | License: 1571670</p>
+          <div className="space-y-2">
+            <p className="text-gray-800 z-10">{t('direct.call')} {t('direct.phone')}</p>
+            <p className="text-gray-800 z-10">{t('direct.email')} {t('direct.email_value')}</p>
+            <p className="text-gray-800 z-10">{t('direct.address')} {t('direct.address_value')} | {t('direct.license')} {t('direct.license_value')}</p>
+          </div>
         </div>
       </section>
     </div>

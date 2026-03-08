@@ -85,7 +85,7 @@ export default function Hero() {
             </button>
 
             <button className="px-10 py-3 rounded-xl font-semibold bg-white border border-white shadow-lg hover:bg-white/90 transition">
-              <Link href="/videos"> {t("buttons.catalogue")}</Link>
+              <Link href="/planetarium-videos"> {t("buttons.catalogue")}</Link>
             </button>
           </div>
         </div>

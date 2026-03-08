@@ -9,7 +9,7 @@
   "home_hero": {
     "title": "Transform Objectives into",
     "title_break": "Immersive AR/VR Experiences",
-    "subtitle": "UAE's #1 provider of curriculum-aligned AR/VR solutions for education, government campaigns, and immersive venues. Trusted by 50K+ active users across the region.",
+    "subtitle": "Built for UAE educators, government campaigns, and immersive venues — now accepting pilot partners for 2026..",
     "badges": {
       "license": "UAE License 1571670",
       "moe": "MOE Aligned",
@@ -17,10 +17,10 @@
       "award": "Award-Winning EdTech"
     },
     "stats": {
-      "teacher": "Teacher Adoption",
-      "users": "Active Users",
-      "engagement": "Engagement Increase",
-      "institutions": "Institutions Trust Us"
+      "teacher": "UAE Licensed Company",
+      "users": "MOE Curriculum Aligned",
+      "engagement": "7 AR/VR Solutions",
+      "institutions": "Launching 2026 — Pilot Partners Welcome"
     }
   },
   "home_perfect_solutions": {
@@ -144,7 +144,12 @@
       "phone": "Phone:",
       "location": "Location:",
       "license": "License:",
-      "address": "Dubai, UAE"
+      "emailValue": "b2b@spaceforcreation.ae",
+      "phoneValue": "5397 797 54 971+",
+      "address": "Dubai, UAE",
+      "licenseValue": "1571670"
+
+      
     },
     "copyright": "© {year} Space for Creation. All rights reserved."
   },
@@ -1032,11 +1037,109 @@
       }
     }
   },
-   "vr_book": {
-    "title": "Step Into New Realities",
-    "subtitle": "Schedule a VR consultation",
-    "button": "Book a VR Experience",
-    "call": "Or call :",
-    "phone": "+971 54 797 5397"
+
+    "contact_life": {
+    "hero": {
+      "title": "Let's Transform Your Vision",
+      "subtitle": "Schedule a personalized demo or speak with our team"
+    },
+    "form": {
+      "title": "Schedule Your Demo",
+      "success": "✅ Demo booked! We'll contact you within 24 hours.",
+      "error": "❌ Something went wrong. Please try again.",
+      "fields": {
+        "name": {
+          "label": "Your name",
+          "placeholder": "Your full name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Work email address"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "Phone number (with country code)"
+        },
+        "category": {
+          "label": "Available Categories",
+          "placeholder": "Select a Category"
+        }
+      },
+      "button": "Book a Demo",
+      "button_pending": "Booking...",
+      "footer": "We'll contact you within 24 hours. No spam."
+    },
+    "direct": {
+      "title": "Prefer to Talk Directly?",
+      "call": "Call :",
+      "email": "Email:",
+      "address": "Address :",
+      "license": "License:",
+      "phone": "+971 54 797 5397",
+      "email_value": "b2b@spaceforcreation.ae",
+      "address_value": "Dubai, UAE",
+      "license_value": "1571670"
+    }
+  },
+   "contact": {
+    "hero": {
+      "title": "Let's Transform Your Vision",
+      "subtitle": "Schedule a personalized demo or speak with our team"
+    },
+    "form": {
+      "title": "Schedule Your Demo",
+      "success": "✅ Demo booked! We'll contact you within 24 hours.",
+      "error": "❌ Something went wrong. Please try again.",
+      "fields": {
+        "name": {
+          "label": "Your name",
+          "placeholder": "Your full name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Work email address"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "Phone number"
+        },
+        "organization": {
+          "label": "Organization",
+          "placeholder": "Organization or Institution name"
+        },
+        "solution": {
+          "label": "What are you interested in?",
+          "placeholder": "Select a solution"
+        },
+        "challenges": {
+          "label": "Briefly describe your goals or challenges",
+          "placeholder": "What challenges are you solving?"
+        }
+      },
+      "button": "Book a Demo",
+      "button_pending": "Booking...",
+      "footer": "We'll contact you within 24 hours. No spam."
+    },
+    "direct": {
+      "title": "Prefer to Talk Directly?",
+      "call": "Call :",
+      "email": "Email:",
+      "address": "Address :",
+      "license": "License:",
+      "phone": "+971 54 797 5397",
+      "email_value": "b2b@spaceforcreation.ae",
+      "address_value": "Dubai, UAE",
+      "license_value": "1571670"
+    },
+    "solutions": {
+      "octar": "OCTAR Ecosystem",
+      "vclab": "VCLAB Virtual Labs",
+      "life": "Life Digital Environment",
+      "ar": "AR Stories & Campaigns",
+      "learning": "Learning Support",
+      "planetarium": "Educational Planetarium",
+      "vr": "VR Experiences"
+    }
   }
+  
 }

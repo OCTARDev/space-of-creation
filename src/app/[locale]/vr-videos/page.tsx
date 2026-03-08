@@ -10,7 +10,8 @@ const allCategories = [
     id: 1,
     title: "scoops of milky way",
     img: "https://api.adgrouptech.com/images/services/0395c6ce8e1238abf44027dd534fcaf31683446343.webp",
-    cover: "https://api.adgrouptech.com/images/services/56e4744bb54621dc49b5ec35f3edee9f1683446344.webp",
+    cover:
+      "https://api.adgrouptech.com/images/services/56e4744bb54621dc49b5ec35f3edee9f1683446344.webp",
     video: "https://www.youtube.com/watch?v=emnp5-Rc4NE",
     year: "2014",
     duration: "20 mins",
@@ -26,7 +27,8 @@ const allCategories = [
     id: 2,
     title: "A Tale of scale",
     img: "https://api.adgrouptech.com/images/services/6485a52dd282f688874a027b873e080d1683446496.webp",
-    cover: "https://api.adgrouptech.com/images/services/6485a52dd282f688874a027b873e080d1683446496.webp",
+    cover:
+      "https://api.adgrouptech.com/images/services/6485a52dd282f688874a027b873e080d1683446496.webp",
     video: "https://www.youtube.com/watch?v=26b-ghmjR7U",
     year: "2015",
     duration: "18 mins",
@@ -42,7 +44,8 @@ const allCategories = [
     id: 3,
     title: "Astralis",
     img: "https://api.adgrouptech.com/images/services/c41d48ad67d67cc7025ae7169d4bcdac1683446622.webp",
-    cover: "https://api.adgrouptech.com/images/services/52bb8d6fdd92282c825ad5ed260bef3f1683446622.webp",
+    cover:
+      "https://api.adgrouptech.com/images/services/52bb8d6fdd92282c825ad5ed260bef3f1683446622.webp",
     video: "https://www.youtube.com/watch?v=ND9T-rNx5E8",
     year: "2016",
     duration: "22 mins",
@@ -58,7 +61,8 @@ const allCategories = [
     id: 4,
     title: "Bizarre Moons",
     img: "https://api.adgrouptech.com/images/services/afd3da21d1211a8e80982cc01aebfccb1683446878.webp",
-    cover: "https://api.adgrouptech.com/images/services/3ce12fa555b579e4d4508758c8075dea1683446878.webp",
+    cover:
+      "https://api.adgrouptech.com/images/services/3ce12fa555b579e4d4508758c8075dea1683446878.webp",
     video: "https://www.youtube.com/watch?v=ND9T-rNx5E8",
     year: "2017",
     duration: "25 mins",
@@ -72,9 +76,10 @@ const allCategories = [
   },
   {
     id: 5,
-title: "Enigma",
+    title: "Enigma",
     img: "https://api.adgrouptech.com/images/services/794e024d427889bb1fa5abec2b7dcee71683447585.webp",
-    cover: "https://api.adgrouptech.com/images/services/32795c31ecf6dce1995d0f5bf43a7c171683447585.webp",
+    cover:
+      "https://api.adgrouptech.com/images/services/32795c31ecf6dce1995d0f5bf43a7c171683447585.webp",
     video: "https://www.youtube.com/watch?v=y-bvynYNIb4",
     year: "2021",
     duration: "24 mins",
@@ -90,7 +95,8 @@ title: "Enigma",
     id: 6,
     title: "Incredible Introduction to the solar system",
     img: "https://api.adgrouptech.com/images/services/a669cb7750da5c74a41d3259519bc7ee1683447868.webp",
-    cover: "https://api.adgrouptech.com/images/services/208689df74033c800b5e17ed4310688d1683447868.webp",
+    cover:
+      "https://api.adgrouptech.com/images/services/208689df74033c800b5e17ed4310688d1683447868.webp",
     video: "https://www.youtube.com/watch?v=PC2P4V5vSOo",
     year: "2019",
     duration: "28 mins",
@@ -106,7 +112,8 @@ title: "Enigma",
     id: 7,
     title: "Map to the Chocolate Planet",
     img: "https://api.adgrouptech.com/images/services/25dcef550ca6f6fc52eea168615b083c1683448161.webp",
-    cover: "https://api.adgrouptech.com/images/services/cadcca09d4393af675140cce9a2f85f91683448161.webp",
+    cover:
+      "https://api.adgrouptech.com/images/services/cadcca09d4393af675140cce9a2f85f91683448161.webp",
     video: "https://www.youtube.com/watch?v=TgCqlCg54Tk",
     year: "2020",
     duration: "20 mins",
@@ -122,7 +129,8 @@ title: "Enigma",
     id: 8,
     title: "Once upon The Big Bang",
     img: "https://api.adgrouptech.com/images/services/a2e004e4c7e63b8ef24dfbb1178dabe81683012375.webp",
-    cover: "https://api.adgrouptech.com/images/services/32795c31ecf6dce1995d0f5bf43a7c171683447585.webp",
+    cover:
+      "https://api.adgrouptech.com/images/services/32795c31ecf6dce1995d0f5bf43a7c171683447585.webp",
     video: "https://www.youtube.com/watch?v=eZ6IT-_uGu8",
     year: "2021",
     duration: "24 mins",
@@ -134,11 +142,12 @@ title: "Enigma",
     description:
       "Explore the deepest mysteries of the cosmos — dark matter, dark energy, and the unseen forces that shape the fate of the entire universe.",
   },
-    {
+  {
     id: 9,
     title: "Pursuing the Dwarfs Script",
     img: "https://api.adgrouptech.com/images/services/f9358c2e33645cf1f7b5c4327e41109f1683012626.webp",
-    cover: "https://api.adgrouptech.com/images/services/954e50b8f18c543c3939efc7f6b900fe1683012626.webp",
+    cover:
+      "https://api.adgrouptech.com/images/services/954e50b8f18c543c3939efc7f6b900fe1683012626.webp",
     video: "https://www.youtube.com/watch?v=PC2P4V5vSOo",
     year: "2019",
     duration: "28 mins",
@@ -150,11 +159,12 @@ title: "Enigma",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
-    {
+  {
     id: 10,
     title: "Cosmix",
     img: "https://api.adgrouptech.com/images/services/abb5da9d1f408f69584bf95f83d42e251683012735.webp",
-    cover: "https://api.adgrouptech.com/images/services/2cc02a5e3d7b2e2b13ae77d24b7faab91683012735.webp",
+    cover:
+      "https://api.adgrouptech.com/images/services/2cc02a5e3d7b2e2b13ae77d24b7faab91683012735.webp",
     video: "https://www.youtube.com/watch?v=sIdvo0gUzfg",
     year: "2019",
     duration: "28 mins",
@@ -166,11 +176,12 @@ title: "Enigma",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
-    {
+  {
     id: 11,
     title: "Satelix",
     img: "https://api.adgrouptech.com/images/services/8ae46d0fd512927cf573a29d38556bce1683012912.webp",
-    cover: "https://api.adgrouptech.com/images/services/4f819c5ad011d69da0163834a8c9da3f1683012912.webp",
+    cover:
+      "https://api.adgrouptech.com/images/services/4f819c5ad011d69da0163834a8c9da3f1683012912.webp",
     video: "https://www.youtube.com/watch?v=KoHFUZAuS_A",
     year: "2019",
     duration: "28 mins",
@@ -182,11 +193,12 @@ title: "Enigma",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
-    {
+  {
     id: 12,
     title: "Cosmonaute 360",
     img: "https://api.adgrouptech.com/images/services/c5e444cd4cdf75e4c7c851bc16e83edf1683013328.webp",
-    cover: "https://api.adgrouptech.com/images/services/1fb547dd605bb3980b9715f1eae9998f1683013328.webp",
+    cover:
+      "https://api.adgrouptech.com/images/services/1fb547dd605bb3980b9715f1eae9998f1683013328.webp",
     video: "https://www.youtube.com/watch?v=5_a596Y4XY4",
     year: "2014",
     duration: "28 mins",
@@ -198,22 +210,24 @@ title: "Enigma",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
-    {
-    id: 13,
-    title: "Cosmonaute 360",
-    img: "https://api.adgrouptech.com/images/services/c5e444cd4cdf75e4c7c851bc16e83edf1683013328.webp",
-    cover: "https://api.adgrouptech.com/images/services/1fb547dd605bb3980b9715f1eae9998f1683013328.webp",
-    video: "https://www.youtube.com/watch?v=5_a596Y4XY4",
-    year: "2014",
-    duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
-    description:
-      "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
-  },
+ {
+      id: 13,
+      title: "The Incredible Sun",
+      img: "https://api.adgrouptech.com/images/services/57fc4f2b9a7823ff95534f346277af291683046485.webp",
+      cover:
+        "https://api.adgrouptech.com/images/services/9835bbdd7f465ec03c30f24b2ec8302e1697480769.webp",
+      video: "https://www.youtube.com/watch?v=ijGyynKnj6s",
+      year: "2014",
+      duration: "28 mins",
+      rating: "HR / Rulesome",
+      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
+      studio: "NASA Education",
+      subject: "Solar System",
+      languages: "English, French",
+      description:
+        "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
+    },
+ 
 ];
 
 export default function Videos() {
@@ -222,13 +236,13 @@ export default function Videos() {
   const [activeCategory, setActiveCategory] = useState(allCategories[0]);
 
   const filtered = allCategories.filter((cat) =>
-    cat.title.toLowerCase().includes(searchQuery.toLowerCase())
+    cat.title.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
   const paginated = filtered.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
+    currentPage * ITEMS_PER_PAGE,
   );
 
   const handleCategoryClick = (cat: (typeof allCategories)[0]) => {
@@ -246,7 +260,10 @@ export default function Videos() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f7f8fa]" style={{ fontFamily: "'Segoe UI', Arial, sans-serif" }}>
+    <div
+      className="min-h-screen bg-[#f7f8fa]"
+      style={{ fontFamily: "'Segoe UI', Arial, sans-serif" }}
+    >
       {/* ── Hero Section ── */}
       <section className="relative h-screen overflow-hidden">
         {/* Background */}
@@ -265,11 +282,15 @@ export default function Videos() {
         {/* Content */}
         <div className="relative h-full max-w-[1200px] mx-auto px-8 flex items-center">
           <div className="max-w-[580px] text-white">
-            <p className="text-[25px] text-gray-300 mb-2.5">{activeCategory.subtitle}</p>
+            <p className="text-[25px] text-gray-300 mb-2.5">
+              {activeCategory.subtitle}
+            </p>
 
             <h1 className="text-[42px] font-extrabold mb-4 leading-tight tracking-tight">
               {activeCategory.title}{" "}
-              <span className="font-normal text-[32px] text-gray-300">({activeCategory.year})</span>
+              <span className="font-normal text-[32px] text-gray-300">
+                ({activeCategory.year})
+              </span>
             </h1>
 
             <p className="text-lg leading-relaxed text-gray-200 mb-6 max-w-[520px]">
@@ -278,12 +299,16 @@ export default function Videos() {
 
             <div className="flex gap-10 mb-7">
               <div>
-                <p className="text-[11px] text-gray-400 mb-1 uppercase tracking-wide">Main Information</p>
+                <p className="text-[11px] text-gray-400 mb-1 uppercase tracking-wide">
+                  Main Information
+                </p>
                 <p className="text-gray-300">{activeCategory.studio}</p>
                 <p className="text-gray-300">{activeCategory.subject}</p>
               </div>
               <div>
-                <p className="text-[11px] text-gray-400 mb-1 uppercase tracking-wide">Languages</p>
+                <p className="text-[11px] text-gray-400 mb-1 uppercase tracking-wide">
+                  Languages
+                </p>
                 <p className=" text-gray-300">{activeCategory.languages}</p>
               </div>
             </div>
@@ -304,22 +329,24 @@ export default function Videos() {
         <div className="max-w-[1100px] mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-3">
-            <h2 className="text-3xl font-bold text-gray-900 mt-20">Explore the Universe</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mt-20">
+              Explore the Universe
+            </h2>
             <p className="text-gray-500 text-sm mt-1.5">
-              Fun, age-appropriate videos that turn space science into an exciting adventure.
+              Fun, age-appropriate videos that turn space science into an
+              exciting adventure.
             </p>
           </div>
 
           {/* Search */}
-          <div className="flex justify-end mb-6">
-            <div className="relative">
- 
+          <div className="flex justify-center mb-10">
+            <div className="relative w-full max-w-md">
               <input
                 type="text"
-                placeholder="Search videos..."
+                placeholder="  Search videos..."
                 value={searchQuery}
                 onChange={handleSearchChange}
-                className="pl-8 pr-3.5 py-2.5 border border-gray-200 rounded-lg text-sm outline-none w-60 bg-white text-gray-700"
+                className="pl-10 pr-4 py-3 border border-gray-200 rounded-xl text-sm outline-none w-full bg-white text-gray-700 shadow-sm focus:border-purple-400 focus:ring-2 focus:ring-purple-100 transition"
               />
             </div>
           </div>
@@ -349,7 +376,8 @@ export default function Videos() {
                       sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = `https://placehold.co/400x530/dde1ea/9ca3af?text=${encodeURIComponent(category.title)}`;
+                        (e.target as HTMLImageElement).src =
+                          `https://placehold.co/400x530/dde1ea/9ca3af?text=${encodeURIComponent(category.title)}`;
                       }}
                     />
                   </div>
@@ -365,35 +393,40 @@ export default function Videos() {
 
           {/* Pagination */}
           {totalPages > 1 && (
-            <div className="flex items-center justify-center gap-2 mt-9">
+            <div className="flex items-center justify-center gap-2 mt-14 mb-16">
               <button
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
-                className="w-9 h-9 flex items-center justify-center border border-gray-200 rounded-lg bg-white cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed text-gray-500"
+                className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <ChevronLeft size={16} />
+                <ChevronLeft size={18} />
               </button>
 
               {[...Array(totalPages)].map((_, i) => (
                 <button
                   key={i + 1}
                   onClick={() => setCurrentPage(i + 1)}
-                  className={`w-9 h-9 rounded-lg font-semibold text-sm cursor-pointer transition-colors ${
-                    currentPage === i + 1
-                      ? "bg-indigo-500 text-white border-none"
-                      : "border border-gray-200 bg-white text-gray-500 hover:bg-gray-50"
-                  }`}
+                  className={`
+                        w-10 h-10 rounded-lg font-medium transition-colors
+                        ${
+                          currentPage === i + 1
+                            ? "bg-purple-500 text-white"
+                            : "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
+                        }
+                      `}
                 >
                   {i + 1}
                 </button>
               ))}
 
               <button
-                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                onClick={() =>
+                  setCurrentPage((p) => Math.min(totalPages, p + 1))
+                }
                 disabled={currentPage === totalPages}
-                className="w-9 h-9 flex items-center justify-center border border-gray-200 rounded-lg bg-white cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed text-gray-500"
+                className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <ChevronRight size={16} />
+                <ChevronRight size={18} />
               </button>
             </div>
           )}
