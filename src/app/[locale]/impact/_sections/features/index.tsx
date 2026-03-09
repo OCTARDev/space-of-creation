@@ -38,7 +38,7 @@ const caseStudies: CaseStudy[] = [
 function BadgeIcon() {
   return (
     <svg
-      className="w-6  h-6"
+      className="w-6 h-10"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -63,13 +63,13 @@ function MetricBadge({
   extra?: string;
 }) {
   return (
-    <div className="absolute s-4 flex items-center gap-2 bg-white rounded-xl shadow-lg px-3 py-2 z-10">
+    <div className="relative s-4 flex items-center gap-2 bg-white rounded-xl shadow-lg px-3 py-2 z-10">
       {extra && (
         <span className="bg-[#3BBFEF] text-white text-xs font-bold rounded-md px-2 py-1 mr-1">
           {extra}
         </span>
       )}
-      <BadgeIcon />
+       <BadgeIcon/>
       <div className="flex flex-col leading-tight">
         <span className="text-gray-900 font-bold text-sm">{value}</span>
         <span className="text-gray-500 text-[11px]">{label}</span>
@@ -130,7 +130,7 @@ function CaseStudyCard({ study, t }: { study: CaseStudy; t: any }) {
           <h3 className="text-xl font-bold text-gray-900 leading-snug">
             {t(`${translationKey}.title`)}
           </h3>
-          <p className="text-[#302f2f] text-sm leading-relaxed italic">
+          <p className="text-[#302f2f] text-xl mt-10 leading-relaxed italic">
             {t(`${translationKey}.quote`)}
           </p>
         </div>
@@ -147,11 +147,13 @@ function CaseStudyCard({ study, t }: { study: CaseStudy; t: any }) {
           </div>
 
           {/* Metric badge overlapping image bottom */}
-          <MetricBadge
+          <div className="me-10">
+                  <MetricBadge
             value={t(`${translationKey}.badge.value`)}
             label={t(`${translationKey}.badge.label`)}
             extra={badgeExtra}
           />
+          </div>
         </div>
       </div>
 

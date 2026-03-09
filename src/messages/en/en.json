@@ -250,40 +250,40 @@
     "subtitle": "Experiences and campaigns designed to change behavior, deepen engagement, and deliver results that last.",
     "caseStudies": {
       "school": {
-        "tag": "School Success Story",
-        "title": "OCTAR AR",
-        "quote": "\"Fully developed Arabic learning ecosystem for kindergartens, learning centers, and homes. MOE-aligned content, bilingual interface, teacher and parent dashboards. Currently in an active pilot with selected UAE institutions.\"",
+        "tag": "School & Kindergarten Challenge",
+        "title": "Arabic Language Learning in UAE Classrooms",
+        "quote": "Children are memorizing Arabic letters without understanding them. We need an approach that makes the language come alive — not just appear on a page. — A common challenge shared by UAE kindergarten directors",
         "badge": {
-          "value": "42%",
-          "label": "Higher Test Scores"
+          "value": "",
+          "label": "70% of what children experience is retained vs. 10% of what they read — Edgar Dale, Cone of Experience"
         },
-        "challenge": ["Provide advanced physics lab experience without prohibitive equipment costs and safety concerns."],
-        "solution": ["Implementation of VCLAB modules for Quantum Mechanics and Electromagnetism."],
-        "result": ["42% increase in average test scores on related modules and qualitative feedback citing 'fundamentally improved understanding of abstract concepts.'"]
+        "challenge": ["Traditional Arabic learning relies on repetition and passive observation. Children aged 3–6 struggle to connect letters to meaning, resulting in surface-level memorization rather than genuine comprehension."],
+        "solution": ["OCTAR AR transforms coloring pages into living AR experiences. Children color a letter by hand, then watch it rise from the page as a 3D animated character — connecting the physical act to a memorable digital moment. Available for kindergartens and homes."],
+        "result": ["🔬 Pilot Program Active — UAE Kindergartens Currently onboarding select UAE institutions. Outcomes to be published upon pilot completion."]
       },
       "government": {
-        "tag": "Government Campaign",
-        "title": "Awareness Program",
-        "quote": "\"By transforming complex water conservation concepts into clear, relatable experiences, the campaign made sustainability stick. Youth didn't just see the message—they remembered it. The result wasn't short-term attention, but lasting recall of the actions that truly matter.\"",
+        "tag": "Learning Support Challenge",
+        "title": "Children with Learning Difficulties in the UAE",
+        "quote": "These children don't need more content. They need a safe space to try, fail, and try again — without fear of judgment. — Specialist feedback, Learning Support Center, Sharjah",
         "badge": {
-          "value": "90%",
-          "label": "Improved Conservation Recall"
+          "value": "",
+          "label": "Students with dyslexia show 3x better retention through multisensory learning — NCLD, 2023"
         },
-        "challenge": ["Create high-impact, memorable content for a national water conservation campaign targeting youth."],
-        "solution": ["Development and distribution of a custom 'Water Guardian' AR storybook to 10,000+ students."],
-        "result": ["Post-campaign surveys showed 90% recall of key conservation steps—a result dramatically higher than previous traditional material."]
+        "challenge": ["Children with dyslexia, ADHD, and reading difficulties are often placed in the same learning environments as their peers — without the safe, repeatable, pressure-free space they need to build genuine confidence"],
+        "solution": ["AR Stories creates therapist-guided, interactive narratives that allow children to engage at their own pace. Each story is designed for repetition without frustration — building comprehension through experience, not instruction. Currently in active testing with a learning support center in Sharjah."],
+        "result": ["🔬 Active Testing — Sharjah, UAE First AR story produced and in clinical review. Full outcomes pending pilot completion."]
       },
       "venue": {
-        "tag": "Venue Transformation",
-        "title": "",
-        "quote": "\"The aquarium-themed Life Digital Environment gave families a reason to pause, connect, and create shared moments. It evolved into the mall's most popular photo spot, extending visits and transforming a routine mall trip into a memorable family experience.\"",
+        "tag": "Venue & Events Challenge",
+        "title": "Driving Engagement in UAE Public Spaces",
+        "quote": "Visitors walk in, look around, and leave. We need something that makes them stop, interact, and come back. — A challenge shared across UAE malls and event venues",
         "badge": {
-          "value": "25 m",
-          "label": "Longer Dwell Time"
+          "value": "4",
+          "label": "Themes Ready"
         },
-        "challenge": ["Drive family footfall and dwell time during the summer festival."],
-        "solution": ["Installation of the Life Digital Environment (Aquarium theme) in the main atrium for 6 weeks."],
-        "result": ["The installation became the #1 photo spot in the mall, with participating families showing an average increased dwell time of 25 minutes."]
+        "challenge": ["Malls, museums, and event venues across the UAE face declining dwell time and footfall. Static displays and traditional activations no longer create the shareable, memorable moments that today's visitors expect."],
+        "solution": ["Life Digital Environment transforms any wall into a living, interactive canvas. Visitors trigger animations, contribute to shared experiences, and create social-media-worthy moments — all without downloading an app. Four themes currently available: Gulf Marine Life, Ramadan, Solar System Giants, and Space"],
+        "result": ["✅ Available Now — UAE Four environments fully produced and ready for deployment. Contact us for a venue assessment"]
       }
     },
     "labels": {
