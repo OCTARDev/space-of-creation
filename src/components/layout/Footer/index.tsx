@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
   const contactRows = [
     {
       label: t("footer.contact.email"),
-      value: "b2b@spaceforcreation.ae",
+      value: "support@fadaatech.com",
     },
     {
       label: t("footer.contact.phone"),
