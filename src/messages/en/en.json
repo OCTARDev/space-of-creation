@@ -1140,6 +1140,65 @@
       "planetarium": "Educational Planetarium",
       "vr": "VR Experiences"
     }
+  },
+    "catalogue": {
+    "hero": {
+      "breadcrumb": {
+        "life": "Life Digital Environment",
+        "categories": "Categories"
+      },
+      "title": "Available Categories",
+      "description": "Welcome to the vibrant world of OCTAR Coloring Categories! Explore our diverse range of captivating themes and choose your favorite category to start your creative journey."
+    },
+    "section": {
+      "title": "Available Categories",
+      "searchPlaceholder": "Search categories...",
+      "loading": "Loading categories...",
+      "error": "Failed to load categories. Please try again.",
+      "noResults": "No categories found matching \"{query}\""
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+    "target": {
+    "hero": {
+      "breadcrumb": {
+        "life": "Life Digital Environment",
+        "categories": "Categories"
+      },
+      "defaultTitle": "Available Categories",
+      "description": "Welcome to the vibrant world of OCTAR Coloring Categories! Explore our diverse range of captivating themes and choose your favorite category to start your creative journey."
+    },
+    "section": {
+      "title": "Available Categories",
+      "searchPlaceholder": "Search categories...",
+      "loading": "Loading categories...",
+      "error": "Failed to load categories. Please try again.",
+      "noResults": "No categories found matching \"{query}\""
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+    "planet_videos": {
+    "hero": {
+      "mainInfo": "Main Information",
+      "languages": "Languages",
+      "startWatching": "Start Watching"
+    },
+    "catalogue": {
+      "title": "Explore the Universe",
+      "subtitle": "Fun, age-appropriate videos that turn space science into an exciting adventure.",
+      "searchPlaceholder": "Search videos...",
+      "noResults": "No videos found matching \"{query}\""
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    }
   }
   
 }

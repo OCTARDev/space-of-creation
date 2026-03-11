@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import bgcover from "@/assets/media/catloguecover.png";
 import Image from "next/image";
 import { useParams } from "next/navigation";
+import { useTranslations } from 'next-intl';
 
 const ITEMS_PER_PAGE = 9;
 
@@ -16,19 +17,18 @@ type Category = {
   media: string;
 };
 
-export default function Catalogue() {
+export default function Target() {
+  const t = useTranslations('target');
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [activeCategory, setActiveCategory] = useState<Category | null>(null);
 
   const {category_id}=useParams<any>()
 
-
   const targetQuery = useQuery<any>({
-
-    queryKey: ["targets", category_id], // category_id in key so it refetches when category_id changes
+    queryKey: ["targets", category_id],
     queryFn: () => getTargets(category_id),
-    enabled: !!category_id, // only fetch when category_id is available
+    enabled: !!category_id,
   });
 
   const allCategories: Category[] = targetQuery.data?.data ?? [];
@@ -55,7 +55,7 @@ export default function Catalogue() {
 
   // Hero displays default cover until user clicks a card
   const heroImage = activeCategory?.media ?? bgcover;
-  const heroTitle = activeCategory?.title ?? "Available categories";
+  const heroTitle = activeCategory?.title ?? t('hero.defaultTitle');
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -78,7 +78,7 @@ export default function Catalogue() {
           <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
             <div className="max-w-3xl text-white">
               <p className="text-sm md:text-base text-gray-200 mb-3">
-                Life Digital Environment / Categories /{" "}
+                {t('hero.breadcrumb.life')} / {t('hero.breadcrumb.categories')} /{" "}
                 <span className="text-[#79B9CE] font-semibold">
                   {heroTitle}
                 </span>
@@ -87,9 +87,7 @@ export default function Catalogue() {
                 {heroTitle}
               </h1>
               <p className="text-base md:text-lg text-gray-200 max-w-2xl">
-                Welcome to the vibrant world of OCTAR Coloring Categories!
-                Explore our diverse range of captivating themes and choose your
-                favorite category to start your creative journey.
+                {t('hero.description')}
               </p>
             </div>
           </div>
@@ -101,13 +99,11 @@ export default function Catalogue() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header with Search */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              Available Categories
-            </h2>
+           
             <div className="relative w-full sm:w-72">
               <input
                 type="text"
-                placeholder="Search categories..."
+                placeholder={t('section.searchPlaceholder')}
                 value={searchQuery}
                 onChange={handleSearchChange}
                 className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500"
@@ -136,7 +132,7 @@ export default function Catalogue() {
           {targetQuery.isError && (
             <div className="text-center py-12">
               <p className="text-red-500">
-                Failed to load categories. Please try again.
+                {t('section.error')}
               </p>
             </div>
           )}
@@ -147,7 +143,7 @@ export default function Catalogue() {
               {paginated.length === 0 ? (
                 <div className="text-center py-12">
                   <p className="text-gray-500">
-                    No categories found matching "{searchQuery}"
+                    {t('section.noResults', { query: searchQuery })}
                   </p>
                 </div>
               ) : (

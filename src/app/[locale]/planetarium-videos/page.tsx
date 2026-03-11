@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const ITEMS_PER_PAGE = 9;
 
@@ -791,6 +792,7 @@ const allCategories = [
 ];
 
 export default function Videos() {
+  const t = useTranslations('planet_videos');
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [activeCategory, setActiveCategory] = useState(allCategories[0]);
@@ -860,16 +862,16 @@ export default function Videos() {
             <div className="flex gap-10 mb-7">
               <div>
                 <p className="text-[11px] text-gray-400 mb-1 uppercase tracking-wide">
-                  Main Information
+                  {t('hero.mainInfo')}
                 </p>
                 <p className="text-gray-300">{activeCategory.studio}</p>
                 <p className="text-gray-300">{activeCategory.subject}</p>
               </div>
               <div>
                 <p className="text-[11px] text-gray-400 mb-1 uppercase tracking-wide">
-                  Languages
+                  {t('hero.languages')}
                 </p>
-                <p className=" text-gray-300">{activeCategory.languages}</p>
+                <p className="text-gray-300">{activeCategory.languages}</p>
               </div>
             </div>
 
@@ -877,8 +879,8 @@ export default function Videos() {
               onClick={openVideo}
               className="inline-flex mt-10 items-center px-6 py-3 rounded-xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition"
             >
-              <Play size={16} fill="white" />
-              Start Watching
+              <Play size={16} fill="white" className="mr-2" />
+              {t('hero.startWatching')}
             </button>
           </div>
         </div>
@@ -890,11 +892,10 @@ export default function Videos() {
           {/* Header */}
           <div className="text-center mb-3">
             <h2 className="text-3xl font-bold text-gray-900 mt-20">
-              Explore the Universe
+              {t('catalogue.title')}
             </h2>
             <p className="text-gray-500 text-sm mt-1.5">
-              Fun, age-appropriate videos that turn space science into an
-              exciting adventure.
+              {t('catalogue.subtitle')}
             </p>
           </div>
 
@@ -903,7 +904,7 @@ export default function Videos() {
             <div className="relative w-full max-w-md">
               <input
                 type="text"
-                placeholder="  Search videos..."
+                placeholder={t('catalogue.searchPlaceholder')}
                 value={searchQuery}
                 onChange={handleSearchChange}
                 className="pl-10 pr-4 py-3 border border-gray-200 rounded-xl text-sm outline-none w-full bg-white text-gray-700 shadow-sm focus:border-purple-400 focus:ring-2 focus:ring-purple-100 transition"
@@ -911,10 +912,10 @@ export default function Videos() {
             </div>
           </div>
 
-          {/* Grid — 1 col mobile → 2 col sm → 3 col md → 4 col lg */}
+          {/* Grid */}
           {paginated.length === 0 ? (
             <div className="text-center py-12 text-gray-500">
-              No videos found matching &quot;{searchQuery}&quot;
+              {t('catalogue.noResults', { query: searchQuery })}
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-start">
@@ -967,13 +968,13 @@ export default function Videos() {
                   key={i + 1}
                   onClick={() => setCurrentPage(i + 1)}
                   className={`
-                        w-10 h-10 rounded-lg font-medium transition-colors
-                        ${
-                          currentPage === i + 1
-                            ? "bg-purple-500 text-white"
-                            : "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
-                        }
-                      `}
+                    w-10 h-10 rounded-lg font-medium transition-colors
+                    ${
+                      currentPage === i + 1
+                        ? "bg-purple-500 text-white"
+                        : "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
+                    }
+                  `}
                 >
                   {i + 1}
                 </button>

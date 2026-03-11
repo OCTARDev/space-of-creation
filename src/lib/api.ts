@@ -13,6 +13,14 @@ export interface book {
   phone: string
   category_ids:Array<number>
 }
+export interface contact {
+  name: number
+  email: string
+  phone: string
+  organization:string
+  interested:string
+  description:string
+}
 
 /* ========== GET APIs ========== */
 
@@ -29,5 +37,10 @@ export const getTargets = async (id:number): Promise<category[]> => {
 
 export const bookLife = async (data: book) => {
   const res = await api.post('/booking/store', data)
+  return res.data.data
+}
+export const contactus = async (data: contact) => {
+  const res = await api.post('/contact-us/send', data)
+  console.log(res)
   return res.data.data
 }

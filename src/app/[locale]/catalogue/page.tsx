@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import bgcover from "@/assets/media/catloguecover.png";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 
 const ITEMS_PER_PAGE = 9;
 
@@ -17,6 +18,7 @@ type Category = {
 };
 
 export default function Catalogue() {
+  const t = useTranslations('catalogue');
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -44,7 +46,7 @@ export default function Catalogue() {
 
   // Hero displays default cover until user clicks a card
   const heroImage = bgcover;
-  const heroTitle = "Available categories";
+  const heroTitle = t('hero.title');
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -67,7 +69,7 @@ export default function Catalogue() {
           <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
             <div className="max-w-3xl text-white">
               <p className="text-sm md:text-base text-gray-200 mb-3">
-                Life Digital Environment / Categories /{" "}
+                {t('hero.breadcrumb.life')} / {t('hero.breadcrumb.categories')} /{" "}
                 <span className="text-[#79B9CE] font-semibold">
                   {heroTitle}
                 </span>
@@ -76,9 +78,7 @@ export default function Catalogue() {
                 {heroTitle}
               </h1>
               <p className="text-base md:text-lg text-gray-200 max-w-2xl">
-                Welcome to the vibrant world of OCTAR Coloring Categories!
-                Explore our diverse range of captivating themes and choose your
-                favorite category to start your creative journey.
+                {t('hero.description')}
               </p>
             </div>
           </div>
@@ -91,12 +91,12 @@ export default function Catalogue() {
           {/* Header with Search */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-              Available Categories
+              {t('section.title')}
             </h2>
             <div className="relative w-full sm:w-72">
               <input
                 type="text"
-                placeholder="Search categories..."
+                placeholder={t('section.searchPlaceholder')}
                 value={searchQuery}
                 onChange={handleSearchChange}
                 className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500"
@@ -125,7 +125,7 @@ export default function Catalogue() {
           {categoryQuery.isError && (
             <div className="text-center py-12">
               <p className="text-red-500">
-                Failed to load categories. Please try again.
+                {t('section.error')}
               </p>
             </div>
           )}
@@ -136,7 +136,7 @@ export default function Catalogue() {
               {paginated.length === 0 ? (
                 <div className="text-center py-12">
                   <p className="text-gray-500">
-                    No categories found matching "{searchQuery}"
+                    {t('section.noResults', { query: searchQuery })}
                   </p>
                 </div>
               ) : (
@@ -146,51 +146,44 @@ export default function Catalogue() {
                       <Link
                         key={category.id}
                         href={`/catalogue/targets/${category.id}`}
+                        className="group block bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow"
                       >
-  
-                          {/* Image wrapper */}
-                          <div
-                            style={{
-                              position: "relative",
-                              paddingBottom: "72%",
-                              overflow: "hidden",
-                              background: "#e8eaf2",
+                        {/* Image wrapper */}
+                        <div
+                          style={{
+                            position: "relative",
+                            paddingBottom: "72%",
+                            overflow: "hidden",
+                            background: "#e8eaf2",
+                          }}
+                        >
+                          <img
+                            src={category.media}
+                            alt={category.title}
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).src =
+                                `https://placehold.co/400x290/dde1ea/9ca3af?text=${encodeURIComponent(
+                                  category.title,
+                                )}`;
                             }}
-                          >
-                            <img
-                              src={category.media}
-                              alt={category.title}
-                              onError={(e) => {
-                                (e.target as HTMLImageElement).src =
-                                  `https://placehold.co/400x290/dde1ea/9ca3af?text=${encodeURIComponent(
-                                    category.title,
-                                  )}`;
-                              }}
-                              style={{
-                                position: "absolute",
-                                inset: 0,
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover",
-                                transition: "transform 0.3s ease",
-                              }}
-                              className="group-hover:scale-105"
-                            />
-                          </div>
+                            style={{
+                              position: "absolute",
+                              inset: 0,
+                              width: "100%",
+                              height: "100%",
+                              objectFit: "cover",
+                              transition: "transform 0.3s ease",
+                            }}
+                            className="group-hover:scale-105"
+                          />
+                        </div>
 
-                          {/* Title */}
-                          <div className="p-4">
-                            <h3
-                              className={`
-                            font-semibold text-base transition-colors
-                            
-                              text-gray-900 group-hover:text-purple-600"
-                            }
-                          `}
-                            >
-                              {category.title}
-                            </h3>
-                          </div>
+                        {/* Title */}
+                        <div className="p-4">
+                          <h3 className="font-semibold text-base text-gray-900 group-hover:text-purple-600 transition-colors">
+                            {category.title}
+                          </h3>
+                        </div>
                       </Link>
                     );
                   })}

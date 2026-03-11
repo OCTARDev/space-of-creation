@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./style.css";
 import { useMutation } from "@tanstack/react-query";
-import { bookLife } from "@/lib/api";
+import { contactus } from "@/lib/api";
 import { useTranslations } from 'next-intl';
 
 export default function Contact() {
@@ -22,33 +22,35 @@ export default function Contact() {
     name: "",
     email: "",
     phone: "",
-    category_id: [1],
     organization: "",
-    solution: "",
-    challenges: "",
+    interested: "",
+    description: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
 
   const mutation = useMutation({
     mutationFn: () =>
-      bookLife({
+      contactus({
         name: formData.name as any,
         email: formData.email,
         phone: formData.phone,
-        category_ids: formData.category_id ? [Number(formData.category_id)] : [],
+        organization:formData.organization,
+        interested:formData.interested,
+        description:formData.description
       }),
+      
       
     onSuccess: () => {
       setSubmitted(true);
+      
       setFormData({ 
         name: "", 
         email: "", 
         phone: "", 
-        category_id: [1],
         organization: "",
-        solution: "",
-        challenges: "",
+        interested: "",
+        description:""
       });
     },
     onError: (error) => {
@@ -64,12 +66,17 @@ export default function Contact() {
 
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.phone || !formData.organization || !formData.solution || !formData.challenges) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.organization || !formData.interested || !formData.description) {
       alert(t('form.error'));
       return;
     }
+
     mutation.mutate();
+
   };
+
+
+  
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12">
@@ -175,8 +182,8 @@ export default function Contact() {
             </label>
             <div className="relative">
               <select
-                name="solution"
-                value={formData.solution}
+                name="interested"
+                value={formData.interested}
                 onChange={handleChange}
                 className="w-full appearance-none border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition bg-white cursor-pointer"
               >
@@ -198,9 +205,9 @@ export default function Contact() {
               {t('form.fields.challenges.label')} <span className="text-red-400">*</span>
             </label>
             <textarea
-              name="challenges"
+              name="description"
               placeholder={t('form.fields.challenges.placeholder')}
-              value={formData.challenges}
+              value={formData.description}
               onChange={handleChange}
               rows={4}
               className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-800 placeholder-gray-300 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition resize-none"
