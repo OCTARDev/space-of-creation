@@ -145,7 +145,7 @@
       "location": "Location:",
       "license": "License:",
       "emailValue": "support@fadaatech.com",
-      "phoneValue": "5397 797 54 971+",
+      "phoneValue": "+971 54 797 5397",
       "address": "Dubai, UAE",
       "licenseValue": "1571670"
 
@@ -1007,6 +1007,13 @@
         ]
       }
     }
+  },
+    "vr_book": {
+    "title": "Step Into New Realities",
+    "subtitle": "Schedule a VR consultation",
+    "button": "Book a VR Experience",
+    "call": "Or call :",
+    "phone": "+971 54 797 5397"
   },
     "vr_keyfeatures": {
     "title": "Complete VR Solution",

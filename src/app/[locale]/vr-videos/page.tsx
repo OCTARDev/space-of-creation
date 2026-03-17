@@ -366,10 +366,10 @@ export default function Videos() {
                   className="group text-left p-0 bg-transparent border-none outline-none cursor-pointer"
                 >
                   {/* Card image — portrait 3:4 */}
-                  <div
-                    className="relative w-90 overflow-hidden rounded-2xl bg-black"
-                    style={{ aspectRatio: "3 / 4" }}
-                  >
+             <div
+  className="relative w-full overflow-hidden rounded-2xl bg-black"
+  style={{ aspectRatio: "3 / 4" }}
+>
                     <Image
                       src={category.img}
                       alt={category.title}
