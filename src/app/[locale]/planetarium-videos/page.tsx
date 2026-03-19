@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 9;
 
 const allCategories = [
   {
@@ -14,13 +14,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/56e4744bb54621dc49b5ec35f3edee9f1683446344.webp",
     video: "https://www.youtube.com/watch?v=emnp5-Rc4NE",
-    year: "2014",
     duration: "20 mins",
-    rating: "HR / Rulesome",
-    subtitle: "The story of the supernova 7+ | 20 mins | HR / Rulesome",
-    studio: "Rocket Jonuals Publications Films",
-    subject: "The 1776 Lists",
-    languages: "English, French",
+    subtitle: "The story of the supernova | 20 mins",
+    languages: "English",
     description:
       "This bright and colorful film tells the story of a star's life cycle: from its birth in gas dust nebulae to the end of life in the form of a black hole or a supernova star. All these phenomena are explained to the maximum extent possible and are accessible for both children and students.",
   },
@@ -31,13 +27,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/6485a52dd282f688874a027b873e080d1683446496.webp",
     video: "https://www.youtube.com/watch?v=26b-ghmjR7U",
-    year: "2015",
     duration: "18 mins",
-    rating: "HR / Rulesome",
-    subtitle: "The story of scale 7+ | 18 mins | HR / Rulesome",
-    studio: "Space Films Studio",
-    subject: "Scale & Universe",
-    languages: "English, French",
+    subtitle: "The story of scale | 18 mins",
+    languages: "English",
     description:
       "A fascinating journey exploring the immense scale of our universe, from the smallest subatomic particles to the largest galactic structures known to science.",
   },
@@ -48,12 +40,8 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/52bb8d6fdd92282c825ad5ed260bef3f1683446622.webp",
     video: "https://www.youtube.com/watch?v=ND9T-rNx5E8",
-    year: "2016",
     duration: "22 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Astralis 7+ | 22 mins | HR / Rulesome",
-    studio: "Stellar Productions",
-    subject: "Stars & Galaxies",
+    subtitle: "Astralis | 22 mins",
     languages: "English, Spanish",
     description:
       "Astralis takes viewers on a breathtaking visual journey through star clusters, nebulae, and the birth of new solar systems across the Milky Way galaxy.",
@@ -65,13 +53,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/3ce12fa555b579e4d4508758c8075dea1683446878.webp",
     video: "https://www.youtube.com/watch?v=ND9T-rNx5E8",
-    year: "2017",
     duration: "25 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Bizarre Moons 7+ | 25 mins | HR / Rulesome",
-    studio: "Cosmic Films",
-    subject: "Moons & Planets",
-    languages: "English, French",
+    subtitle: "Bizarre Moons | 25 mins",
+    languages: "English",
     description:
       "Discover the strangest moons in our solar system — from Europa's icy ocean to Titan's methane lakes — and what they might tell us about life beyond Earth.",
   },
@@ -82,13 +66,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/32795c31ecf6dce1995d0f5bf43a7c171683447585.webp",
     video: "https://www.youtube.com/watch?v=y-bvynYNIb4",
-    year: "2021",
     duration: "24 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Enigma 7+ | 24 mins | HR / Rulesome",
-    studio: "Mystery Films",
-    subject: "Dark Matter",
-    languages: "English, French",
+    subtitle: "Enigma | 24 mins",
+    languages: "English",
     description:
       "Explore the deepest mysteries of the cosmos — dark matter, dark energy, and the unseen forces that shape the fate of the entire universe.",
   },
@@ -99,13 +79,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/208689df74033c800b5e17ed4310688d1683447868.webp",
     video: "https://www.youtube.com/watch?v=PC2P4V5vSOo",
-    year: "2019",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -116,12 +92,8 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/cadcca09d4393af675140cce9a2f85f91683448161.webp",
     video: "https://www.youtube.com/watch?v=TgCqlCg54Tk",
-    year: "2020",
     duration: "20 mins",
-    rating: "HR / Rulesome",
-    subtitle: "New Horizons 7+ | 20 mins | HR / Rulesome",
-    studio: "Deep Space Films",
-    subject: "Space Exploration",
+    subtitle: "New Horizons | 20 mins",
     languages: "English",
     description:
       "Follow the New Horizons spacecraft on its historic mission past Pluto and into the mysterious Kuiper Belt at the edge of our solar system.",
@@ -133,13 +105,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/32795c31ecf6dce1995d0f5bf43a7c171683447585.webp",
     video: "https://www.youtube.com/watch?v=eZ6IT-_uGu8",
-    year: "2021",
     duration: "24 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Enigma 7+ | 24 mins | HR / Rulesome",
-    studio: "Mystery Films",
-    subject: "Dark Matter",
-    languages: "English, French",
+    subtitle: "Enigma | 24 mins",
+    languages: "English",
     description:
       "Explore the deepest mysteries of the cosmos — dark matter, dark energy, and the unseen forces that shape the fate of the entire universe.",
   },
@@ -150,13 +118,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/954e50b8f18c543c3939efc7f6b900fe1683012626.webp",
     video: "https://www.youtube.com/watch?v=PC2P4V5vSOo",
-    year: "2019",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -167,13 +131,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/2cc02a5e3d7b2e2b13ae77d24b7faab91683012735.webp",
     video: "https://www.youtube.com/watch?v=sIdvo0gUzfg",
-    year: "2019",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -184,13 +144,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/4f819c5ad011d69da0163834a8c9da3f1683012912.webp",
     video: "https://www.youtube.com/watch?v=KoHFUZAuS_A",
-    year: "2019",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -201,13 +157,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/1fb547dd605bb3980b9715f1eae9998f1683013328.webp",
     video: "https://www.youtube.com/watch?v=5_a596Y4XY4",
-    year: "2014",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -218,13 +170,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/e83dc3776aa55acf8670d0f4c505d9c91697469394.webp",
     video: "https://www.youtube.com/watch?v=GeggpUt4Dec&t=4s",
-    year: "2014",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -235,13 +183,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/751d76594be85a26b6b153482bc9025d1697469829.webp",
     video: "https://www.youtube.com/watch?v=C_sNaaTeyjY",
-    year: "2014",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -252,13 +196,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/98b8371e308b0497f38e7e4f1563cac41697470214.webp",
     video: "https://www.youtube.com/watch?v=rwF7e1El3IM",
-    year: "2014",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -269,13 +209,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/e486fda911e33ef99eec93551ac4c8851697470683.webp",
     video: "https://www.youtube.com/watch?v=hckyhYG2FYU&t=1s",
-    year: "2014",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -286,13 +222,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/75b0350f5873616057be15be4ff868f61697471270.webp",
     video: "https://www.youtube.com/watch?v=4kHToAtcRu4",
-    year: "2014",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -303,13 +235,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/e31b262511b767260d6f82c33f854bf41697471786.webp",
     video: "https://www.youtube.com/watch?v=NeaEAw4FTiM",
-    year: "2014",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -320,13 +248,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/b9faa0a13b53de214fd497a7ca9b48d01697472789.webp",
     video: "https://www.youtube.com/watch?v=za67A38pPdg",
-    year: "2014",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -337,13 +261,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/39762c2079eee114d38d4d4ea1cca9c91697474688.webp",
     video: "https://www.youtube.com/watch?v=9Ft8pQBUanQ",
-    year: "2014",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -354,13 +274,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/7ef7217337119d62a543982eb0b2122c1697475558.webp",
     video: "https://www.youtube.com/shorts/o7BRUUUR148",
-    year: "2014",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -371,13 +287,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/d9af1b0c735e037a48ff0895a426e0a61697475714.webp",
     video: "https://www.youtube.com/watch?v=gPwsX3P-xrc",
-    year: "2014",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -388,13 +300,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/63c28de3901a2ca3d14de7cc651740851697476627.webp",
     video: "https://www.youtube.com/watch?v=aWFCZeP-5Qc",
-    year: "2014",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -405,13 +313,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/8fb5245753653676c9d14247959ccc2f1697476780.webp",
     video: "https://www.youtube.com/watch?v=fbT4o3-FRII",
-    year: "2014",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System | 28 mins",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -422,13 +326,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/83946bd692d0757392c701b88f5ffae41697477066.webp",
       video: "https://www.youtube.com/watch?v=YPLkFUrkeEs",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -439,13 +339,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/65e018c81c51eeac414c4daa92a9259a1697477571.webp",
       video: "https://www.youtube.com/watch?v=tm4YJkPWot0",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -456,13 +352,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/b1831c5a2423d41eaf42afc4a911653d1697477663.webp",
       video: "https://www.youtube.com/watch?v=UNGlOkPKwIQ",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -473,13 +365,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/3b002c321009ad616b65e349fc9ae7fb1697479699.webp",
       video: "https://www.youtube.com/watch?v=rpqTa994CrM",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -490,13 +378,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/b8acb1d2b61a51303acd67fa9cbc31441697479988.webp",
       video: "https://www.youtube.com/",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -507,13 +391,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/258a27f77f6a6ccaaa78c303256aca7c1697480126.webp",
       video: "https://www.youtube.com/watch?v=dOOHJrqIJqY",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -524,13 +404,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/980e686dea90e5f554273f658e5a728b1697480323.webp",
       video: "https://www.youtube.com/watch?v=r3Rjsi0lWHw",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -541,13 +417,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/3b322dfe291d37d641f91c014e2647591697480431.webp",
       video: "https://www.youtube.com/watch?v=QOYjGtWZNJ4",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -558,13 +430,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/7ef2bc3e37e6e87e708434bf749a0c3d1697480569.webp",
       video: "https://www.youtube.com/watch?v=lxhxcqBK5Ok",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -575,13 +443,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/9835bbdd7f465ec03c30f24b2ec8302e1697480769.webp",
       video: "https://www.youtube.com/watch?v=ijGyynKnj6s",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -592,13 +456,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/9835bbdd7f465ec03c30f24b2ec8302e1697480769.webp",
       video: "https://www.youtube.com/watch?v=ijGyynKnj6s",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -609,13 +469,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/0eeb4c9a8f625ebe4ce57373e82171bd1697480869.webp",
       video: "https://www.youtube.com/",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -626,13 +482,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/52a742428b2ad4a03faa1cdd507cef671697481110.webp",
       video: "https://www.youtube.com/watch?v=o-X-WKSkGR0",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -643,13 +495,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/5200b51a588eeb6372eb70e250a281a91697481193.webp",
       video: "https://www.youtube.com/watch?v=bfcpCnk4REU",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -660,13 +508,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/5200b51a588eeb6372eb70e250a281a91697481193.webp",
       video: "https://www.youtube.com/watch?v=OYtaEb7yjw8",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -677,13 +521,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/3a184bb690bdd98e62695e79ce3d9b531697482242.webp",
       video: "https://www.youtube.com/watch?v=WgtTRiKJeQc",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -694,13 +534,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/3a184bb690bdd98e62695e79ce3d9b531697482242.webp",
       video: "https://www.youtube.com/watch?v=XncSEwRxHtQ",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -711,13 +547,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/dba5b384f3b9cfa5b2f045bbc2dfff4e1697482535.webp",
       video: "https://www.youtube.com/watch?v=MC3qNQMIfx4",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -728,13 +560,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/e65f2aaa28b44aba2a6a01c2182602b41697531983.webp",
       video: "https://www.youtube.com/watch?v=ToQrwyopihM&t",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -745,13 +573,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/e65f2aaa28b44aba2a6a01c2182602b41697531983.webp",
       video: "https://www.youtube.com/watch?v=aZTSSSzrD_s",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -762,13 +586,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/8b18ba4e1ad6f4012cd260e582ec5a701698103888.webp",
       video: "https://www.youtube.com/watch?v=38DZVfWTXoo",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -779,13 +599,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/6449346da619c8c011042cc2a64b1fb51698103940.webp",
       video: "https://www.youtube.com/watch?v=58zioCtblAI&t",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System | 28 mins",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -850,9 +666,6 @@ export default function Videos() {
 
             <h1 className="text-[42px] font-extrabold mb-4 leading-tight tracking-tight">
               {activeCategory.title}{" "}
-              <span className="font-normal text-[32px] text-gray-300">
-                ({activeCategory.year})
-              </span>
             </h1>
 
             <p className="text-lg leading-relaxed text-gray-200 mb-6 max-w-[520px]">
@@ -864,8 +677,6 @@ export default function Videos() {
                 <p className="text-[11px] text-gray-400 mb-1 uppercase tracking-wide">
                   {t('hero.mainInfo')}
                 </p>
-                <p className="text-gray-300">{activeCategory.studio}</p>
-                <p className="text-gray-300">{activeCategory.subject}</p>
               </div>
               <div>
                 <p className="text-[11px] text-gray-400 mb-1 uppercase tracking-wide">

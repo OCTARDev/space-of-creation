@@ -161,11 +161,14 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-white border-t px-4 py-4 space-y-3">
+                    <LanguageSwitcher className="mx-2" />
+
           <Link href="/" className="block font-bold">{t("navbar.home")}</Link>
           <div
             className="relative"
             onMouseEnter={() => setOpenDropdown(true)}
             onMouseLeave={() => setOpenDropdown(false)}
+            onClick={() => setOpenDropdown(!openDropdown)}
           >
             <button className="text-gray-600 font-bold hover:text-gray-900 flex items-center gap-1">
               {t("navbar.solutions")}
@@ -181,6 +184,7 @@ const Navbar = () => {
               }`}
             >
               <div className="space-y-4">
+                
                 {solutions.map((item, index) => (
                   <Link
                     key={index}
@@ -199,7 +203,6 @@ const Navbar = () => {
           <Link href="/contact" className="block bg-purple-500 text-white px-4 py-2 rounded-lg">
             {t("navbar.contact")}
           </Link>
-          <LanguageSwitcher className="mx-2" />
         </div>
       )}
     </nav>

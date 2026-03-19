@@ -14,13 +14,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/56e4744bb54621dc49b5ec35f3edee9f1683446344.webp",
     video: "https://www.youtube.com/watch?v=emnp5-Rc4NE",
-    year: "2014",
     duration: "20 mins",
-    rating: "HR / Rulesome",
-    subtitle: "The story of the supernova 7+ | 20 mins | HR / Rulesome",
-    studio: "Rocket Jonuals Publications Films",
-    subject: "The 1776 Lists",
-    languages: "English, French",
+    subtitle: "The story of the supernova  | 20 mins ",
+    languages: "English",
     description:
       "This bright and colorful film tells the story of a star's life cycle: from its birth in gas dust nebulae to the end of life in the form of a black hole or a supernova star. All these phenomena are explained to the maximum extent possible and are accessible for both children and students.",
   },
@@ -31,13 +27,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/6485a52dd282f688874a027b873e080d1683446496.webp",
     video: "https://www.youtube.com/watch?v=26b-ghmjR7U",
-    year: "2015",
     duration: "18 mins",
-    rating: "HR / Rulesome",
-    subtitle: "The story of scale 7+ | 18 mins | HR / Rulesome",
-    studio: "Space Films Studio",
-    subject: "Scale & Universe",
-    languages: "English, French",
+    subtitle: "The story of scale  | 18 mins ",
+    languages: "English",
     description:
       "A fascinating journey exploring the immense scale of our universe, from the smallest subatomic particles to the largest galactic structures known to science.",
   },
@@ -48,12 +40,8 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/52bb8d6fdd92282c825ad5ed260bef3f1683446622.webp",
     video: "https://www.youtube.com/watch?v=ND9T-rNx5E8",
-    year: "2016",
     duration: "22 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Astralis 7+ | 22 mins | HR / Rulesome",
-    studio: "Stellar Productions",
-    subject: "Stars & Galaxies",
+    subtitle: "Astralis  | 22 mins ",
     languages: "English, Spanish",
     description:
       "Astralis takes viewers on a breathtaking visual journey through star clusters, nebulae, and the birth of new solar systems across the Milky Way galaxy.",
@@ -65,13 +53,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/3ce12fa555b579e4d4508758c8075dea1683446878.webp",
     video: "https://www.youtube.com/watch?v=ND9T-rNx5E8",
-    year: "2017",
     duration: "25 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Bizarre Moons 7+ | 25 mins | HR / Rulesome",
-    studio: "Cosmic Films",
-    subject: "Moons & Planets",
-    languages: "English, French",
+    subtitle: "Bizarre Moons  | 25 mins ",
+    languages: "English",
     description:
       "Discover the strangest moons in our solar system — from Europa's icy ocean to Titan's methane lakes — and what they might tell us about life beyond Earth.",
   },
@@ -82,13 +66,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/32795c31ecf6dce1995d0f5bf43a7c171683447585.webp",
     video: "https://www.youtube.com/watch?v=y-bvynYNIb4",
-    year: "2021",
     duration: "24 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Enigma 7+ | 24 mins | HR / Rulesome",
-    studio: "Mystery Films",
-    subject: "Dark Matter",
-    languages: "English, French",
+    subtitle: "Enigma  | 24 mins ",
+    languages: "English",
     description:
       "Explore the deepest mysteries of the cosmos — dark matter, dark energy, and the unseen forces that shape the fate of the entire universe.",
   },
@@ -99,13 +79,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/208689df74033c800b5e17ed4310688d1683447868.webp",
     video: "https://www.youtube.com/watch?v=PC2P4V5vSOo",
-    year: "2019",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System  | 28 mins ",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -116,12 +92,8 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/cadcca09d4393af675140cce9a2f85f91683448161.webp",
     video: "https://www.youtube.com/watch?v=TgCqlCg54Tk",
-    year: "2020",
     duration: "20 mins",
-    rating: "HR / Rulesome",
-    subtitle: "New Horizons 7+ | 20 mins | HR / Rulesome",
-    studio: "Deep Space Films",
-    subject: "Space Exploration",
+    subtitle: "New Horizons  | 20 mins ",
     languages: "English",
     description:
       "Follow the New Horizons spacecraft on its historic mission past Pluto and into the mysterious Kuiper Belt at the edge of our solar system.",
@@ -133,13 +105,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/32795c31ecf6dce1995d0f5bf43a7c171683447585.webp",
     video: "https://www.youtube.com/watch?v=eZ6IT-_uGu8",
-    year: "2021",
     duration: "24 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Enigma 7+ | 24 mins | HR / Rulesome",
-    studio: "Mystery Films",
-    subject: "Dark Matter",
-    languages: "English, French",
+    subtitle: "Enigma  | 24 mins ",
+    languages: "English",
     description:
       "Explore the deepest mysteries of the cosmos — dark matter, dark energy, and the unseen forces that shape the fate of the entire universe.",
   },
@@ -150,13 +118,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/954e50b8f18c543c3939efc7f6b900fe1683012626.webp",
     video: "https://www.youtube.com/watch?v=PC2P4V5vSOo",
-    year: "2019",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System  | 28 mins ",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -167,13 +131,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/2cc02a5e3d7b2e2b13ae77d24b7faab91683012735.webp",
     video: "https://www.youtube.com/watch?v=sIdvo0gUzfg",
-    year: "2019",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System  | 28 mins ",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -184,13 +144,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/4f819c5ad011d69da0163834a8c9da3f1683012912.webp",
     video: "https://www.youtube.com/watch?v=KoHFUZAuS_A",
-    year: "2019",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System  | 28 mins ",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -201,13 +157,9 @@ const allCategories = [
     cover:
       "https://api.adgrouptech.com/images/services/1fb547dd605bb3980b9715f1eae9998f1683013328.webp",
     video: "https://www.youtube.com/watch?v=5_a596Y4XY4",
-    year: "2014",
     duration: "28 mins",
-    rating: "HR / Rulesome",
-    subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-    studio: "NASA Education",
-    subject: "Solar System",
-    languages: "English, French",
+    subtitle: "Solar System  | 28 mins ",
+    languages: "English",
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
@@ -218,13 +170,9 @@ const allCategories = [
       cover:
         "https://api.adgrouptech.com/images/services/9835bbdd7f465ec03c30f24b2ec8302e1697480769.webp",
       video: "https://www.youtube.com/watch?v=ijGyynKnj6s",
-      year: "2014",
       duration: "28 mins",
-      rating: "HR / Rulesome",
-      subtitle: "Solar System 7+ | 28 mins | HR / Rulesome",
-      studio: "NASA Education",
-      subject: "Solar System",
-      languages: "English, French",
+      subtitle: "Solar System  | 28 mins ",
+      languages: "English",
       description:
         "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
     },
@@ -291,9 +239,6 @@ export default function Videos() {
 
             <h1 className="text-[42px] font-extrabold mb-4 leading-tight tracking-tight">
               {activeCategory.title}{" "}
-              <span className="font-normal text-[32px] text-gray-300">
-                ({activeCategory.year})
-              </span>
             </h1>
 
             <p className="text-lg leading-relaxed text-gray-200 mb-6 max-w-[520px]">
@@ -301,13 +246,7 @@ export default function Videos() {
             </p>
 
             <div className="flex gap-10 mb-7">
-              <div>
-                <p className="text-[11px] text-gray-400 mb-1 uppercase tracking-wide">
-                  {t('hero.mainInfo')}
-                </p>
-                <p className="text-gray-300">{activeCategory.studio}</p>
-                <p className="text-gray-300">{activeCategory.subject}</p>
-              </div>
+     
               <div>
                 <p className="text-[11px] text-gray-400 mb-1 uppercase tracking-wide">
                   {t('hero.languages')}
