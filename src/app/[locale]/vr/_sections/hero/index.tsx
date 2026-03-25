@@ -10,8 +10,8 @@ export default function Hero() {
   const t = useTranslations("vr_hero");
 
   const badges = [
-    { key: "headsets", icon: Users },
-    { key: "portable", icon: Star },
+    { key: "portable", icon: Users },
+    { key: "headsets", icon: Star },
     { key: "safe", icon: Globe },
   ];
 

@@ -99,11 +99,14 @@
     "subtitle": "Real results from educators, government entities, and immersive venue operators",
     "testimonials": {
       "vclab": {
-        "quote": "VCLAB transformed our physics program. Students who struggled now achieve 42% higher test scores. Safer, unlimited, and more engaging than our physical lab ever was."      },
+        "quote": "VCLAB transformed our physics program. Students who struggled now achieve 42% higher test scores. Safer, unlimited, and more engaging than our physical lab ever was."
+      },
       "government": {
-        "quote": "Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable."      },
+        "quote": "Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable."
+      },
       "centers": {
-        "quote": "Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement."      }
+        "quote": "Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement."
+      }
     }
   },
   "home_book": {
@@ -148,8 +151,6 @@
       "phoneValue": "+971 54 797 5397",
       "address": "Dubai, UAE",
       "licenseValue": "1571670"
-
-      
     },
     "copyright": "© {year} Space for Creation. All rights reserved."
   },
@@ -179,7 +180,7 @@
       }
     }
   },
-   "about_team": {
+  "about_team": {
     "title": "Our Team",
     "subtitle": "Passionate educators, seasoned developers, and creative designers",
     "cards": {
@@ -201,7 +202,7 @@
       "statement": "immersive technology, when guided by pedagogy, can unlock extraordinary potential in every learner."
     }
   },
-    "about_credentials": {
+  "about_credentials": {
     "title": "Our Credentials",
     "subtitle": "Built on a foundation of expertise and compliance",
     "cards": {
@@ -223,20 +224,20 @@
       }
     }
   },
-    "about_book": {
+  "about_book": {
     "title": "Ready to Partner with Us?",
     "subtitle": "Let's transform learning together",
     "button": "Get in Touch",
     "call": "Or call :",
     "phone": "+971 54 797 5397"
   },
-   "impact_hero": {
+  "impact_hero": {
     "title": {
       "line": "Our Impact Story is Just Beginning"
     },
     "subtitle": "We don't have 100 case studies yet — we have something more valuable: a clear vision, proven technology, and the right partners to build something real.",
-    "sub2":"FadaaTech launched in the UAE in early 2026",
-    
+    "sub2": "FadaaTech launched in the UAE in early 2026",
+
     "button": "Book a Consultation",
     "stats": {
       "scores": "Test Score Increase",
@@ -245,7 +246,7 @@
       "institutions": "Institutions Trust Us"
     }
   },
-   "impact_features": {
+  "impact_features": {
     "title": "What We've Built",
     "subtitle": "Experiences and campaigns designed to change behavior, deepen engagement, and deliver results that last.",
     "caseStudies": {
@@ -257,9 +258,15 @@
           "value": "",
           "label": "70% of what children experience is retained vs. 10% of what they read — Edgar Dale, Cone of Experience"
         },
-        "challenge": ["Traditional Arabic learning relies on repetition and passive observation. Children aged 3–6 struggle to connect letters to meaning, resulting in surface-level memorization rather than genuine comprehension."],
-        "solution": ["OCTAR AR transforms coloring pages into living AR experiences. Children color a letter by hand, then watch it rise from the page as a 3D animated character — connecting the physical act to a memorable digital moment. Available for kindergartens and homes."],
-        "result": ["🔬 Pilot Program Active — UAE Kindergartens Currently onboarding select UAE institutions. Outcomes to be published upon pilot completion."]
+        "challenge": [
+          "Traditional Arabic learning relies on repetition and passive observation. Children aged 3–6 struggle to connect letters to meaning, resulting in surface-level memorization rather than genuine comprehension."
+        ],
+        "solution": [
+          "OCTAR AR transforms coloring pages into living AR experiences. Children color a letter by hand, then watch it rise from the page as a 3D animated character — connecting the physical act to a memorable digital moment. Available for kindergartens and homes."
+        ],
+        "result": [
+          "🔬 Pilot Program Active — UAE Kindergartens Currently onboarding select UAE institutions. Outcomes to be published upon pilot completion."
+        ]
       },
       "government": {
         "tag": "Learning Support Challenge",
@@ -269,9 +276,15 @@
           "value": "",
           "label": "Students with dyslexia show 3x better retention through multisensory learning — NCLD, 2023"
         },
-        "challenge": ["Children with dyslexia, ADHD, and reading difficulties are often placed in the same learning environments as their peers — without the safe, repeatable, pressure-free space they need to build genuine confidence"],
-        "solution": ["AR Stories creates therapist-guided, interactive narratives that allow children to engage at their own pace. Each story is designed for repetition without frustration — building comprehension through experience, not instruction. Currently in active testing with a learning support center in Sharjah."],
-        "result": ["🔬 Active Testing — Sharjah, UAE First AR story produced and in clinical review. Full outcomes pending pilot completion."]
+        "challenge": [
+          "Children with dyslexia, ADHD, and reading difficulties are often placed in the same learning environments as their peers — without the safe, repeatable, pressure-free space they need to build genuine confidence"
+        ],
+        "solution": [
+          "AR Stories creates therapist-guided, interactive narratives that allow children to engage at their own pace. Each story is designed for repetition without frustration — building comprehension through experience, not instruction. Currently in active testing with a learning support center in Sharjah."
+        ],
+        "result": [
+          "🔬 Active Testing — Sharjah, UAE First AR story produced and in clinical review. Full outcomes pending pilot completion."
+        ]
       },
       "venue": {
         "tag": "Venue & Events Challenge",
@@ -281,9 +294,15 @@
           "value": "4",
           "label": "Themes Ready"
         },
-        "challenge": ["Malls, museums, and event venues across the UAE face declining dwell time and footfall. Static displays and traditional activations no longer create the shareable, memorable moments that today's visitors expect."],
-        "solution": ["Life Digital Environment transforms any wall into a living, interactive canvas. Visitors trigger animations, contribute to shared experiences, and create social-media-worthy moments — all without downloading an app. Four themes currently available: Gulf Marine Life, Ramadan, Solar System Giants, and Space"],
-        "result": ["✅ Available Now — UAE Four environments fully produced and ready for deployment. Contact us for a venue assessment"]
+        "challenge": [
+          "Malls, museums, and event venues across the UAE face declining dwell time and footfall. Static displays and traditional activations no longer create the shareable, memorable moments that today's visitors expect."
+        ],
+        "solution": [
+          "Life Digital Environment transforms any wall into a living, interactive canvas. Visitors trigger animations, contribute to shared experiences, and create social-media-worthy moments — all without downloading an app. Four themes currently available: Gulf Marine Life, Ramadan, Solar System Giants, and Space"
+        ],
+        "result": [
+          "✅ Available Now — UAE Four environments fully produced and ready for deployment. Contact us for a venue assessment"
+        ]
       }
     },
     "labels": {
@@ -292,14 +311,14 @@
       "result": "Result"
     }
   },
-    "impact_book": {
+  "impact_book": {
     "title": "Ready to Write Your Own Success Story?",
     "subtitle": "Let's discuss how we can help you achieve measurable results",
     "button": "Book a Consultation",
     "call": "Or call:",
     "phone": "+971 54 797 5397"
   },
-    "octar_hero": {
+  "octar_hero": {
     "breadcrumb": {
       "home": "Home",
       "solutions": "Solutions",
@@ -323,11 +342,11 @@
       "lessons": "AR Lessons"
     }
   },
-   "octar_video": {
+  "octar_video": {
     "title": "Learn, Explore, Empower",
     "subtitle": {
       "line1": "Two editions Designed for every learning environment — ",
-      
+
       "line2": "from nursery to Grade 6, from classroom to living room."
     },
     "caption": {
@@ -335,7 +354,7 @@
       "subtitle": "See how VCLAB transforms science learning"
     }
   },
-    "octar_features": {
+  "octar_features": {
     "cards": {
       "problem": {
         "title": "The Challenge",
@@ -374,7 +393,7 @@
       }
     }
   },
-    "octar_howitworks": {
+  "octar_howitworks": {
     "title": "How It Works",
     "subtitle": "One ecosystem, seamless flow from classroom to home",
     "steps": {
@@ -411,7 +430,7 @@
     },
     "badge": "Continuous Loop"
   },
-    "octar_keyfeatures": {
+  "octar_keyfeatures": {
     "title": "Key Features",
     "subtitle": "Choose your path to immersive transformation",
     "features": {
@@ -441,26 +460,29 @@
       }
     }
   },
-    "octar_reviews": {
+  "octar_reviews": {
     "title": "Real Impact from Educators and Students",
     "subtitle": "Real results from educators, campaign managers, and venue operators",
     "testimonials": {
       "teacher": {
-        "quote": "\"My students finally understand oxidation-reduction reactions. They can experiment until they truly get it, without worrying about making mistakes.\""      },
+        "quote": "\"My students finally understand oxidation-reduction reactions. They can experiment until they truly get it, without worrying about making mistakes.\""
+      },
       "coordinator": {
-        "quote": "\"Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable.\""      },
+        "quote": "\"Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable.\""
+      },
       "student": {
-        "quote": "\"Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement.\""      }
+        "quote": "\"Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement.\""
+      }
     }
   },
-    "octar_book": {
+  "octar_book": {
     "title": "Ready to Transform Arabic and English Learning?",
     "subtitle": "Choose your edition and book a personalized OCTAR demo",
     "button": "Book OCTAR Demo",
     "call": "Or call :",
     "phone": "+971 54 797 5397"
   },
-    "vclab_hero": {
+  "vclab_hero": {
     "breadcrumb": {
       "home": "Home",
       "solutions": "Solutions",
@@ -480,7 +502,7 @@
       "schools": "Schools Trust Us",
       "safety": "Safety Incidents"
     }
-  } ,
+  },
   "vclab_video": {
     "title": "From Theory to Real Scientific Practice",
     "subtitle": {
@@ -529,7 +551,7 @@
       }
     }
   },
-   "vclab_keyfeatures": {
+  "vclab_keyfeatures": {
     "title": "The VCLAB Solution",
     "subtitle": "All benefits of a physical lab, none of the limitations",
     "features": {
@@ -559,26 +581,29 @@
       }
     }
   },
-    "vclab_reviews": {
+  "vclab_reviews": {
     "title": "Real Impact from Educators and Students",
     "subtitle": "Real results from educators, campaign managers, and venue operators",
     "testimonials": {
       "teacher": {
-        "quote": "\"My students finally understand oxidation-reduction reactions. They can experiment until they truly get it, without worrying about making mistakes.\""      },
+        "quote": "\"My students finally understand oxidation-reduction reactions. They can experiment until they truly get it, without worrying about making mistakes.\""
+      },
       "coordinator": {
-        "quote": "\"Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable.\""      },
+        "quote": "\"Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable.\""
+      },
       "student": {
-        "quote": "\"Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement.\""      }
+        "quote": "\"Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement.\""
+      }
     }
   },
-    "vclab_book": {
+  "vclab_book": {
     "title": "Transform Your Science Program",
     "subtitle": "Schedule a VCLAB demo",
     "button": "Book a Demo",
     "call": "Or call :",
     "phone": "+971 54 797 5397"
   },
-   "life_hero": {
+  "life_hero": {
     "breadcrumb": {
       "home": "Home",
       "solutions": "Solutions",
@@ -596,7 +621,7 @@
       "catalogue": "Catalogue"
     }
   },
-   "life_features": {
+  "life_features": {
     "cards": {
       "challenge": {
         "title": "The Challenge",
@@ -625,7 +650,7 @@
       }
     }
   },
-    "life_keyfeatures": {
+  "life_keyfeatures": {
     "title": "Powerful Features",
     "features": {
       "themes": {
@@ -646,19 +671,22 @@
       }
     }
   },
-    "life_reviews": {
+  "life_reviews": {
     "title": "Real Impact from Educators and Students",
     "subtitle": "Real results from educators, campaign managers, and venue operators",
     "testimonials": {
       "teacher": {
-        "quote": "\"The moment a child sees their own coloring come alive on the big screen, everything changes. The excitement, the focus — it's unlike anything I've seen in a traditional classroom.\""      },
+        "quote": "\"The moment a child sees their own coloring come alive on the big screen, everything changes. The excitement, the focus — it's unlike anything I've seen in a traditional classroom.\""
+      },
       "coordinator": {
-        "quote": "\"We used the Ramadan theme for our school's awareness week. Every student was fully engaged from the first minute, and the Arabic narration made it even more meaningful.\""      },
+        "quote": "\"We used the Ramadan theme for our school's awareness week. Every student was fully engaged from the first minute, and the Arabic narration made it even more meaningful.\""
+      },
       "student": {
-        "quote": "\"My favorite part was when my drawing showed up on the big screen! I kept asking my teacher to do it again.\""      }
+        "quote": "\"My favorite part was when my drawing showed up on the big screen! I kept asking my teacher to do it again.\""
+      }
     }
   },
-    "life_engaging": {
+  "life_engaging": {
     "title": "Launch an Engaging Learning Experience — Instantly",
     "subtitle": {
       "line1": "Run themed AR experiences instantly via web,",
@@ -674,21 +702,21 @@
       "label": "Android App"
     }
   },
-    "life_book": {
+  "life_book": {
     "title": "Design Your Interactive Space",
     "subtitle": "Schedule a consultation",
     "button": "Book Your Free Demo",
     "call": "Or call :",
     "phone": "+971 54 797 5397"
   },
-    "arstories_hero": {
+  "arstories_hero": {
     "breadcrumb": {
       "home": "Home",
       "solutions": "Solutions",
       "ar": "AR Stories & Campaigns"
     },
     "ideal": "Ideal for: Government & NGOs",
-    "title": "OCTAR AR Stories & Campaigns",
+    "title": "AR Stories & Campaigns",
     "subtitle": "Transform your message into an unforgettable immersive experience. AR campaigns that people actively engage with, share, and remember.",
     "badges": {
       "recall": "90% Message Recall",
@@ -703,7 +731,7 @@
       "web": "WebAR (No App)"
     }
   },
-    "arstories_video": {
+  "arstories_video": {
     "title": "Step Inside the Story with AR Campaigns",
     "subtitle": "AR Stories & Campaigns that turn messages into lived experiences.",
     "caption": {
@@ -711,7 +739,7 @@
       "subtitle": "See how VCLAB transforms science learning"
     }
   },
-    "arstories_features": {
+  "arstories_features": {
     "cards": {
       "challenge": {
         "title": "The Challenge",
@@ -739,7 +767,7 @@
       }
     }
   },
-   "arstories_keyfeatures": {
+  "arstories_keyfeatures": {
     "title": "Campaign Types",
     "features": {
       "safety": {
@@ -756,26 +784,29 @@
       }
     }
   },
-    "arstories_reviews": {
+  "arstories_reviews": {
     "title": "Real Impact from Educators and Students",
     "subtitle": "Real results from educators, campaign managers, and venue operators",
     "testimonials": {
       "teacher": {
-        "quote": "\"My students finally understand oxidation-reduction reactions. They can experiment until they truly get it, without worrying about making mistakes.\""      },
+        "quote": "\"My students finally understand oxidation-reduction reactions. They can experiment until they truly get it, without worrying about making mistakes.\""
+      },
       "coordinator": {
-        "quote": "\"Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable.\""      },
+        "quote": "\"Our water conservation campaign reached 10,000+ students with 90% message recall. The AR storybook made our message unforgettable.\""
+      },
       "student": {
-        "quote": "\"Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement.\""      }
+        "quote": "\"Life Digital became our #1 photo spot. 25 minutes average increased dwell time and unprecedented social media engagement.\""
+      }
     }
   },
-   "arstories_book": {
+  "arstories_book": {
     "title": "Launch Your AR Campaign",
     "subtitle": "Schedule a campaign consultation",
     "button": "Book a Campaign Consultation",
     "call": "Or call :",
     "phone": "+971 54 797 5397"
   },
-   "learning_hero": {
+  "learning_hero": {
     "breadcrumb": {
       "home": "Home",
       "solutions": "Solutions",
@@ -799,7 +830,7 @@
       "subtitle": "See how VCLAB transforms science learning"
     }
   },
-    "learning_features": {
+  "learning_features": {
     "cards": {
       "challenge": {
         "title": "The Challenge",
@@ -827,7 +858,7 @@
       }
     }
   },
-    "learning_keyfeatures": {
+  "learning_keyfeatures": {
     "title": "OCTAR Learning Support",
     "subtitle": "Adaptive technology for students with special educational needs",
     "features": {
@@ -849,14 +880,14 @@
       }
     }
   },
-    "learning_book": {
+  "learning_book": {
     "title": "Let's Discuss Your Clinical Needs",
     "subtitle": "Schedule a consultation with our clinical technology specialists",
     "button": "Book a Clinical Consultation",
     "call": "Or call :",
     "phone": "+971 54 797 5397"
   },
-    "planetarium_hero": {
+  "planetarium_hero": {
     "breadcrumb": {
       "home": "Home",
       "solutions": "Solutions",
@@ -881,7 +912,7 @@
       "languages": "Languages (AR/EN)"
     }
   },
-   "planetarium_video": {
+  "planetarium_video": {
     "title": "Curriculum-Aligned Educational Planetarium",
     "subtitle": "Bilingual, MOE-aligned astronomy programs that bring the universe to the classroom.",
     "caption": {
@@ -889,7 +920,7 @@
       "subtitle": "See how VCLAB transforms science learning"
     }
   },
-   "planetarium_features": {
+  "planetarium_features": {
     "cards": {
       "challenge": {
         "title": "The Challenge",
@@ -917,7 +948,7 @@
       }
     }
   },
-    "planetarium_keyfeatures": {
+  "planetarium_keyfeatures": {
     "title": "Built for Educational Excellence",
     "features": {
       "integration": {
@@ -961,10 +992,10 @@
     },
     "ideal": "Ideal for: Schools & Events & Corporate",
     "title": "VR Experiences by FADAA",
-    "subtitle": "Step into new realities with professional-grade VR. Educational journeys, thrilling adventures, and immersive training.",
+    "subtitle": "Journey through thrilling adventures, professional-grade VR educational training",
     "badges": {
-      "headsets": "Latest VR Headsets",
-      "portable": "Portable Setups",
+      "headsets": "Easy Setup",
+      "portable": "Book VR Experience",
       "safe": "Safe & Supervised"
     },
     "buttons": {
@@ -972,80 +1003,98 @@
       "catalogue": "Catalogue"
     }
   },
-    "vr_video": {
-    "title": "Step into New Realities",
-    "subtitle": "Professional VR experiences for learning, events, and corporate training — immersive and engaging.",
+  "vr_video": {
+    "title": "Dive into Immersive Worlds",
+    "subtitle": "VR Rentals for Schools & Events – Ready to Deploy— Space & Science Content Included",
     "caption": {
       "title": "Watch: Students conducting virtual experiments",
       "subtitle": "See how VCLAB transforms science learning"
     }
   },
-   "vr_features": {
+  "vr_features": {
     "cards": {
       "challenge": {
         "title": "The Challenge",
         "items": [
-          "Traditional methods of learning, engagement, or training are limited in interactivity and retention.",
-          "Participants often struggle to stay focused or fully experience content.",
-          "Scaling impactful experiences is difficult across schools, events, and corporate environments."
+          "Traditional methods struggle with engagement",
+          "Science lessons feel distant and boring",
+          "Scaling school events is difficult and costly"
         ]
       },
       "solution": {
         "title": "The Solution",
         "items": [
-          "Professional-grade VR experiences tailored for education, events, and corporate training.",
-          "Immersive scenarios that make learning and engagement active and memorable.",
-          "Scalable VR solutions adaptable to different audiences and settings."
+          "Oculus Quest 2 rentals with space movies",
+          "Portable kits for daily school visits",
+          "Easy setup, trained supervisors included"
         ]
       },
       "impact": {
         "title": "Measured Impact",
         "items": [
-          "Increased engagement and participation across audiences.",
-          "Higher knowledge retention and skill acquisition in educational and corporate programs.",
-          "Memorable experiences that enhance brand, event, or learning outcomes."
+          "95% content retention vs textbooks",
+          "3x higher student engagement",
+          "Memorable space science experiences"
         ]
       }
     }
   },
-    "vr_book": {
+  "vr_reviews": {
+    "title": "Real Impact from Educators and Students",
+    "subtitle": "Real impact from educators, campaign managers, and students",
+    "testimonials": {
+      "teacher": {
+        "header": "Students engage 3x more",
+        "quote": "Students engage 3x more without worrying about making mistakes"
+      },
+      "coordinator": {
+        "header": "Water conservation campaign",
+        "quote": "20,000 students reached 95% message recall, unforgettable"
+      },
+      "student": {
+        "header": "Digital became 3D 360°",
+        "quote": "Many students with 95% success, unprecedented social media"
+      }
+    }
+  },
+  "vr_book": {
     "title": "Step Into New Realities",
     "subtitle": "Schedule a VR consultation",
     "button": "Book a VR Experience",
     "call": "Or call :",
     "phone": "+971 54 797 5397"
   },
-    "vr_keyfeatures": {
-    "title": "Complete VR Solution",
+  "vr_keyfeatures": {
+    "title": "Complete VR Rental",
     "features": {
       "headsets": {
         "title": "Premium Headsets",
-        "description": "Meta Quest 3, HTC Vive, and other top-tier VR systems."
+        "description": "Premium Oculus Quest 2"
       },
       "portable": {
         "title": "Portable Setup",
-        "description": "Bring VR to any location. Quick setup in classrooms or event spaces."
+        "description": "Bring to any location, quick setup classrooms or event spaces"
       },
       "multi": {
         "title": "Multi-User Sessions",
-        "description": "Run simultaneous experiences for groups."
+        "description": "Run simultaneous space experiences for groups"
       },
       "safe": {
         "title": "Safe & Supervised",
-        "description": "Trained facilitators guide every session with safety protocols."
+        "description": "Trained facilitators every session with safety protocols"
       },
       "entertainment": {
-        "title": "Entertainment",
-        "description": "Thrilling adventures and immersive games for events."
+        "title": "Event Ready",
+        "description": "Thrilling space adventures, immersive games for events"
       },
       "educational": {
         "title": "Educational Content",
-        "description": "Curriculum-aligned VR experiences for immersive learning."
+        "description": "Space & science films curriculum-aligned for immersive learning"
       }
     }
   },
 
-    "contact_life": {
+  "contact_life": {
     "hero": {
       "title": "Let's Transform Your Vision",
       "subtitle": "Schedule a personalized demo or speak with our team"
@@ -1088,7 +1137,7 @@
       "license_value": "1571670"
     }
   },
-   "contact": {
+  "contact": {
     "hero": {
       "title": "Let's Transform Your Vision",
       "subtitle": "Schedule a personalized demo or speak with our team"
@@ -1148,7 +1197,7 @@
       "vr": "VR Experiences"
     }
   },
-    "catalogue": {
+  "catalogue": {
     "hero": {
       "breadcrumb": {
         "life": "Life Digital Environment",
@@ -1169,7 +1218,7 @@
       "next": "Next"
     }
   },
-    "target": {
+  "target": {
     "hero": {
       "breadcrumb": {
         "life": "Life Digital Environment",
@@ -1190,7 +1239,7 @@
       "next": "Next"
     }
   },
-    "planet_videos": {
+  "planet_videos": {
     "hero": {
       "mainInfo": "Main Information",
       "languages": "Languages",
@@ -1207,5 +1256,4 @@
       "next": "Next"
     }
   }
-  
 }

@@ -10,7 +10,6 @@ const stats = [
   { value: "90%", key: "recall" },
   { value: "10k+", key: "reached" },
   { value: "3x", key: "engagement" },
-  { value: "100%", key: "web" },
 ];
 
 export default function Hero() {

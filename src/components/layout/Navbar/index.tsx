@@ -13,6 +13,7 @@ import {
   PiTent,
   PiVirtualReality,
 } from "react-icons/pi";
+
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 

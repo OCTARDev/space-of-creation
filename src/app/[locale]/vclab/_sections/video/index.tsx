@@ -75,15 +75,7 @@ export default function VideoSection() {
           )}
         </div>
 
-        {/* Bottom caption bar */}
-        <div className="relative text-center z-10 bg-gray-700 bg-opacity-90 px-5 py-3">
-          <p className="text-gary-600 text-sm font-medium">
-            {t('caption.title')}
-          </p>
-          <p className="text-gray-400 text-xs mt-0.5">
-            {t('caption.subtitle')}
-          </p>
-        </div>
+        
       </div>
     </section>
   );

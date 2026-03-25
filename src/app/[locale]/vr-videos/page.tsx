@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 const ITEMS_PER_PAGE = 12;
 
@@ -163,24 +163,26 @@ const allCategories = [
     description:
       "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
   },
- {
-      id: 13,
-      title: "The Incredible Sun",
-      img: "https://api.adgrouptech.com/images/services/57fc4f2b9a7823ff95534f346277af291683046485.webp",
-      cover:
-        "https://api.adgrouptech.com/images/services/9835bbdd7f465ec03c30f24b2ec8302e1697480769.webp",
-      video: "https://www.youtube.com/watch?v=ijGyynKnj6s",
-      duration: "28 mins",
-      subtitle: "Solar System  | 28 mins ",
-      languages: "English",
-      description:
-        "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
-    },
- 
+  {
+    id: 13,
+    title: "The Incredible Sun",
+    img: "https://api.adgrouptech.com/images/services/57fc4f2b9a7823ff95534f346277af291683046485.webp",
+    cover:
+      "https://api.adgrouptech.com/images/services/9835bbdd7f465ec03c30f24b2ec8302e1697480769.webp",
+    video: "https://www.youtube.com/watch?v=ijGyynKnj6s",
+    duration: "28 mins",
+    subtitle: "Solar System  | 28 mins ",
+    languages: "English",
+    description:
+      "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
+  },
 ];
 
 export default function Videos() {
-  const t = useTranslations('planet_videos');
+  const t = useTranslations("planet_videos");
+  const locale = useLocale();
+  const isRTL = locale === "ar";
+
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [activeCategory, setActiveCategory] = useState(allCategories[0]);
@@ -190,7 +192,7 @@ export default function Videos() {
   );
 
   const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
-    
+
   const paginated = filtered.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE,
@@ -238,7 +240,7 @@ export default function Videos() {
             </p>
 
             <h1 className="text-[42px] font-extrabold mb-4 leading-tight tracking-tight">
-              {activeCategory.title}{" "}
+              {activeCategory.title}
             </h1>
 
             <p className="text-lg leading-relaxed text-gray-200 mb-6 max-w-[520px]">
@@ -246,10 +248,9 @@ export default function Videos() {
             </p>
 
             <div className="flex gap-10 mb-7">
-     
               <div>
                 <p className="text-[11px] text-gray-400 mb-1 uppercase tracking-wide">
-                  {t('hero.languages')}
+                  {t("hero.languages")}
                 </p>
                 <p className="text-gray-300">{activeCategory.languages}</p>
               </div>
@@ -260,7 +261,7 @@ export default function Videos() {
               className="inline-flex mt-10 items-center px-6 py-3 rounded-xl text-white text-lg font-medium bg-gradient-to-r from-[#A88EEF] to-[#79B9CE] shadow-lg hover:opacity-90 transition"
             >
               <Play size={16} fill="white" className="mr-2" />
-              {t('hero.startWatching')}
+              {t("hero.startWatching")}
             </button>
           </div>
         </div>
@@ -272,10 +273,10 @@ export default function Videos() {
           {/* Header */}
           <div className="text-center mb-3">
             <h2 className="text-3xl font-bold text-gray-900 mt-20">
-              {t('catalogue.title')}
+              {t("catalogue.title")}
             </h2>
             <p className="text-gray-500 text-sm mt-1.5">
-              {t('catalogue.subtitle')}
+              {t("catalogue.subtitle")}
             </p>
           </div>
 
@@ -284,7 +285,7 @@ export default function Videos() {
             <div className="relative w-full max-w-md">
               <input
                 type="text"
-                placeholder={t('catalogue.searchPlaceholder')}
+                placeholder={t("catalogue.searchPlaceholder")}
                 value={searchQuery}
                 onChange={handleSearchChange}
                 className="pl-10 pr-4 py-3 border border-gray-200 rounded-xl text-sm outline-none w-full bg-white text-gray-700 shadow-sm focus:border-purple-400 focus:ring-2 focus:ring-purple-100 transition"
@@ -295,7 +296,7 @@ export default function Videos() {
           {/* Grid */}
           {paginated.length === 0 ? (
             <div className="text-center py-12 text-gray-500">
-              {t('catalogue.noResults', { query: searchQuery })}
+              {t("catalogue.noResults", { query: searchQuery })}
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-start">
@@ -303,13 +304,13 @@ export default function Videos() {
                 <button
                   key={category.id}
                   onClick={() => handleCategoryClick(category)}
-                  className="group text-left p-0 bg-transparent border-none outline-none cursor-pointer"
+                  className="group text-start p-0 bg-transparent border-none outline-none cursor-pointer"
                 >
                   {/* Card image — portrait 3:4 */}
-             <div
-  className="relative w-full overflow-hidden rounded-2xl bg-black"
-  style={{ aspectRatio: "3 / 4" }}
->
+                  <div
+                    className="relative w-full overflow-hidden rounded-2xl bg-black"
+                    style={{ aspectRatio: "3 / 4" }}
+                  >
                     <Image
                       src={category.img}
                       alt={category.title}
@@ -317,8 +318,7 @@ export default function Videos() {
                       sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       className="w-full h-screen transition-transform duration-300 group-hover:scale-105"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src =
-                          `https://placehold.co/400x530/dde1ea/9ca3af?text=${encodeURIComponent(category.title)}`;
+                        (e.target as HTMLImageElement).src = `https://placehold.co/400x530/dde1ea/9ca3af?text=${encodeURIComponent(category.title)}`;
                       }}
                     />
                   </div>
@@ -335,14 +335,17 @@ export default function Videos() {
           {/* Pagination */}
           {totalPages > 1 && (
             <div className="flex items-center justify-center gap-2 mt-14 mb-16">
+              {/* Previous button */}
               <button
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
+                aria-label={t("pagination.previous")}
                 className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <ChevronLeft size={18} />
+                {isRTL ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
               </button>
 
+              {/* Page numbers */}
               {[...Array(totalPages)].map((_, i) => (
                 <button
                   key={i + 1}
@@ -360,14 +363,16 @@ export default function Videos() {
                 </button>
               ))}
 
+              {/* Next button */}
               <button
                 onClick={() =>
                   setCurrentPage((p) => Math.min(totalPages, p + 1))
                 }
                 disabled={currentPage === totalPages}
+                aria-label={t("pagination.next")}
                 className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <ChevronRight size={18} />
+                {isRTL ? <ChevronLeft size={18} /> : <ChevronRight size={18} />}
               </button>
             </div>
           )}

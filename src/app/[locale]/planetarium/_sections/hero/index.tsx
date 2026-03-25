@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import bgcover from "@/assets/media/gif.gif";
+import bgcover from "@/assets/media/planetarium.png";
 import { Star, Users, Globe } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+
 
 const stats = [
   { value: "15+", key: "programs" },
@@ -27,12 +28,12 @@ export default function Hero() {
       <div className="relative h-screen w-full">
         {/* Background Image */}
         <Image
-          src={bgcover}
-          alt="Educational-Planetarium"
-          fill
-          priority
-          className="h-full"
-        />
+              src={bgcover}
+              alt="Hero background"
+              fill
+              className="object-cover object-center"
+              priority
+            />
 
         {/* Softer / darker overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />

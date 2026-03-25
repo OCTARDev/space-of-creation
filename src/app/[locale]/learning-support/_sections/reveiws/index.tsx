@@ -29,7 +29,8 @@ export default function WhatOurClientsSay() {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-left flex flex-col"
+              className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 
+              flex flex-col"
             >
               <p className="text-gray-600 text-sm leading-relaxed flex-1">
                 {t(`testimonials.${item.key}.quote`)}

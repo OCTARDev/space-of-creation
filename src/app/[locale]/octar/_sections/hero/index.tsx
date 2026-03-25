@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import bgcover from "@/assets/media/octatCover.jpg";
+import bgcover from "@/assets/media/octatCover.png";
 import { Star, Users, Globe } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";

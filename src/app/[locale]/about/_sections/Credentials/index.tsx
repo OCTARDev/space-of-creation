@@ -27,7 +27,7 @@ const CredentialsSection = () => {
           {credentials.map((credential, index) => (
             <div 
               key={index}
-              className="bg-white rounded-2xl shadow-sm p-8 text-left border border-gray-100"
+              className="bg-white rounded-2xl shadow-sm p-8 border border-gray-100"
             >
               <h3 className="text-lg font-semibold text-gray-800">
                 {t(`cards.${credential.key}.title`)}

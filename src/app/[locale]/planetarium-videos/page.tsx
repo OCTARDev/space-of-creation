@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const ITEMS_PER_PAGE = 9;
 
@@ -609,6 +609,8 @@ const allCategories = [
 
 export default function Videos() {
   const t = useTranslations('planet_videos');
+  const locale = useLocale();
+  const isRTL = locale === "ar";
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [activeCategory, setActiveCategory] = useState(allCategories[0]);
@@ -734,7 +736,7 @@ export default function Videos() {
                 <button
                   key={category.id}
                   onClick={() => handleCategoryClick(category)}
-                  className="group text-left p-0 bg-transparent border-none outline-none cursor-pointer"
+                  className="group text-start p-0 bg-transparent border-none outline-none cursor-pointer"
                 >
                   {/* Card image — portrait 3:4 */}
            <div
@@ -764,16 +766,19 @@ export default function Videos() {
           )}
 
           {/* Pagination */}
-          {totalPages > 1 && (
+           {totalPages > 1 && (
             <div className="flex items-center justify-center gap-2 mt-14 mb-16">
+              {/* Previous button */}
               <button
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
+                aria-label={t("pagination.previous")}
                 className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <ChevronLeft size={18} />
+                {isRTL ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
               </button>
 
+              {/* Page numbers */}
               {[...Array(totalPages)].map((_, i) => (
                 <button
                   key={i + 1}
@@ -791,14 +796,16 @@ export default function Videos() {
                 </button>
               ))}
 
+              {/* Next button */}
               <button
                 onClick={() =>
                   setCurrentPage((p) => Math.min(totalPages, p + 1))
                 }
                 disabled={currentPage === totalPages}
+                aria-label={t("pagination.next")}
                 className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <ChevronRight size={18} />
+                {isRTL ? <ChevronLeft size={18} /> : <ChevronRight size={18} />}
               </button>
             </div>
           )}
