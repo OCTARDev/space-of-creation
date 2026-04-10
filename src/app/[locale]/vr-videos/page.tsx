@@ -1,193 +1,43 @@
 "use client";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
+import { getVr } from "@/lib/api";
+import { useQuery } from "@tanstack/react-query";
 
 const ITEMS_PER_PAGE = 12;
 
-const allCategories = [
-  {
-    id: 1,
-    title: "scoops of milky way",
-    img: "https://api.adgrouptech.com/images/services/0395c6ce8e1238abf44027dd534fcaf31683446343.webp",
-    cover:
-      "https://api.adgrouptech.com/images/services/56e4744bb54621dc49b5ec35f3edee9f1683446344.webp",
-    video: "https://www.youtube.com/watch?v=emnp5-Rc4NE",
-    duration: "20 mins",
-    subtitle: "The story of the supernova  | 20 mins ",
-    languages: "English",
-    description:
-      "This bright and colorful film tells the story of a star's life cycle: from its birth in gas dust nebulae to the end of life in the form of a black hole or a supernova star. All these phenomena are explained to the maximum extent possible and are accessible for both children and students.",
-  },
-  {
-    id: 2,
-    title: "A Tale of scale",
-    img: "https://api.adgrouptech.com/images/services/6485a52dd282f688874a027b873e080d1683446496.webp",
-    cover:
-      "https://api.adgrouptech.com/images/services/6485a52dd282f688874a027b873e080d1683446496.webp",
-    video: "https://www.youtube.com/watch?v=26b-ghmjR7U",
-    duration: "18 mins",
-    subtitle: "The story of scale  | 18 mins ",
-    languages: "English",
-    description:
-      "A fascinating journey exploring the immense scale of our universe, from the smallest subatomic particles to the largest galactic structures known to science.",
-  },
-  {
-    id: 3,
-    title: "Astralis",
-    img: "https://api.adgrouptech.com/images/services/c41d48ad67d67cc7025ae7169d4bcdac1683446622.webp",
-    cover:
-      "https://api.adgrouptech.com/images/services/52bb8d6fdd92282c825ad5ed260bef3f1683446622.webp",
-    video: "https://www.youtube.com/watch?v=ND9T-rNx5E8",
-    duration: "22 mins",
-    subtitle: "Astralis  | 22 mins ",
-    languages: "English, Spanish",
-    description:
-      "Astralis takes viewers on a breathtaking visual journey through star clusters, nebulae, and the birth of new solar systems across the Milky Way galaxy.",
-  },
-  {
-    id: 4,
-    title: "Bizarre Moons",
-    img: "https://api.adgrouptech.com/images/services/afd3da21d1211a8e80982cc01aebfccb1683446878.webp",
-    cover:
-      "https://api.adgrouptech.com/images/services/3ce12fa555b579e4d4508758c8075dea1683446878.webp",
-    video: "https://www.youtube.com/watch?v=ND9T-rNx5E8",
-    duration: "25 mins",
-    subtitle: "Bizarre Moons  | 25 mins ",
-    languages: "English",
-    description:
-      "Discover the strangest moons in our solar system — from Europa's icy ocean to Titan's methane lakes — and what they might tell us about life beyond Earth.",
-  },
-  {
-    id: 5,
-    title: "Enigma",
-    img: "https://api.adgrouptech.com/images/services/794e024d427889bb1fa5abec2b7dcee71683447585.webp",
-    cover:
-      "https://api.adgrouptech.com/images/services/32795c31ecf6dce1995d0f5bf43a7c171683447585.webp",
-    video: "https://www.youtube.com/watch?v=y-bvynYNIb4",
-    duration: "24 mins",
-    subtitle: "Enigma  | 24 mins ",
-    languages: "English",
-    description:
-      "Explore the deepest mysteries of the cosmos — dark matter, dark energy, and the unseen forces that shape the fate of the entire universe.",
-  },
-  {
-    id: 6,
-    title: "Incredible Introduction to the solar system",
-    img: "https://api.adgrouptech.com/images/services/a669cb7750da5c74a41d3259519bc7ee1683447868.webp",
-    cover:
-      "https://api.adgrouptech.com/images/services/208689df74033c800b5e17ed4310688d1683447868.webp",
-    video: "https://www.youtube.com/watch?v=PC2P4V5vSOo",
-    duration: "28 mins",
-    subtitle: "Solar System  | 28 mins ",
-    languages: "English",
-    description:
-      "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
-  },
-  {
-    id: 7,
-    title: "Map to the Chocolate Planet",
-    img: "https://api.adgrouptech.com/images/services/25dcef550ca6f6fc52eea168615b083c1683448161.webp",
-    cover:
-      "https://api.adgrouptech.com/images/services/cadcca09d4393af675140cce9a2f85f91683448161.webp",
-    video: "https://www.youtube.com/watch?v=TgCqlCg54Tk",
-    duration: "20 mins",
-    subtitle: "New Horizons  | 20 mins ",
-    languages: "English",
-    description:
-      "Follow the New Horizons spacecraft on its historic mission past Pluto and into the mysterious Kuiper Belt at the edge of our solar system.",
-  },
-  {
-    id: 8,
-    title: "Once upon The Big Bang",
-    img: "https://api.adgrouptech.com/images/services/a2e004e4c7e63b8ef24dfbb1178dabe81683012375.webp",
-    cover:
-      "https://api.adgrouptech.com/images/services/32795c31ecf6dce1995d0f5bf43a7c171683447585.webp",
-    video: "https://www.youtube.com/watch?v=eZ6IT-_uGu8",
-    duration: "24 mins",
-    subtitle: "Enigma  | 24 mins ",
-    languages: "English",
-    description:
-      "Explore the deepest mysteries of the cosmos — dark matter, dark energy, and the unseen forces that shape the fate of the entire universe.",
-  },
-  {
-    id: 9,
-    title: "Pursuing the Dwarfs Script",
-    img: "https://api.adgrouptech.com/images/services/f9358c2e33645cf1f7b5c4327e41109f1683012626.webp",
-    cover:
-      "https://api.adgrouptech.com/images/services/954e50b8f18c543c3939efc7f6b900fe1683012626.webp",
-    video: "https://www.youtube.com/watch?v=PC2P4V5vSOo",
-    duration: "28 mins",
-    subtitle: "Solar System  | 28 mins ",
-    languages: "English",
-    description:
-      "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
-  },
-  {
-    id: 10,
-    title: "Cosmix",
-    img: "https://api.adgrouptech.com/images/services/abb5da9d1f408f69584bf95f83d42e251683012735.webp",
-    cover:
-      "https://api.adgrouptech.com/images/services/2cc02a5e3d7b2e2b13ae77d24b7faab91683012735.webp",
-    video: "https://www.youtube.com/watch?v=sIdvo0gUzfg",
-    duration: "28 mins",
-    subtitle: "Solar System  | 28 mins ",
-    languages: "English",
-    description:
-      "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
-  },
-  {
-    id: 11,
-    title: "Satelix",
-    img: "https://api.adgrouptech.com/images/services/8ae46d0fd512927cf573a29d38556bce1683012912.webp",
-    cover:
-      "https://api.adgrouptech.com/images/services/4f819c5ad011d69da0163834a8c9da3f1683012912.webp",
-    video: "https://www.youtube.com/watch?v=KoHFUZAuS_A",
-    duration: "28 mins",
-    subtitle: "Solar System  | 28 mins ",
-    languages: "English",
-    description:
-      "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
-  },
-  {
-    id: 12,
-    title: "Cosmonaute 360",
-    img: "https://api.adgrouptech.com/images/services/c5e444cd4cdf75e4c7c851bc16e83edf1683013328.webp",
-    cover:
-      "https://api.adgrouptech.com/images/services/1fb547dd605bb3980b9715f1eae9998f1683013328.webp",
-    video: "https://www.youtube.com/watch?v=5_a596Y4XY4",
-    duration: "28 mins",
-    subtitle: "Solar System  | 28 mins ",
-    languages: "English",
-    description:
-      "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
-  },
-  {
-    id: 13,
-    title: "The Incredible Sun",
-    img: "https://api.adgrouptech.com/images/services/57fc4f2b9a7823ff95534f346277af291683046485.webp",
-    cover:
-      "https://api.adgrouptech.com/images/services/9835bbdd7f465ec03c30f24b2ec8302e1697480769.webp",
-    video: "https://www.youtube.com/watch?v=ijGyynKnj6s",
-    duration: "28 mins",
-    subtitle: "Solar System  | 28 mins ",
-    languages: "English",
-    description:
-      "An incredible guided tour of our solar system — from the scorching surface of Mercury to the icy reaches of Pluto and beyond the Kuiper Belt.",
-  },
-];
 
 export default function Videos() {
   const t = useTranslations("planet_videos");
   const locale = useLocale();
   const isRTL = locale === "ar";
+  
 
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [activeCategory, setActiveCategory] = useState(allCategories[0]);
 
-  const filtered = allCategories.filter((cat) =>
+    const vrQuery = useQuery<any>({
+    queryKey: ["vr"],
+    queryFn: getVr,
+  });
+
+  const vrs: any[] = vrQuery.data?.data ?? [];
+
+const [activeCategory, setActiveCategory] = useState<any>(null);
+
+useEffect(() => {
+  if (vrs.length > 0 && !activeCategory) {
+    setActiveCategory(vrs[0]); // first real item
+  }
+}, [vrs]);
+
+  console.log(vrs);
+
+  
+
+  const filtered = vrs.filter((cat) =>
     cat.title.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
@@ -198,7 +48,7 @@ export default function Videos() {
     currentPage * ITEMS_PER_PAGE,
   );
 
-  const handleCategoryClick = (cat: (typeof allCategories)[0]) => {
+  const handleCategoryClick = (cat: (typeof vrs)[0]) => {
     setActiveCategory(cat);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -209,7 +59,7 @@ export default function Videos() {
   };
 
   const openVideo = () => {
-    window.open(activeCategory.video, "_blank");
+    window.open(activeCategory.link, "_blank");
   };
 
   return (
@@ -221,11 +71,11 @@ export default function Videos() {
       <section className="relative h-screen overflow-hidden">
         {/* Background */}
         <img
-          src={activeCategory.cover}
-          alt={activeCategory.title}
+          src={activeCategory?.cover}
+          alt={activeCategory?.title}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
           onError={(e) => {
-            (e.target as HTMLImageElement).src = activeCategory.img;
+            (e.target as HTMLImageElement).src = activeCategory?.card_image;
           }}
         />
 
@@ -236,15 +86,15 @@ export default function Videos() {
         <div className="relative h-full max-w-[1200px] mx-auto px-8 flex items-center">
           <div className="max-w-[580px] text-white">
             <p className="text-[25px] text-gray-300 mb-2.5">
-              {activeCategory.subtitle}
+              {activeCategory?.subtitle}
             </p>
 
             <h1 className="text-[42px] font-extrabold mb-4 leading-tight tracking-tight">
-              {activeCategory.title}
+              {activeCategory?.title}
             </h1>
 
             <p className="text-lg leading-relaxed text-gray-200 mb-6 max-w-[520px]">
-              {activeCategory.description}
+              {activeCategory?.description}
             </p>
 
             <div className="flex gap-10 mb-7">
@@ -252,7 +102,7 @@ export default function Videos() {
                 <p className="text-[11px] text-gray-400 mb-1 uppercase tracking-wide">
                   {t("hero.languages")}
                 </p>
-                <p className="text-gray-300">{activeCategory.languages}</p>
+                <p className="text-gray-300">{activeCategory?.lang}</p>
               </div>
             </div>
 
@@ -312,7 +162,7 @@ export default function Videos() {
                     style={{ aspectRatio: "3 / 4" }}
                   >
                     <Image
-                      src={category.img}
+                      src={category.card_image}
                       alt={category.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"

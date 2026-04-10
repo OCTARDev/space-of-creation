@@ -33,6 +33,16 @@ export const getTargets = async (id:number): Promise<category[]> => {
   return res.data.data
 }
 
+export const getVr = async (): Promise<any[]> => {
+  const res = await api.get('/vr-categories?search=&page=1')  
+  return res.data.data
+}
+
+export const getPlanetarium = async (): Promise<any[]> => {
+  const res = await api.get('/planetarium-categories?search=&page=1')  
+  return res.data.data
+}
+
 /* ========== POST API ========== */
 
 export const bookLife = async (data: book) => {
