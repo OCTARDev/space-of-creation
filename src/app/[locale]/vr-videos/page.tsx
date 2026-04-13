@@ -1,3 +1,5 @@
+
+
 "use client";
 import { useState , useEffect } from "react";
 import Image from "next/image";
@@ -11,17 +13,16 @@ const ITEMS_PER_PAGE = 12;
 
 export default function Videos() {
   const t = useTranslations("planet_videos");
-  const locale = useLocale();
-  const isRTL = locale === "ar";
+  let locale = useLocale();
+  let isRTL = locale === "ar";
   
 
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-
-    const vrQuery = useQuery<any>({
-    queryKey: ["vr"],
-    queryFn: getVr,
-  });
+const vrQuery = useQuery<any>({
+  queryKey: ["vr", locale], // 👈 add locale here
+  queryFn: getVr,
+});
 
   const vrs: any[] = vrQuery.data?.data ?? [];
 
@@ -33,7 +34,6 @@ useEffect(() => {
   }
 }, [vrs]);
 
-  console.log(vrs);
 
   
 

@@ -19,7 +19,7 @@ export default function Videos() {
   const [currentPage, setCurrentPage] = useState(1);
 
     const vrQuery = useQuery<any>({
-    queryKey: ["planetarium"],
+    queryKey: ["planetarium", locale], // 👈 add locale here],
     queryFn: getPlanetarium,
   });
 
@@ -33,7 +33,6 @@ useEffect(() => {
   }
 }, [vrs]);
 
-  console.log(vrs);
 
   
 

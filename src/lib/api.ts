@@ -51,6 +51,5 @@ export const bookLife = async (data: book) => {
 }
 export const contactus = async (data: contact) => {
   const res = await api.post('/contact-us/send', data)
-  console.log(res)
   return res.data.data
 }
