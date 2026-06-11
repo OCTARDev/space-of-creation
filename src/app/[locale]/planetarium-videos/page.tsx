@@ -6,7 +6,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { getPlanetarium } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 
-const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 8;
 
 
 export default function Videos() {
@@ -31,7 +31,7 @@ useEffect(() => {
   if (vrs.length > 0 && !activeCategory) {
     setActiveCategory(vrs[0]); // first real item
   }
-}, [vrs]);
+}, [vrQuery.data]);
 
 
   
@@ -182,6 +182,7 @@ useEffect(() => {
           )}
 
           {/* Pagination */}
+
           {totalPages > 1 && (
             <div className="flex items-center justify-center gap-2 mt-14 mb-16">
               {/* Previous button */}

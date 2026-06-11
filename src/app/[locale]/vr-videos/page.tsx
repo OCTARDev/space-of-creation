@@ -8,7 +8,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { getVr } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 
-const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 6;
 
 
 export default function Videos() {
