@@ -39,8 +39,7 @@ export const getcategorys = async (
 
 ): Promise<category[]> => {
   
-  const res = await api.get(`/categories??search=${search}&page=${page}`)
-    console.log(res.data)
+  const res = await api.get(`/categories?search=${search}&page=${page}`)
 
   return res.data.data
 
