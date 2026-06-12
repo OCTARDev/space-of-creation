@@ -8,8 +8,6 @@ import { useTranslations, useLocale } from "next-intl";
 import { getVr } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 
-const ITEMS_PER_PAGE = 6;
-
 
 export default function Videos() {
   const t = useTranslations("planet_videos");
@@ -19,12 +17,17 @@ export default function Videos() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-const vrQuery = useQuery<any>({
-  queryKey: ["vr", locale], // 👈 add locale here
-  queryFn: getVr,
-});
 
-  const vrs: any[] = vrQuery.data?.data ?? [];
+
+
+  const vrQuery = useQuery({
+    queryKey: ["vr", locale, currentPage, searchQuery],
+    queryFn: () => getVr(currentPage, searchQuery),
+  });
+  const response = vrQuery.data;
+  
+  const vrs = response?.data ?? [];
+  const totalPages = response?.total_pages ?? 1;
 
 const [activeCategory, setActiveCategory] = useState<any>(null);
 
@@ -35,18 +38,6 @@ useEffect(() => {
 }, [vrs]);
 
 
-  
-
-  const filtered = vrs.filter((cat) =>
-    cat.title.toLowerCase().includes(searchQuery.toLowerCase()),
-  );
-
-  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
-
-  const paginated = filtered.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE,
-  );
 
   const handleCategoryClick = (cat: (typeof vrs)[0]) => {
     setActiveCategory(cat);
@@ -144,13 +135,13 @@ useEffect(() => {
           </div>
 
           {/* Grid */}
-          {paginated.length === 0 ? (
+          {vrs.length === 0 ? (
             <div className="text-center py-12 text-gray-500">
               {t("catalogue.noResults", { query: searchQuery })}
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-start">
-              {paginated.map((category) => (
+              {vrs.map((category:any) => (
                 <button
                   key={category.id}
                   onClick={() => handleCategoryClick(category)}

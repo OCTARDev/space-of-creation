@@ -33,15 +33,25 @@ export const getTargets = async (id:number): Promise<category[]> => {
   return res.data.data
 }
 
-export const getVr = async (): Promise<any[]> => {
-  const res = await api.get('/vr-categories?search=&page=1')  
+export const getVr = async (
+    page: number,
+  search = ""
+) => {
+  const res = await api.get(`/vr-categories?search=${search}&page=${page}`)  
   return res.data.data
 }
 
-export const getPlanetarium = async (): Promise<any[]> => {
-  const res = await api.get('/planetarium-categories?search=&page=1')  
-  return res.data.data
-}
+export const getPlanetarium = async (
+  page: number,
+  search = ""
+) => {
+  const res = await api.get(
+    `/planetarium-categories?search=${search}&page=${page}`
+  );
+
+  
+  return res.data.data;
+};
 
 /* ========== POST API ========== */
 
