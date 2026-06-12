@@ -1,6 +1,6 @@
 "use client";
 
-import { getcategorys, getTargets } from "@/lib/api";
+import {getTargets } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -9,7 +9,6 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from 'next-intl';
 
-const ITEMS_PER_PAGE = 9;
 
 type Category = {
   id: number;
@@ -28,22 +27,15 @@ export default function Target() {
   const {category_id}=useParams<any>()
 
   const targetQuery = useQuery<any>({
-    queryKey: ["targets", category_id],
-    queryFn: () => getTargets(category_id),
+    queryKey: ["targets", category_id, currentPage, searchQuery],
+    queryFn: () => getTargets(category_id, currentPage, searchQuery),
     enabled: !!category_id,
   });
 
-  const allCategories: Category[] = targetQuery.data?.data ?? [];
-
-  const filtered = allCategories.filter((cat) =>
-    cat.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
-  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
-  const paginated = filtered.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
-  );
+   const response = targetQuery.data;
+  
+  const targets = response?.data ?? [];
+  const totalPages = response?.total_pages ?? 1;
 
   const handleCategoryClick = (cat: Category) => {
     setActiveCategory(cat);
@@ -142,7 +134,7 @@ export default function Target() {
           {/* Categories Grid */}
           {!targetQuery.isLoading && !targetQuery.isError && (
             <>
-              {paginated.length === 0 ? (
+              {targets.length === 0 ? (
                 <div className="text-center py-12">
                   <p className="text-gray-500">
                     {t('section.noResults', { query: searchQuery })}
@@ -150,7 +142,7 @@ export default function Target() {
                 </div>
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {paginated.map((category) => {
+                  {targets.map((category:any) => {
                     const isActive = activeCategory?.id === category.id;
 
                     return (

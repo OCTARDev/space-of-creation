@@ -1,9 +1,10 @@
 "use client";
-import "./style.css";
-import { getcategorys, bookLife } from "@/lib/api";
+import { getcategorys, bookLife, getcategorysForbook } from "@/lib/api";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 import { useTranslations } from 'next-intl';
+import style from "./contactlife.module.css";
+
 
 type Category = {
   id: number;
@@ -25,7 +26,7 @@ export default function Contactlife() {
 
   const categoryQuery = useQuery<any>({
     queryKey: ["categories"],
-    queryFn: getcategorys,
+    queryFn: getcategorysForbook,
   });
 
   const allCategories: Category[] = categoryQuery.data?.data ?? [];

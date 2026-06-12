@@ -9,7 +9,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLocale, useTranslations } from 'next-intl';
 
-const ITEMS_PER_PAGE = 9;
 
 type Category = {
   id: number;
@@ -25,21 +24,16 @@ export default function Catalogue() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const categoryQuery = useQuery<any>({
-    queryKey: ["categories"],
-    queryFn: getcategorys,
+    queryKey: ["categories", currentPage, searchQuery],
+    queryFn: () => getcategorys(currentPage, searchQuery),
   });
 
-  const allCategories: Category[] = categoryQuery.data?.data ?? [];
+  const response = categoryQuery.data;
+  
+  const ctl = response?.data ?? [];
+  const totalPages = response?.total_pages ?? 1;
 
-  const filtered = allCategories.filter((cat) =>
-    cat.title.toLowerCase().includes(searchQuery.toLowerCase()),
-  );
 
-  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
-  const paginated = filtered.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE,
-  );
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
@@ -135,7 +129,7 @@ export default function Catalogue() {
           {/* Categories Grid */}
           {!categoryQuery.isLoading && !categoryQuery.isError && (
             <>
-              {paginated.length === 0 ? (
+              {ctl.length === 0 ? (
                 <div className="text-center py-12">
                   <p className="text-gray-500">
                     {t('section.noResults', { query: searchQuery })}
@@ -143,7 +137,7 @@ export default function Catalogue() {
                 </div>
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {paginated.map((category) => {
+                  {ctl.map((category:any) => {
                     return (
                       <Link
                         key={category.id}

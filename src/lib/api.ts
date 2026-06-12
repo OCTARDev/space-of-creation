@@ -1,3 +1,4 @@
+
 import { api } from './axios'
 
 /* ========== TYPES ========== */
@@ -24,12 +25,34 @@ export interface contact {
 
 /* ========== GET APIs ========== */
 
-export const getcategorys = async (): Promise<category[]> => {
+
+export const getcategorysForbook = async (): Promise<category[]> => {
   const res = await api.get('/categories')
   return res.data.data
 }
-export const getTargets = async (id:number): Promise<category[]> => {
-  const res = await api.get(`/categories/targets/${id}`)
+
+export const getcategorys = async (
+
+      page: number,
+        search = ""
+ 
+
+): Promise<category[]> => {
+  
+  const res = await api.get(`/categories??search=${search}&page=${page}`)
+    console.log(res.data)
+
+  return res.data.data
+
+}
+export const getTargets = async (
+  id:number,
+  
+      page: number,
+        search = ""
+
+): Promise<category[]> => {
+  const res = await api.get(`/categories/targets/${id}?search=${search}&page=${page}`)
   return res.data.data
 }
 
