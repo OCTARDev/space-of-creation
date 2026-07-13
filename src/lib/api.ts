@@ -12,15 +12,15 @@ export interface book {
   name: number
   email: string
   phone: string
-  category_ids:Array<number>
+  category_ids: Array<number>
 }
 export interface contact {
   name: number
   email: string
   phone: string
-  organization:string
-  interested:string
-  description:string
+  organization: string
+  interested: string
+  description: string
 }
 
 /* ========== GET APIs ========== */
@@ -33,22 +33,22 @@ export const getcategorysForbook = async (): Promise<category[]> => {
 
 export const getcategorys = async (
 
-      page: number,
-        search = ""
- 
+  page: number,
+  search = ""
+
 
 ): Promise<category[]> => {
-  
+
   const res = await api.get(`/categories?search=${search}&page=${page}`)
 
   return res.data.data
 
 }
 export const getTargets = async (
-  id:number,
-  
-      page: number,
-        search = ""
+  id: number,
+
+  page: number,
+  search = ""
 
 ): Promise<category[]> => {
   const res = await api.get(`/categories/targets/${id}?search=${search}&page=${page}`)
@@ -56,10 +56,10 @@ export const getTargets = async (
 }
 
 export const getVr = async (
-    page: number,
+  page: number,
   search = ""
 ) => {
-  const res = await api.get(`/vr-categories?search=${search}&page=${page}`)  
+  const res = await api.get(`/vr-categories?search=${search}&page=${page}`)
   return res.data.data
 }
 
@@ -71,7 +71,7 @@ export const getPlanetarium = async (
     `/planetarium-categories?search=${search}&page=${page}`
   );
 
-  
+
   return res.data.data;
 };
 

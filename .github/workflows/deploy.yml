@@ -1,0 +1,52 @@
+name: Build and Deploy Next.js to CyberPanel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Next.js App
+        run: npm run build
+
+      - name: Deploy to Server
+        run: |
+          echo "${{ secrets.SERVER_SSH_KEY }}" > /tmp/deploy_key
+          chmod 600 /tmp/deploy_key
+          rsync -avz --delete \
+            -e "ssh -i /tmp/deploy_key -o StrictHostKeyChecking=no -p 22" \
+            --exclude='.git' \
+            --exclude='node_modules' \
+            ./ \
+            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/fadaatech.com/nextjs/
+          rm /tmp/deploy_key
+
+      - name: Install & Restart PM2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 22
+          script: |
+            cd /home/fadaatech.com/nextjs
+            npm ci --production
+            pm2 restart fadaatech || pm2 start npm --name "fadaatech" -- start
+            pm2 save
+            echo "✅ Next.js deployed successfully"
