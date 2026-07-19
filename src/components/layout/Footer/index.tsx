@@ -108,18 +108,21 @@ const Footer: React.FC = () => {
               }`}
             >
               <SocialIcon
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/fadaa-techno/"
                 icon={<Linkedin size={16} />}
               />
               <SocialIcon
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61584742681435"
                 icon={<Facebook size={16} />}
               />
               <SocialIcon
-                href="https://instagram.com"
+                href="https://www.instagram.com/fadaaelebtkar/"
                 icon={<Instagram size={16} />}
               />
-              <SocialIcon href="https://tiktok.com" icon={<TikTokIcon />} />
+              <SocialIcon 
+              href="https://www.tiktok.com/@fadaatech" 
+              icon={<TikTokIcon />} 
+              />
             </div>
           </div>
 
