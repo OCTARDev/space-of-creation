@@ -5,22 +5,19 @@ import { Suspense } from "react";
 import "@/assets/styles/globals.css";
 import Loader from "@/components/ui/Loader";
 
-
-
-
-export const cairo = Cairo({
+const cairo = Cairo({
   subsets: ["arabic", "latin"],
-  weight: ["200","300","400","500","600","700","800","900"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
-  variable: "--font-cairo", // important for Tailwind
+  variable: "--font-cairo",
 });
 
 export const metadata: Metadata = {
   title: "space of creation",
   description: "space of creation Website",
-  icons:{
-    icon:"logo.svg"
-  }
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
@@ -29,13 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
-      <body
-        className={``}
-      >
+    <html lang="en">
+      <body className={`${cairo.variable} ${cairo.className}`}>
         <ClientProvider>
           <Suspense fallback={<Loader />}>
-              {children}
+            {children}
           </Suspense>
         </ClientProvider>
       </body>
